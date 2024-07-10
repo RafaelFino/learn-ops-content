@@ -36,7 +36,7 @@ c.StudentComment("""Claro!""")
 c.Speak("""Vamos criar um programa que imprime 'Olá, mundo!' na tela. O que acha?""")
 c.StudentComment("""Legal!""")
 c.Speak("""Vamos lá!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 print('Olá, mundo!')
 """)
 c.Speak("""Viu como é simples?""")
@@ -51,12 +51,12 @@ c.Speak("""Mas vou te explicar e dar um desconto pois é muito conteúdo mesmo..
 c.StudentComment("""Sim!""")
 c.Speak("""Vamos criar uma variável chamada 'nome' e atribuir o valor 'Fulano' a ela. O que acha?""")
 c.StudentComment("""Legal!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 nome = 'Fulano'
 """)
 c.Speak("""Agora a variável 'nome' armazena o valor 'Fulano'. Quer ver o valor dessa variável?""")
 c.StudentComment("""Sim!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 nome = 'Fulano'
 print(nome)
 """)
@@ -72,7 +72,7 @@ c.StudentComment("""Sim!""")
 c.Speak("""Vamos criar um bloco de código que imprime 'Olá, mundo!' na tela. O que acha?""")
 c.StudentComment("""Legal!""")
 c.Speak("""Vamos lá!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if True:
     print('Olá, mundo!')
 """)
@@ -86,7 +86,7 @@ c.Speak("""O 'if' é uma estrutura de controle que permite executar um bloco de 
 c.StudentComment("""Sim!""")
 c.Speak("""Vamos criar um bloco de código que imprime 'Olá, mundo!' na tela se a variável 'condicao' for verdadeira. O que acha?""")
 c.StudentComment("""Legal!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 condicao = True
 if condicao:
     print('Olá, mundo!')
@@ -101,12 +101,12 @@ c.Speak("""Listas são coleções de elementos em Python. Você pode criar uma l
 c.StudentComment("""Sim! Por favor... não vi isso nos materiais preparatórios... ou se vi fui um vacilão e não prestei atenção...""")
 c.Speak("""Vamos criar uma lista chamada 'numeros' e adicionar os números de 1 a 5 a ela. O que acha?""")
 c.StudentComment("""Legal!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 """)
 c.Speak("""Agora a lista 'numeros' contém os números de 1 a 5. Quer ver o conteúdo dessa lista?""")
 c.StudentComment("""Sim!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 print(numeros)
 """)
@@ -123,19 +123,19 @@ c.Speak("""Índices são posições dos elementos em uma lista. Em Python, os í
 c.StudentComment("""Sim!""")
 c.Speak("""Vamos acessar o primeiro elemento da lista 'numeros'. O que acha?""")
 c.StudentComment("""Legal!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 print(numeros[0])
 """)
 c.Speak("""Vamos brincar um pouco com essa lista... e se tentarmos colocar mais um número nela?""")
 c.StudentComment("""Legal!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 numeros.append(6)
 print(numeros)
 """)
 c.Speak("""Viu como é simples? tenho certeza de que você também consegue... agora vamos tentar remover um número dessa lista...""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 numeros.remove(3)
 print(numeros)
@@ -147,7 +147,7 @@ c.StudentComment("""Não entendi direito esse método 'remove', ele espera a pos
 c.Speak("""O método 'remove' espera o valor do elemento que você quer remover. Se você quiser remover um elemento de uma lista, você precisa informar o valor desse elemento. Entendeu?""")
 c.Question("""E se eu quiser remover o item em uma posição específica da lista?""")
 c.Speak("""Para remover um elemento de uma lista em uma posição específica, você pode usar a função 'pop'. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 numeros.pop(2)
 print(numeros)
@@ -159,7 +159,7 @@ c.StudentComment("""Está ficando mais claro agora... e o que é esse 'print' qu
 c.Speak("""O 'print' é uma função que imprime o conteúdo de uma variável na tela. É muito útil para debugar o código e ver o que está acontecendo. Entendeu?""")
 c.StudentComment("""Agora que você me explicou, eu lembrei que vi isso sim... mas ainda não entendi direito... consegue me mostrar um exemplo mais prático, com listas de textos por exemplo?""")
 c.Speak("""Claro! Vamos criar uma lista de nomes e mostrar o conteúdo dessa lista. Depois vamos adicionar itens, remover itens tanto por nome como por posição, exibir os resultados e explicar cada passo. O que acha?""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 nomes = ['Fulano', 'Ciclano', 'Beltrano']
 print('Vamos mostrar a lista completa aqui')
 print(nomes)
@@ -184,7 +184,7 @@ c.Speak("""Vamos falar um pouco mais sobre os condicionais...""")
 c.Speak("""Você sabe o que são condicionais?""")
 c.StudentComment("""Não faço ideia...""")
 c.Speak("""Mas deveria, são a base da programação. Condicionais são estruturas de controle que permitem executar um bloco de código se uma condição for verdadeira. Vamos fazer um exemplo com um IF e ELSE""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 minhaVar = False
 if minhaVar == False:
     print('Minha variável é falsa')
@@ -199,14 +199,14 @@ c.Speak("""Outro ponto, tudo o que estiver na 'mesma linha' do que estiver abaix
 c.Speak("""Agora vamos falar dos operadores de comparação... presta atenção pois isso é MUITO IMPORTANTE E JÁ FALAMOS ISSO NA AULA DE IFs!""")
 c.Speak("""Os operadores de comparação são usados para comparar valores. Vamos ver os principais operadores de comparação em Python""")
 c.Speak("""O operador de igualdade é o '=='. Ele verifica se dois valores são iguais. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 5 == 5:
     print('5 é igual a 5')
 """)
 c.Speak("""Complicado?""")
 c.StudentComment("""É... olhando assim parece de boa""")
 c.Speak("""Agora vamos falar do operador de diferença, que é o '!='. Ele verifica se dois valores são diferentes. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 5 != 5:
     print('5 é diferente de 5')
 else:
@@ -215,43 +215,43 @@ else:
 c.Speak("""Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Agora vamos falar do operador de maior que, que é o '>'. Ele verifica se um valor é maior que outro. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 5 > 3:
     print('5 é maior que 3')
 """)
 c.Speak("""Pegou a ideia?""")
 c.StudentComment("""Usando exemplos simples assim, parece que tá de boa""")
 c.Speak("""Agora vamos falar do operador de menor que, que é o '<'. Ele verifica se um valor é menor que outro. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 3 < 5:
     print('3 é menor que 5')
 """)
 c.Speak("""Agora vamos falar do operador de maior ou igual a, que é o '>='. Ele verifica se um valor é maior ou igual a outro. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 5 >= 5:
     print('5 é maior ou igual a 5')
 """)
 c.Speak("""Agora vamos falar do operador de menor ou igual a, que é o '<='. Ele verifica se um valor é menor ou igual a outro. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 3 <= 5:
     print('3 é menor ou igual a 5')
 """)
 c.Speak("""Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Agora vamos falar do operador de 'in', que verifica se um valor está contido em uma lista. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 3 in [1, 2, 3, 4, 5]:
     print('3 está na lista')
 """)
 c.Speak("""Agora vamos falar do operador de 'not in', que verifica se um valor não está contido em uma lista. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 6 not in [1, 2, 3, 4, 5]:
     print('6 não está na lista')
 """)
 c.Speak("""Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Agora vamos falar do operador de 'is', que verifica se dois objetos são o mesmo objeto. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 a = [1, 2, 3]
 b = a
 if a is b:
@@ -260,7 +260,7 @@ if a is b:
 c.Speak("""Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Agora vamos falar do operador de 'is not', que verifica se dois objetos não são o mesmo objeto. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 a = [1, 2, 3]
 b = [1, 2, 3]
 if a is not b:
@@ -270,7 +270,7 @@ c.Speak("""Percebe que mesmo com os mesmos valores, a e b são objetos diferente
 c.Question("""Sim, entendi, mas essa me deixou meio confuso, não são as mesmas coisas?""")
 c.Speak("""Não, a e b são objetos diferentes, mesmo que tenham os mesmos valores. Quando você cria essas variáveis em python, você está criando objetos diferentes. Na memória do computador, a e b são objetos diferentes. É como se você tivesse dois pães, eles são do mesmo tipo, podem ser bem parecidos, mas são dois itens diferentes.""")
 c.Speak("""Acabei usando o not mas não falei dele, o 'not' é um operador de negação, ele inverte o valor de uma expressão. Olha mais um exemplo:""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if not 5 == 5:
     print('5 não é igual a 5')
 else:
@@ -298,21 +298,21 @@ c.Speak("""Agora vamos falar dos operadores lógicos. Você sabe o que são oper
 c.StudentComment("""Não faço ideia...""")
 c.Speak("""Os operadores lógicos são usados para combinar expressões condicionais. Vamos ver os principais operadores lógicos em Python""")
 c.Speak("""O operador 'and' verifica se duas expressões são verdadeiras. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 5 > 3 and 5 < 10:
     print('5 é maior que 3 e menor que 10')
 """)
 c.Speak("""O operador 'and' só retorna verdadeiro se as duas expressões forem verdadeiras. Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Agora vamos falar do operador 'or', que verifica se pelo menos uma das expressões é verdadeira. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if 5 > 10 or 5 < 10:
     print('5 é maior que 10 ou menor que 10')
 """)
 c.Speak("""O operador 'or' retorna verdadeiro se pelo menos uma das expressões for verdadeira. Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Agora vamos falar novamente do operador 'not', que inverte o valor de uma expressão. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 if not 5 == 10:
     print('5 não é igual a 10')
 """)
@@ -327,7 +327,7 @@ c.Speak("""Agora vamos falar sobre os loops em Python. Você sabe o que são loo
 c.StudentComment("""É tipo algo que fica repetindo e acontecendo várias vezes? Eu sou meio lerdo, não sei direito na verdade...""")
 c.Speak("""Isso mesmo! Os loops são estruturas de controle que permitem executar um bloco de código várias vezes. Vamos ver os principais loops em Python""")
 c.Speak("""O loop 'for' é usado para iterar sobre uma sequência de elementos. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 for i in range(5):
     print(i)
 """)
@@ -340,14 +340,14 @@ c.StudentComment("""Iterar? Você escreveu errado? não seria Interar? Fiquei co
 c.Speak("""Não, não escrevi errado. Iterar significa percorrer, passar por cada elemento da sequência. Não deixa de ser uma interação pois interagimos com cada elemento da sequência. É um termo técnico super comum, você vai pegar o jeito com a prática!""")
 c.StudentComment("""Acho que estou entendendo, mas poderia me mostrar um exemplo mais prático?""")
 c.Speak("""Claro! Vamos criar um loop 'for' que itera sobre uma lista de nomes e imprime cada nome. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 nomes = ['Fulano', 'Ciclano', 'Beltrano']
 for nome in nomes:
     print(nome)
 """)
 c.Speak("""O loop 'for' itera sobre a lista de nomes e imprime cada nome. Vamos para um exemplo mais prático ainda""")
 c.Speak("""Vamos criar um loop 'for' que itera sobre uma lista de números e soma cada número. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 soma = 0
 for numero in numeros:
@@ -360,7 +360,7 @@ c.Speak("""Vamos resolver um problema comum em entrevistas para desenvolvedores?
 c.Speak("""Vamos criar um programa que imprime os números de 1 a 12. O que acha?""")
 c.StudentComment("""Legal!""")
 c.Speak("""Vamos lá!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 for i in range(1, 13):
     print(i)
 """)
@@ -371,7 +371,7 @@ c.StudentComment("""Não faço ideia...""")
 c.Speak("""Um palíndromo é uma palavra que se lê da mesma forma de trás para frente. Por exemplo, 'ovo' é um palíndromo. Entendeu?""")
 c.StudentComment("""Entendi!""")
 c.Speak("""Vamos criar uma função que verifica se uma palavra é um palíndromo ou não. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 def palindromo(str palavra) -> bool:
     if palavra == palavra[::-1]:
         return True
@@ -394,7 +394,7 @@ c.Speak("""O '->' é uma seta que indica o tipo de retorno da função. Nesse ca
 c.Speak("""Entendeu?""")
 c.StudentComment("""Sim, entendi! Eu acho... poderia me mostrar uma outra forma de resolver esse problema, sem usar esse '::-1', achei complexo...""")
 c.Speak("""Claro! Vamos criar uma função que verifica se uma palavra é um palíndromo ou não sem usar o '::-1'. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 def palindromo2(str palavra) -> bool:
     for i in range(len(palavra) // 2):
         if palavra[i] != palavra[len(palavra) - i - 1]:
@@ -404,7 +404,7 @@ def palindromo2(str palavra) -> bool:
 c.Speak("""A função 'palindromo2' verifica se a palavra é um palíndromo ou não sem usar o '::-1'. A função itera sobre metade da palavra e compara os caracteres. Se os caracteres forem diferentes, a função retorna falso, senão, retorna verdadeiro. Entendeu?""")
 c.Question("""Está melhorando, existe uma forma mais simples, com mais passo a passo e usando só os recursos que vimos nessa aula de resolver isso aí?""")
 c.Speak("""Claro! Vamos criar uma função que verifica se uma palavra é um palíndromo ou não de forma mais simples. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 def palindromo3(str palavra) -> bool:
     # Itera sobre metade da palavra
     for c1 in range(len(palavra)):
@@ -422,7 +422,7 @@ c.StudentComment("""Sim, vendo esse código comentado, eu entendi... mas preciso
 c.Speak("""Não se preocupe, com a prática você vai pegar o jeito!""")
 c.Speak("""Mas ainda precisamos falar sobre outros tipos de loops em Python...""")
 c.Speak("""O loop 'while' é usado para executar um bloco de código enquanto uma condição for verdadeira. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 i = 0
 while i < 5:
     print(i)
@@ -433,7 +433,7 @@ c.StudentComment("""Sim, entendi!""")
 c.Speak("""O loop 'while' é muito útil quando você não sabe quantas vezes o bloco de código precisa ser executado. Você só precisa definir uma condição de parada. Entendeu?""")
 c.StudentComment("""Consegue me mostrar com um exemplo prático? Podemos fazer o exercício do palindromo com o 'while'?""")
 c.Speak("""Claro! Vamos criar uma função que verifica se uma palavra é um palíndromo ou não usando um loop 'while'. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 def palindromo4(str palavra) -> bool:
     i = 0
     j = len(palavra) - 1
@@ -456,7 +456,7 @@ c.Speak("""Alias, é assim que se faz profissionalmente, você não precisa recr
 c.Speak("""Mas primeiro, vamos ver como fazer isso com seu próprio código. Vamos criar um arquivo chamado 'utils.py' e colocar a função 'palindromo' nele. Depois, vamos importar essa função em outro arquivo e usá-la. O que acha?""")
 c.StudentComment("""Legal!""")
 c.Speak("""Vamos lá!""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 # utils.py
 def palindromo(str palavra) -> bool:
     for i in range(len(palavra) // 2):
@@ -465,7 +465,7 @@ def palindromo(str palavra) -> bool:
     return True
 """)
 c.Speak("""Agora que criamos o arquivo 'utils.py' com a função 'palindromo', vamos importar essa função em outro arquivo e usá-la. Vamos ver o exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRunAndRun("""
 # main.py
 #Nessa linha, vamos chamar a função palindromo do arquivo utils.py
 from utils import palindromo
@@ -506,7 +506,7 @@ c.Speak("""Não, não é como um docker. Um ambiente virtual é um ambiente isol
 c.Speak("""Com um ambiente virtual, você pode instalar pacotes específicos para um projeto sem afetar outros projetos ou o sistema como um todo. É uma boa prática usar ambientes virtuais para desenvolver em Python. Entendeu?""")
 c.StudentComment("""Acho que sim... mas e se eu quiser compartilhar meu código com outras pessoas?""")
 c.Speak("""Nesse caso, você pode usar um arquivo chamado 'requirements.txt'. O 'requirements.txt' é um arquivo que lista todos os pacotes que seu projeto precisa para funcionar. Vamos ver um exemplo""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 # requirements.txt
 requests==2.26.0
 """)
@@ -518,7 +518,7 @@ pip install -r requirements.txt
 c.Speak("""O comando 'pip install -r requirements.txt' instala os pacotes listados no 'requirements.txt'. Depois de instalar os pacotes, você pode compartilhar seu código com outras pessoas e elas poderão instalar os pacotes necessários usando o 'requirements.txt'.""")
 c.Speak("""Note que estamos fixando uma versão específica do pacote 'requests'. Isso é importante para garantir que seu código funcione corretamente. Se você não fixar a versão, o 'pip' pode instalar uma versão mais recente do pacote que pode não ser compatível com seu código.""")
 c.Speak("""você pode omitir a versão e ter um arquivo mais simples, olha como ficaria:""")
-c.ShowCode("""
+c.ShowCodeAndRun("""
 # requirements.txt
 requests
 """)

@@ -6,10 +6,10 @@ import time
 import sys
 from pprint import pformat
 from typing import Any
-
 from pygments import highlight
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer
+import getpass
 
 class color:
     PURPLE = '\033[95m'
@@ -22,6 +22,17 @@ class color:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     END = '\033[0m'
+
+lexers = {
+    "python": PythonLexer(),
+    "shell": BashLexer(),
+    "bash": BashLexer(),
+    "docker": DockerLexer(),
+    "dockerfile": DockerLexer(),
+    "json": JsonLexer(),
+    "yaml": YamlLexer(),
+    "yml": YamlLexer(),
+}
 
 
 nextStepMessages = [
@@ -37,7 +48,7 @@ nextStepMessages = [
     """Vamos com calma... vou te explicar isso...""",
     """Um passo de cada vez querido Doença...""",
     """Vamos chegar nesse dia...""",
-    """Qual problema você quer resolver? (tenho q dizer isso... rs...)"""
+    """Qual problema você quer resolver? (tenho q dizer isso... rs...)""",
     """Vamos ver isso aí...""",
 ]
 
@@ -80,7 +91,7 @@ class Chat:
     _wait = 1
 
     def __init__(self):
-        self._student = os.getlogin()
+        self._student = getpass.getuser()
         self._teacher = "Fino"
 
     def Teacher(self) -> str:
@@ -93,7 +104,11 @@ class Chat:
         for char in msg:
             sys.stdout.write(char)
             sys.stdout.flush()
-            time.sleep(0.01)
+            if char == " ":
+                wait = 0.01*(random.randint(0,8))
+            else:
+                wait = 0.001*(random.randint(0,80))
+            time.sleep(wait)
 
     def Speak(self, msg):
         for line in msg.splitlines():
@@ -120,16 +135,27 @@ class Chat:
         sleep(self._wait)
         if wait:
             self.NextStep()
-
-    def ShowCode(self, code, wait=True, run=True):
-        print(color.END + color.BOLD + "# [Python code]:" + color.END)
-        print(highlight(code, PythonLexer(), Terminal256Formatter()))
-        if run:
-            print(color.END + color.BOLD +
-                  "\n# [Python code] - Exec:" + color.END)
-            exec(code)
-            print(color.END + "\n")
+    
+    def getLexer(self, lang):
+        if lang.lower() in lexers:
+            return lexers[lang]
         
+        return lexers["python"]
+    
+    def ShowCode(self, code, wait=True, lexer="python"):
+        print(color.END + color.BOLD + "# [Python code]:" + color.END)
+        print(highlight(code, self.getLexer(lexer), Terminal256Formatter()))
+
+        if wait:
+            self.AskEnter()
+
+    def ShowCodeAndRun(self, code, wait=True, lexer="python"):
+        self.ShowCode(code, wait, lexer)
+        print(color.END + color.BOLD +
+                "\n# [Python code] - Exec:" + color.END)
+        exec(code)
+        print(color.END + "\n")
+
         if wait:
             self.AskEnter()
 
@@ -138,10 +164,12 @@ class Chat:
         for line in command.splitlines():
             print(color.END + color.BOLD + color.GREEN + "$> " + color.END, end="")
             print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
+        print("")
         if run:
             print(color.END + color.BOLD +
                   "# [Shell command] - EXEC:\n" + color.END)
             os.system(command)
+            print("")
         
         if wait:
             self.AskEnter()

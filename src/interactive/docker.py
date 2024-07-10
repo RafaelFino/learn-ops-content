@@ -137,7 +137,7 @@ c.StudentComment("Entendi... então não posso usar para jogar meu Counter Strik
 c.Speak("Você pode tentar, mas não é a melhor ideia... o Wine não é perfeito e pode ter problemas de compatibilidade e desempenho com jogos e aplicativos Windows.")
 c.Speak("Se você quer jogar Counter Strike na Steam, o melhor é usar o Windows mesmo. O Windows é a plataforma ideal para jogos e aplicativos Windows.")
 c.Speak("Outro ponto que você precisa considerar é que esse tipo de solução é indicado para aplicações servidor, não para aplicações desktop.")
-c.Speak("Apensar de possível, rodar um desktop virtualizado assim é uma péssima ideia, você vai ter muitos problemas de desempenho e compatibilidade.")
+c.Speak("Apesar de possível, rodar um desktop virtualizado assim é uma péssima ideia, você vai ter muitos problemas de desempenho e compatibilidade.")
 c.Question("Entendi... e como eu posso criar um container com o Docker? No Linux mesmo, como os adultos fazem...")
 c.Speak("Para criar um container com o Docker, você precisa de uma imagem. Uma imagem é um pacote que contém todos os arquivos e configurações necessários para rodar uma aplicação em um container.")
 c.Speak("Você pode baixar imagens do Docker Hub ou criar suas próprias imagens com um arquivo chamado Dockerfile. O Dockerfile é um arquivo de configuração que descreve como construir uma imagem.")
@@ -147,8 +147,8 @@ c.StudentComment("Pode me mostrar um exemplo de como criar um container com o Do
 c.Speak("Claro, meu jovem Padawan! Vamos criar um container com o Docker. Primeiro, você precisa baixar uma imagem do Docker Hub. Vamos baixar a imagem do Ubuntu.")
 c.Speak("Você pode baixar a imagem do Ubuntu com o comando docker pull ubuntu. Esse comando vai baixar a imagem do Ubuntu do Docker Hub para o seu computador.")
 c.ShowCommand("docker pull ubuntu")
-c.Speak("Depois de baixar a imagem do Ubuntu, você pode rodar um container com o comando docker run. Vamos rodar um container interativo do Ubuntu.")
-c.Speak("Você pode rodar um container interativo do Ubuntu com o comando docker run -it ubuntu. Esse comando vai criar e rodar um container interativo do Ubuntu.")
+c.Speak("Depois de baixar a imagem do Ubuntu, você pode rodar um container com o comando 'docker run'. Vamos rodar um container interativo do Ubuntu.")
+c.Speak("Você pode rodar um container interativo do Ubuntu com o comando 'docker run -it ubuntu'. Esse comando vai criar e rodar um container interativo do Ubuntu.")
 c.ShowCommand("docker run -it ubuntu")
 c.Speak("Pronto, agora você está rodando um container interativo do Ubuntu. Você pode usar comandos como ls, pwd e cat para explorar o container.")
 c.Speak("Quando você terminar de usar o container, você pode sair com o comando exit. Esse comando vai encerrar o container e voltar para o seu terminal.")
@@ -164,9 +164,9 @@ c.Speak("Claro, meu jovem Padawan! Para instalar o Docker no Linux, você pode s
 c.Speak("Primeiro, SEMPRE LEIA A DOCUMENTAÇÃO OFICIAL DO DOCKER, ela é a melhor fonte de informação sobre como instalar o Docker no seu sistema. https://docs.docker.com/engine/install/ubuntu/")
 c.Speak("Tenho um script legal aqui para te ajudar, olha:")
 c.ShowCommand("curl -fsSL https://get.docker.com -o get-docker.sh")
-c.Speak("Depois de baixar o script, você pode rodar o comando sudo sh get-docker.sh para instalar o Docker.")
+c.Speak("Depois de baixar o script, você pode rodar o comando 'sudo sh get-docker.sh' para instalar o Docker.")
 c.ShowCommand("sudo sh get-docker.sh")
-c.Speak("Depois de instalar o Docker, você pode rodar o comando docker --version para verificar se a instalação foi bem sucedida.")
+c.Speak("Depois de instalar o Docker, você pode rodar o comando 'docker --version' para verificar se a instalação foi bem sucedida.")
 c.ShowCommand("docker --version")
 c.StudentComment("Obrigado, Fino! Vou seguir esses passos e instalar o Docker no meu PC! Você é o melhor professor de todos!")
 c.Speak("Disponha, meu jovem Aspirante a Ex Pobre... mas onde você vai? não terminamos a aula ainda! Tá com preguiça???")
@@ -203,12 +203,12 @@ c.Speak("Com o Dockerfile, você pode versionar e compartilhar suas configuraç�
 c.StudentComment("Entendi... você poderia me mostrar como criar um Dockerfile?")
 c.Speak("Claro, pequeno Gafanhoto! Vamos criar um Dockerfile juntos. Primeiro, você precisa criar um arquivo chamado Dockerfile no seu diretório de trabalho.")
 c.Speak("Depois, você pode adicionar os comandos necessários para construir sua imagem. Vamos criar um Dockerfile simples para rodar um servidor web.")
-c.ShowCommand("""
+c.ShowCode("""
               FROM nginx:latest
               COPY index.html /usr/share/nginx/html/index.html
               EXPOSE 80
               CMD ["nginx", "-g", "daemon off;"]
-              """)
+              """, "docker")
 c.Speak("Nesse exemplo, estamos usando um nginx como servidor web e copiando um arquivo index.html para o diretório /usr/share/nginx/html. Depois, estamos expondo a porta 80 e rodando o nginx.")
 c.Speak("Depois de criar o Dockerfile, você pode construir a imagem com o comando docker build. Vamos construir a imagem com o nome webserver.")
 c.ShowCommand("docker build -t webserver .")
