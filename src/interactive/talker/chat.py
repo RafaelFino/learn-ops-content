@@ -2,7 +2,8 @@
 import os
 import random
 from time import sleep
-
+import time
+import sys
 
 class color:
     PURPLE = '\033[95m'
@@ -27,6 +28,11 @@ nextStepMessages = [
     """Vamos ver isso aí...""",
     """Olha... vc tem razão, um passo de cada vez, vamos explicar essa parte...""",
     """Estamos indo bem, vamos chegar lá..."""
+    """Vamos com calma... vou te explicar isso...""",
+    """Um passo de cada vez querido Doença...""",
+    """Vamos chegar nesse dia...""",
+    """Qual problema você quer resolver? (tenho q dizer isso... rs...)"""
+    """Vamos ver isso aí...""",
 ]
 
 pressEnterMessages = [
@@ -39,6 +45,17 @@ pressEnterMessages = [
     """No seu tempo campeão... aperta o ENTER aí quando vc quiser...""",
     """E aí? td bem com vc? quando estiver de boa, aperta o ENTER aí que continuamos... """,
     """Tá divertido? quando quiser, aperta o ENTER que vamos em frente..."""
+    """Vamos com calma...mas vc precisa apertar o ENTER para continuarmos...""",    
+    """Aperta o ENTER aí...""",
+    """Quando vc estiver de boa, aperta o ENTER aí que continuamos...""",
+    """Aperta o ENTER aí que vamos em frente...""",
+    """Vamos lá, aperta o ENTER aí...""",
+    """CTRL+C para tudo, mas se vc quiser continuar, aperta o ENTER aí...""",
+    """Tá com preguiça? aperta o ENTER aí que continuamos...""",
+    """Eu tbm tô cansado, mas aperta o ENTER aí que continuamos...""",
+    """Sei que é muita coisa, mas temos que continuar, aperta o ENTER aí...""",
+    """Ah... nem é tão complicado assim, sei que vc já fez coisa pior.. aperta o ENTER aí...""",
+    """Se precisar, vai buscar um café e depois aperta o ENTER aí...""",
 ]
 
 
@@ -54,29 +71,43 @@ def ClearScreen():
 class Chat:
     _teacher = ""
     _student = ""
+    _wait = 1
 
     def __init__(self):
         self._student = os.getlogin()
         self._teacher = "Fino"
 
+    def slowPrint(self, msg):       
+        for char in msg:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(0.01)
+
     def Speak(self, msg):
         for line in msg.splitlines():
             print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-                  color.END + color.GREEN + line + color.END)
+                  color.END + color.GREEN, end="")
+            self.slowPrint(line)
+            print(color.END)
+
             # Espera um pouquinho para cada linha poder ser lida...
             sleep(len(line)/100)
 
     def StudentComment(self, msg):
         print(color.END + color.DARKCYAN + color.BOLD +
-              "\n# [{0}] ".format(self._student) + color.END + color.YELLOW + msg + color.END)
+              "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
+        self.slowPrint(msg)
+        print(color.END)
         # tempo para entender oq está acontecendo
-        sleep(2)
+        sleep(self._wait)
 
     def Question(self, msg, wait=True):
         print(color.END + color.DARKCYAN + color.BOLD +
-              "\n# [{0}] ".format(self._student) + color.END + color.YELLOW + msg + color.END)
+              "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
+        self.slowPrint(msg)
+        print(color.END)
         # tempo para entender oq está acontecendo
-        sleep(2)
+        sleep(self._wait)
         if wait:
             self.NextStep()
 
