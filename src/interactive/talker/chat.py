@@ -4,6 +4,12 @@ import random
 from time import sleep
 import time
 import sys
+from pprint import pformat
+from typing import Any
+
+from pygments import highlight
+from pygments.formatters import Terminal256Formatter
+from pygments.lexers import PythonLexer, BashLexer
 
 class color:
     PURPLE = '\033[95m'
@@ -91,14 +97,13 @@ class Chat:
             print(color.END)
 
             # Espera um pouquinho para cada linha poder ser lida...
-            sleep(len(line)/100)
+            sleep(len(line)/200)
 
     def StudentComment(self, msg):
         print(color.END + color.DARKCYAN + color.BOLD +
               "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
         self.slowPrint(msg)
         print(color.END)
-        # tempo para entender oq está acontecendo
         sleep(self._wait)
 
     def Question(self, msg, wait=True):
@@ -106,45 +111,37 @@ class Chat:
               "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
         self.slowPrint(msg)
         print(color.END)
-        # tempo para entender oq está acontecendo
         sleep(self._wait)
         if wait:
             self.NextStep()
 
     def ShowCode(self, code, wait=True, run=True):
-        print(color.END + color.BOLD + "\n# [Python code] - START" + color.END)
-        print(color.END + color.BOLD + color.BLUE +
-              "{}".format(code) + color.END)
+        print(color.END + color.BOLD + "# [Python code]:" + color.END)
+        print(highlight(code, PythonLexer(), Terminal256Formatter()))
         if run:
             print(color.END + color.BOLD +
-                  "# [Python code] - EXEC:\n" + color.END)
+                  "\n# [Python code] - Exec:" + color.END)
             exec(code)
-
-        print(color.END + color.BOLD +
-              "# [Python code] - END\n" + color.END)
+            print(color.END + "\n")
         
         if wait:
             self.AskEnter()
 
     def ShowCommand(self, command, wait=True, run=False):
-        print(color.END + color.BOLD + "\n# [Shell command] - START" + color.END)
-        print("\n")
-        print(color.END + color.BOLD + color.BLUE +
-              "{}".format(command) + color.END)
-        print("\n")
+        print(color.END + color.BOLD + "\n# [Shell command]:" + color.END)
+        for line in command.splitlines():
+            print(color.END + color.BOLD + color.GREEN + "$> " + color.END, end="")
+            print(highlight(line, BashLexer(), Terminal256Formatter()))
         if run:
             print(color.END + color.BOLD +
                   "# [Shell command] - EXEC:\n" + color.END)
             os.system(command)
-
-        print(color.END + color.BOLD +
-              "# [Shell command] - END\n" + color.END)
         
         if wait:
             self.AskEnter()
 
     def PrintResult(self, msg):
-        print(color.END + color.CYAN + "# RESULTADO: {}".format(msg) + color.END)
+        print(color.END + color.CYAN + "# Result: {}".format(msg) + color.END)
 
     def AskEnter(self):
         print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +

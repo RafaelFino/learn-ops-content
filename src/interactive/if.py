@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+# Importing the chat class from the talker module
 from talker import chat
 
 chat = chat.Chat()
