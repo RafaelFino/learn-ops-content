@@ -357,11 +357,11 @@ print(soma)
 c.Speak("""O loop 'for' itera sobre a lista de números e soma cada número. Entendeu?""")
 c.StudentComment("""Sim, entendi!""")
 c.Speak("""Vamos resolver um problema comum em entrevistas para desenvolvedores? Um problema que normalmente é resolvido com loops...""")
-c.Speak("""Vamos criar um programa que imprime os números de 1 a 100. O que acha?""")
+c.Speak("""Vamos criar um programa que imprime os números de 1 a 12. O que acha?""")
 c.StudentComment("""Legal!""")
 c.Speak("""Vamos lá!""")
 c.ShowCode("""
-for i in range(1, 101):
+for i in range(1, 13):
     print(i)
 """)
 c.Speak("""Viu como é simples?""")
