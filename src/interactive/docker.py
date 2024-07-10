@@ -69,7 +69,9 @@ from talker import chat
 
 
 c = chat.Chat()
+
 c.Speak("Olá, querido Doença! Tá bem? Hoje vamos falar sobre virtualização, containers e Docker. Você sabe o que é virtualização?")
+c.AskEnter()
 c.StudentComment("Olá, Fino! Tudo bem! Eu sei mais ou menos o que é virtualização, mas não sei muito bem a diferença entre virtualização e containers.")
 c.Speak("Então, virtualização é uma técnica que permite criar uma versão virtual de um dispositivo ou recurso, como um servidor, um sistema operacional, um dispositivo de armazenamento ou uma rede. Já os containers são uma forma de virtualização que permite executar aplicações isoladas em um sistema operacional compartilhado.")
 c.Question("Não entendi nada... pode explicar de novo de uma forma mais simples? Não esquece que eu sou meio burro e não entendo nada dessa coisa toda")
@@ -204,11 +206,11 @@ c.StudentComment("Entendi... você poderia me mostrar como criar um Dockerfile?"
 c.Speak("Claro, pequeno Gafanhoto! Vamos criar um Dockerfile juntos. Primeiro, você precisa criar um arquivo chamado Dockerfile no seu diretório de trabalho.")
 c.Speak("Depois, você pode adicionar os comandos necessários para construir sua imagem. Vamos criar um Dockerfile simples para rodar um servidor web.")
 c.ShowCode("""
-              FROM nginx:latest
-              COPY index.html /usr/share/nginx/html/index.html
-              EXPOSE 80
-              CMD ["nginx", "-g", "daemon off;"]
-              """, "docker")
+FROM nginx:latest
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+""", lexer="docker")
 c.Speak("Nesse exemplo, estamos usando um nginx como servidor web e copiando um arquivo index.html para o diretório /usr/share/nginx/html. Depois, estamos expondo a porta 80 e rodando o nginx.")
 c.Speak("Depois de criar o Dockerfile, você pode construir a imagem com o comando docker build. Vamos construir a imagem com o nome webserver.")
 c.ShowCommand("docker build -t webserver .")

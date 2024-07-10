@@ -112,13 +112,14 @@ from talker import chat
 # O professor deve explicar como usar o comando apt para buscar pacotes no sistema
 # O professor deve explicar como usar o comando apt para verificar informações de pacotes no sistema
 
-c = chat.Chat("Fino", "Aluno")
+c = chat.Chat()
 
 c.Speak("Olá, Aluno! Tudo bem?")
+c.AskEnter()
 c.Speak("Hoje vamos falar sobre Linux e sobre o terminal, tudo bem?")
 c.Speak("Você já ouviu falar sobre o Linux?")
 c.Speak("O Linux é um sistema operacional, assim como o Windows e o MacOS")
-c.StudentComment("Ah, entendi! Mas o que é um sistema operacional?")
+c.Question("Ah, entendi! Mas o que é um sistema operacional?")
 c.Speak("Um sistema operacional é um software que gerencia os recursos de hardware de um computador")
 c.Speak("Ele fornece uma interface para o usuário interagir com o computador")
 c.Speak("No caso do Linux, a interface mais comum é o terminal")

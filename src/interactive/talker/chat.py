@@ -89,26 +89,43 @@ class Chat:
     _teacher = ""
     _student = ""
     _wait = 1
+    _fastMode = False
 
-    def __init__(self):
-        self._student = getpass.getuser()
-        self._teacher = "Fino"
+    def __init__(self, teacher="Fino", student=getpass.getuser(), wait=1, fastMode=False):
+        self._student = student
+        self._teacher = teacher
+        self._wait = wait
+        self._fastMode = fastMode
+
+        # Lista os comandos básicos
+        self.Speak(f"Olá, eu sou o {self._teacher} e estou aqui para te ajudar um pouco...")
+        self.Speak(f"Caso queira sair, aperte 'q' a qualquer momento")
+        self.Speak(f"Se quiser ativar o modo rápido, aperte 'f' e para desativar, aperte 's'")
+        self.AskEnter()
 
     def Teacher(self) -> str:
         return self._teacher
     
     def Student(self) -> str:
         return self._student
+    
+    def SetFastMode(self, fast: bool):
+        self._fastMode = fast
+    
+    def Wait(self, wait: float):
+        if self._fastMode:
+            return
+        time.sleep(wait)
 
-    def slowPrint(self, msg):       
-        for char in msg:
+    def slowPrint(self, msg):
+        for char in msg:     
             sys.stdout.write(char)
             sys.stdout.flush()
             if char == " ":
                 wait = 0.01*(random.randint(0,8))
             else:
                 wait = 0.001*(random.randint(0,80))
-            time.sleep(wait)
+            self.Wait(wait)
 
     def Speak(self, msg):
         for line in msg.splitlines():
@@ -118,21 +135,21 @@ class Chat:
             print(color.END)
 
             # Espera um pouquinho para cada linha poder ser lida...
-            sleep(len(line)/200)
+            self.Wait(len(line)/200)
 
     def StudentComment(self, msg):
         print(color.END + color.DARKCYAN + color.BOLD +
               "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
         self.slowPrint(msg)
         print(color.END)
-        sleep(self._wait)
+        self.Wait(self._wait)
 
     def Question(self, msg, wait=True):
         print(color.END + color.DARKCYAN + color.BOLD +
               "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
         self.slowPrint(msg)
         print(color.END)
-        sleep(self._wait)
+        self.Wait(self._wait)
         if wait:
             self.NextStep()
     
@@ -142,32 +159,50 @@ class Chat:
         
         return lexers["python"]
     
+    def isEmpty(self, line) -> bool:
+            if line == "" or line.isspace() or line == "\n" or line == "\r" or line == "\r\n" or line == "\n\r" or line == "\r\n":
+                return True
+            
+            return False
+    
     def ShowCode(self, code, wait=True, lexer="python"):
-        print(color.END + color.BOLD + "# [Python code]:" + color.END)
-        print(highlight(code, self.getLexer(lexer), Terminal256Formatter()))
+        print(color.END + color.BOLD + f"# [{lexer} code]:\n" + color.END)
+        ln = 1
+        for line in code.splitlines():
+            if self.isEmpty(line):
+                continue
 
+            print(color.END + color.BOLD + color.BLUE + "{:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter()), end="")
+            ln += 1
+
+        print("")
         if wait:
             self.AskEnter()
 
     def ShowCodeAndRun(self, code, wait=True, lexer="python"):
         self.ShowCode(code, wait, lexer)
         print(color.END + color.BOLD +
-                "\n# [Python code] - Exec:" + color.END)
+                f"\n# [{lexer} code] - Exec:" + color.END)
         exec(code)
         print(color.END + "\n")
 
         if wait:
             self.AskEnter()
 
+        print("")
+
     def ShowCommand(self, command, wait=True, run=False):
-        print(color.END + color.BOLD + "\n# [Shell command]:" + color.END)
+        print(color.END + color.BOLD + "\n# [shell command]:" + color.END)
         for line in command.splitlines():
+            if self.isEmpty(line):
+                continue
+
             print(color.END + color.BOLD + color.GREEN + "$> " + color.END, end="")
             print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
         print("")
         if run:
             print(color.END + color.BOLD +
-                  "# [Shell command] - EXEC:\n" + color.END)
+                  "# [shell command] - EXEC:\n" + color.END)
             os.system(command)
             print("")
         
@@ -180,7 +215,19 @@ class Chat:
     def AskEnter(self):
         print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
               color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
-        input()
+        key = input()
+
+        if key.lower() == "q":
+            self.Speak("Espero que você volte logo...")
+            exit()
+        
+        if key.lower() == "f":
+            self.Speak(f"Modo rápido ativado... tá com pressa {self._student}?")
+            self.SetFastMode(True)
+
+        if key.lower() == "s":
+            self.Speak("Modo rápido desativado... melhor ir devagar né?")
+            self.SetFastMode(False)
 
     def NextStep(self):
         self.Speak(nextStepMessages[random.randint(
