@@ -83,6 +83,12 @@ class Chat:
         self._student = os.getlogin()
         self._teacher = "Fino"
 
+    def Teacher(self) -> str:
+        return self._teacher
+    
+    def Student(self) -> str:
+        return self._student
+
     def slowPrint(self, msg):       
         for char in msg:
             sys.stdout.write(char)
@@ -131,7 +137,7 @@ class Chat:
         print(color.END + color.BOLD + "\n# [Shell command]:" + color.END)
         for line in command.splitlines():
             print(color.END + color.BOLD + color.GREEN + "$> " + color.END, end="")
-            print(highlight(line, BashLexer(), Terminal256Formatter()))
+            print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
         if run:
             print(color.END + color.BOLD +
                   "# [Shell command] - EXEC:\n" + color.END)
