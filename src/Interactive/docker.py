@@ -68,7 +68,7 @@ from talker import chat
 # O professor deve explicar como criar um Docker Compose.
 
 
-c = chat.Chat("Fino", "Aluno")
+c = chat.Chat()
 c.Speak("Olá, querido Doença! Tá bem? Hoje vamos falar sobre virtualização, containers e Docker. Você sabe o que é virtualização?")
 c.StudentComment("Olá, Fino! Tudo bem! Eu sei mais ou menos o que é virtualização, mas não sei muito bem a diferença entre virtualização e containers.")
 c.Speak("Então, virtualização é uma técnica que permite criar uma versão virtual de um dispositivo ou recurso, como um servidor, um sistema operacional, um dispositivo de armazenamento ou uma rede. Já os containers são uma forma de virtualização que permite executar aplicações isoladas em um sistema operacional compartilhado.")

@@ -25,7 +25,7 @@ from talker import chat
 # Os comandos não precisam ser sincronizados com o repositorio remoto, apenas localmente.
 # Ao final da aula, não devem ficar arquivos criados localmente, todos os exemplos de comandos devem ser teóricos
 
-c = chat.Chat("Fino", "Aluno")
+c = chat.Chat()
 c.Speak("""E aí cara, como vc está? Vamos falar um pouco sobre Git?""")
 c.StudentComment("""Claro! Mas oque é Git?""")
 c.Speak("""Sabe o código fonte que você faz? é uma ferramenta que te ajuda a guardar ele, e a controlar as mudanças que você faz nele.""")  

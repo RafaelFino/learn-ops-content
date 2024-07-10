@@ -1,6 +1,6 @@
 from talker import chat
 
-chat = chat.Chat("Fino", "Aluno")
+chat = chat.Chat()
 
 chat.Speak("""E aí cara, como vc está?
 Falamos tanto sobre codar, sobre o tal do python, java script, linguagens de todos os tipos

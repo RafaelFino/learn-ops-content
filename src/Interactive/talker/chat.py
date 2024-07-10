@@ -55,9 +55,9 @@ class Chat:
     _teacher = ""
     _student = ""
 
-    def __init__(self, teacher, student):
-        self._student = student
-        self._teacher = teacher
+    def __init__(self):
+        self._student = os.getlogin()
+        self._teacher = "Fino"
 
     def Speak(self, msg):
         for line in msg.splitlines():
