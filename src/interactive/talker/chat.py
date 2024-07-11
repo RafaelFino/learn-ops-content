@@ -198,17 +198,15 @@ class Chat:
         self.ShowCode(code, wait=False, lexer=lexer)
         
         print(color.END + color.BOLD +
-                f"\n# [{lexer} code] - Exec:" + color.END)
+                f"# [{lexer} code] Result:" + color.END)
         exec(code)
-        print(color.END + "\n")
+        print(color.END, end="")
 
         if wait:
             self.AskEnter()
 
-        print("")
-
     def ShowCommand(self, command, wait=True, run=False):
-        print(color.END + color.BOLD + "\n# [shell command]:" + color.END)
+        print(color.END + color.BOLD + "# [shell command]:" + color.END)
         self.printBar()
         for line in command.splitlines():
             if self.isEmpty(line):
@@ -219,9 +217,8 @@ class Chat:
         self.printBar()
         if run:
             print(color.END + color.BOLD +
-                  "# [shell command] - EXEC:\n" + color.END)
+                  "# [shell command] Result:" + color.END)
             os.system(command)
-            print("")
         
         if wait:
             self.AskEnter()
