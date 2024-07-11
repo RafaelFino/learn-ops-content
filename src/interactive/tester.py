@@ -21,3 +21,10 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 CMD python app.py
            """, lexer="docker")
+
+c.ShowCode("""
+FROM nginx:latest
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+""", lexer="docker")

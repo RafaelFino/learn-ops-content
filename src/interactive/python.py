@@ -342,7 +342,10 @@ c.StudentComment("""Acho que estou entendendo, mas poderia me mostrar um exemplo
 c.Speak("""Claro! Vamos criar um loop 'for' que itera sobre uma lista de nomes e imprime cada nome. Vamos ver o exemplo""")
 c.ShowCodeAndRun("""
 nomes = ['Fulano', 'Ciclano', 'Beltrano']
+                 
+# Itera sobre a lista de nomes e imprime cada nome
 for nome in nomes:
+    # Imprime um nome de cada vez
     print(nome)
 """)
 c.Speak("""O loop 'for' itera sobre a lista de nomes e imprime cada nome. Vamos para um exemplo mais prático ainda""")
@@ -350,8 +353,13 @@ c.Speak("""Vamos criar um loop 'for' que itera sobre uma lista de números e som
 c.ShowCodeAndRun("""
 numeros = [1, 2, 3, 4, 5]
 soma = 0
+                 
+# Itera sobre a lista de números e soma cada número
 for numero in numeros:
+    # Soma o número
     soma = soma + numero
+        
+# Imprime a soma, deveria ser 15
 print(soma)
 """)
 c.Speak("""O loop 'for' itera sobre a lista de números e soma cada número. Entendeu?""")
@@ -377,6 +385,12 @@ def palindromo(str palavra) -> bool:
         return True
     else:
         return False
+                 
+# Chama a função palindromo, deve retornar True
+print(palindromo('ovo'))
+                 
+# Chama a função palindromo, deve retornar False
+print(palindromo('casa'))
 """)
 c.Speak("""A função 'palindromo' verifica se a palavra é igual à palavra invertida. Se for, a função retorna verdadeiro, senão, retorna falso. Fui muito rápido nessa, não? Vamos explicar mais devagar...""")
 c.StudentComment("""Sim, foi rápido...""")
@@ -395,17 +409,24 @@ c.Speak("""Entendeu?""")
 c.StudentComment("""Sim, entendi! Eu acho... poderia me mostrar uma outra forma de resolver esse problema, sem usar esse '::-1', achei complexo...""")
 c.Speak("""Claro! Vamos criar uma função que verifica se uma palavra é um palíndromo ou não sem usar o '::-1'. Vamos ver o exemplo""")
 c.ShowCodeAndRun("""
-def palindromo2(str palavra) -> bool:
+def palindromo2(palavra) -> bool:
     for i in range(len(palavra) // 2):
         if palavra[i] != palavra[len(palavra) - i - 1]:
             return False
     return True
+        
+                 
+# Chama a função palindromo2, deve retornar True
+print(palindromo2('ovo'))
+                 
+# Chama a função palindromo2, deve retornar False
+print(palindromo2('casa'))
 """)
 c.Speak("""A função 'palindromo2' verifica se a palavra é um palíndromo ou não sem usar o '::-1'. A função itera sobre metade da palavra e compara os caracteres. Se os caracteres forem diferentes, a função retorna falso, senão, retorna verdadeiro. Entendeu?""")
 c.Question("""Está melhorando, existe uma forma mais simples, com mais passo a passo e usando só os recursos que vimos nessa aula de resolver isso aí?""")
 c.Speak("""Claro! Vamos criar uma função que verifica se uma palavra é um palíndromo ou não de forma mais simples. Vamos ver o exemplo""")
 c.ShowCodeAndRun("""
-def palindromo3(str palavra) -> bool:
+def palindromo3(palavra) -> bool:
     # Itera sobre metade da palavra
     for c1 in range(len(palavra)):
         # Calcula o índice do outro caractere, do final para o começo
@@ -416,6 +437,12 @@ def palindromo3(str palavra) -> bool:
            
     # Se passar por todos os caracteres e não retornar falso, retorna verdadeiro
     return True
+                 
+# Chama a função palindromo3, deve retornar True
+print(palindromo3('ovo'))
+                 
+# Chama a função palindromo3, deve retornar False
+print(palindromo3('casa'))
 """)
 c.Speak("""A função 'palindromo3' verifica se a palavra é um palíndromo ou não de forma mais simples. A função itera sobre metade da palavra e compara os caracteres. Se os caracteres forem diferentes, a função retorna falso, senão, retorna verdadeiro. Entendeu?""")
 c.StudentComment("""Sim, vendo esse código comentado, eu entendi... mas preciso praticar mais""")
@@ -434,15 +461,26 @@ c.Speak("""O loop 'while' é muito útil quando você não sabe quantas vezes o 
 c.StudentComment("""Consegue me mostrar com um exemplo prático? Podemos fazer o exercício do palindromo com o 'while'?""")
 c.Speak("""Claro! Vamos criar uma função que verifica se uma palavra é um palíndromo ou não usando um loop 'while'. Vamos ver o exemplo""")
 c.ShowCodeAndRun("""
-def palindromo4(str palavra) -> bool:
+def palindromo4(palavra) -> bool:
+    # Inicializa os índices
     i = 0
+    # Inicializa o índice do final da palavra
     j = len(palavra) - 1
+    # Itera sobre metade da palavra
     while i < j:
+        # Compara os caracteres, se forem diferentes, retorna falso
         if palavra[i] != palavra[j]:
             return False
+        # Atualiza os índices
         i = i + 1
         j = j - 1
     return True
+                 
+# Chama a função palindromo4, deve retornar True
+print(palindromo4('ovo'))
+
+# Chama a função palindromo4, deve retornar False
+print(palindromo4('casa'))
 """)
 c.Speak("""A função 'palindromo4' verifica se a palavra é um palíndromo ou não usando um loop 'while'. A função itera sobre metade da palavra e compara os caracteres. Se os caracteres forem diferentes, a função retorna falso, senão, retorna verdadeiro. Entendeu?""")
 c.StudentComment("""Sim, entendi! Mas o código me parece mais complexo nesse caso... existe uma regra de quando usar 'for' e quando usar 'while'?""")
@@ -456,16 +494,18 @@ c.Speak("""Alias, é assim que se faz profissionalmente, você não precisa recr
 c.Speak("""Mas primeiro, vamos ver como fazer isso com seu próprio código. Vamos criar um arquivo chamado 'utils.py' e colocar a função 'palindromo' nele. Depois, vamos importar essa função em outro arquivo e usá-la. O que acha?""")
 c.StudentComment("""Legal!""")
 c.Speak("""Vamos lá!""")
-c.ShowCodeAndRun("""
+c.ShowCode("""
 # utils.py
-def palindromo(str palavra) -> bool:
+def palindromo(palavra) -> bool:
+    # Itera sobre metade da palavra
     for i in range(len(palavra) // 2):
+        # Compara os caracteres, se forem diferentes, retorna falso
         if palavra[i] != palavra[len(palavra) - i - 1]:
             return False
     return True
 """)
 c.Speak("""Agora que criamos o arquivo 'utils.py' com a função 'palindromo', vamos importar essa função em outro arquivo e usá-la. Vamos ver o exemplo""")
-c.ShowCodeAndRunAndRun("""
+c.ShowCode("""
 # main.py
 #Nessa linha, vamos chamar a função palindromo do arquivo utils.py
 from utils import palindromo
@@ -518,7 +558,7 @@ pip install -r requirements.txt
 c.Speak("""O comando 'pip install -r requirements.txt' instala os pacotes listados no 'requirements.txt'. Depois de instalar os pacotes, você pode compartilhar seu código com outras pessoas e elas poderão instalar os pacotes necessários usando o 'requirements.txt'.""")
 c.Speak("""Note que estamos fixando uma versão específica do pacote 'requests'. Isso é importante para garantir que seu código funcione corretamente. Se você não fixar a versão, o 'pip' pode instalar uma versão mais recente do pacote que pode não ser compatível com seu código.""")
 c.Speak("""você pode omitir a versão e ter um arquivo mais simples, olha como ficaria:""")
-c.ShowCodeAndRun("""
+c.ShowCommand("""
 # requirements.txt
 requests
 """)

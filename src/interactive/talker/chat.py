@@ -44,7 +44,7 @@ nextStepMessages = [
     """Não é complexo, vamos olhar de perto...""",
     """Vamos ver isso aí...""",
     """Olha... vc tem razão, um passo de cada vez, vamos explicar essa parte...""",
-    """Estamos indo bem, vamos chegar lá..."""
+    """Estamos indo bem, vamos chegar lá...""",
     """Vamos com calma... vou te explicar isso...""",
     """Um passo de cada vez querido Doença...""",
     """Vamos chegar nesse dia...""",
@@ -61,7 +61,7 @@ pressEnterMessages = [
     """Só estou esperando vc apertar o ENTER para seguirmos...""",
     """No seu tempo campeão... aperta o ENTER aí quando vc quiser...""",
     """E aí? td bem com vc? quando estiver de boa, aperta o ENTER aí que continuamos... """,
-    """Tá divertido? quando quiser, aperta o ENTER que vamos em frente..."""
+    """Tá divertido? quando quiser, aperta o ENTER que vamos em frente...""",
     """Vamos com calma...mas vc precisa apertar o ENTER para continuarmos...""",    
     """Aperta o ENTER aí...""",
     """Quando vc estiver de boa, aperta o ENTER aí que continuamos...""",
@@ -74,7 +74,6 @@ pressEnterMessages = [
     """Ah... nem é tão complicado assim, sei que vc já fez coisa pior.. aperta o ENTER aí...""",
     """Se precisar, vai buscar um café e depois aperta o ENTER aí...""",
 ]
-
 
 def ClearScreen():
     # Linux
@@ -94,13 +93,21 @@ class Chat:
     def __init__(self, teacher="Fino", student=getpass.getuser(), wait=1, fastMode=False):
         self._student = student
         self._teacher = teacher
+        self._wait = 0
+        self._fastMode = True
+
+        # Lista os comandos básicos
+        self.Speak(f"Olá, eu sou o {self._teacher} e estou aqui para tentear ajudar um pouco...")
+        self.Speak(f"Temos alguns comandos:")
+        self.Speak("Caso queira sair, aperte CTRL+C a qualquer momento")
+        self.Speak(f"No momento em que te pedirem para teclar um 'ENTER', você pode:")
+        self.Speak(" - Apertar a tecla ENTER para continuar")
+        self.Speak(" - Apertar a tecla 'Q' para sair")
+        self.Speak(" - Apertar a tecla 'F' para ativar o modo rápido")
+        self.Speak(" - Apertar a tecla 'S' para desativar o modo rápido")
         self._wait = wait
         self._fastMode = fastMode
 
-        # Lista os comandos básicos
-        self.Speak(f"Olá, eu sou o {self._teacher} e estou aqui para te ajudar um pouco...")
-        self.Speak(f"Caso queira sair, aperte 'q' a qualquer momento")
-        self.Speak(f"Se quiser ativar o modo rápido, aperte 'f' e para desativar, aperte 's'")
         self.AskEnter()
 
     def Teacher(self) -> str:
@@ -166,21 +173,30 @@ class Chat:
             return False
     
     def ShowCode(self, code, wait=True, lexer="python"):
-        print(color.END + color.BOLD + f"# [{lexer} code]:\n" + color.END)
+        print(color.END + color.BOLD + f"# [{lexer} code]:" + color.END)
         ln = 1
+        self.printBar()
         for line in code.splitlines():
             if self.isEmpty(line):
                 continue
 
-            print(color.END + color.BOLD + color.BLUE + "{:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter()), end="")
+            print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter()), end="")
             ln += 1
 
-        print("")
+        self.printBar()
         if wait:
             self.AskEnter()
 
+    def printBar(self):
+        print(color.END + color.BOLD + color.BLUE + " ", end="")
+        width = os.get_terminal_size().columns
+        for s in range(width - 2):
+            print(chr(3196), end="")
+        print(color.END)
+
     def ShowCodeAndRun(self, code, wait=True, lexer="python"):
-        self.ShowCode(code, wait, lexer)
+        self.ShowCode(code, wait=False, lexer=lexer)
+        
         print(color.END + color.BOLD +
                 f"\n# [{lexer} code] - Exec:" + color.END)
         exec(code)
@@ -193,13 +209,14 @@ class Chat:
 
     def ShowCommand(self, command, wait=True, run=False):
         print(color.END + color.BOLD + "\n# [shell command]:" + color.END)
+        self.printBar()
         for line in command.splitlines():
             if self.isEmpty(line):
                 continue
 
-            print(color.END + color.BOLD + color.GREEN + "$> " + color.END, end="")
+            print(color.END + color.BOLD + color.BLUE + "| " + color.END + color.GREEN + color.BOLD + "$> " + color.END, end="")
             print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
-        print("")
+        self.printBar()
         if run:
             print(color.END + color.BOLD +
                   "# [shell command] - EXEC:\n" + color.END)
@@ -217,17 +234,20 @@ class Chat:
               color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
         key = input()
 
-        if key.lower() == "q":
+        if key is not None and key != "":
+            key = key.lower()
+
+        if key == "q":
             self.Speak("Espero que você volte logo...")
             exit()
         
-        if key.lower() == "f":
-            self.Speak(f"Modo rápido ativado... tá com pressa {self._student}?")
+        if key == "f":
             self.SetFastMode(True)
+            self.Speak(f"Modo rápido ativado... tá com pressa {self._student}?")
 
-        if key.lower() == "s":
-            self.Speak("Modo rápido desativado... melhor ir devagar né?")
+        if key == "s":
             self.SetFastMode(False)
+            self.Speak("Modo rápido desativado... melhor ir devagar né?")
 
     def NextStep(self):
         self.Speak(nextStepMessages[random.randint(
