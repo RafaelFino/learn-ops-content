@@ -564,10 +564,9 @@ requests
 """)
 c.Speak("""Dessa forma, o 'pip' irá instalar a versão mais recente do pacote 'requests'. Mas é importante fixar a versão para garantir que seu código funcione corretamente. Entendeu?""")
 c.StudentComment("""Sim, acho que sim...""")
-c.Speak("""Ainda sobre a estrutura de pastas da sua solução, é importante que você organize bem seus arquivos. Em python normalmente o código fonte fica na pasta 'src', os testes ficam na pasta 'tests', os arquivos de configuração ficam na pasta 'config', os arquivos de dados ficam na pasta 'data', e assim por diante...""")
-c.Speak("""Organizar bem seus arquivos é fundamental para manter seu código limpo e organizado. Além disso, é importante usar um sistema de controle de versão como o Git para gerenciar seu código. O Git permite que você controle as mudanças no seu código, reverta alterações, e trabalhe em equipe de forma eficiente.""")
-c.Speak("""Veja um exemplo de organização de pastas para um projeto em Python, com um app chamado main.py, com entidades, serviços, camadas de bancos de dados, scritps, storages, APIs, testes, configurações, dados, arquivos de configuração, requirements, readme e etc""")
-c.Speak("""
+c.Speak("""Ainda sobre a estrutura de pastas da sua solução, é importante que você organize bem seus arquivos. Em python normalmente o código fonte fica na pasta 'src', os testes ficam na pasta 'tests', os arquivos de configuração ficam na pasta 'config', os arquivos de dados ficam na pasta 'data', e assim por diante...
+Organizar bem seus arquivos é fundamental para manter seu código limpo e organizado. Além disso, é importante usar um sistema de controle de versão como o Git para gerenciar seu código. O Git permite que você controle as mudanças no seu código, reverta alterações, e trabalhe em equipe de forma eficiente.
+Veja um exemplo de organização de pastas para um projeto em Python, com um app chamado main.py, com entidades, serviços, camadas de bancos de dados, scritps, storages, APIs, testes, configurações, dados, arquivos de configuração, requirements, readme e etc
 ├── src
 │   ├── main.py
 │   ├── entities
