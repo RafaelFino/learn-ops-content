@@ -231,7 +231,7 @@ class Chat:
 
     def AskEnter(self):
         key = input(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-              color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END, end="")
+              color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
         
         if key is not None and key != "":
             key = key.lower()
