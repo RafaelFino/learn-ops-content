@@ -546,7 +546,7 @@ c.Speak("""Não, não é como um docker. Um ambiente virtual é um ambiente isol
 c.Speak("""Com um ambiente virtual, você pode instalar pacotes específicos para um projeto sem afetar outros projetos ou o sistema como um todo. É uma boa prática usar ambientes virtuais para desenvolver em Python. Entendeu?""")
 c.StudentComment("""Acho que sim... mas e se eu quiser compartilhar meu código com outras pessoas?""")
 c.Speak("""Nesse caso, você pode usar um arquivo chamado 'requirements.txt'. O 'requirements.txt' é um arquivo que lista todos os pacotes que seu projeto precisa para funcionar. Vamos ver um exemplo""")
-c.ShowCodeAndRun("""
+c.ShowCode("""
 # requirements.txt
 requests==2.26.0
 """)
