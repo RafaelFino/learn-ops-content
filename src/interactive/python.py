@@ -51,7 +51,7 @@ c.Speak("""Mas vou te explicar e dar um desconto pois é muito conteúdo mesmo..
 c.StudentComment("""Sim!""")
 c.Speak("""Vamos criar uma variável chamada 'nome' e atribuir o valor 'Fulano' a ela. O que acha?""")
 c.StudentComment("""Legal!""")
-c.ShowCodeAndRun("""
+c.ShowCode("""
 nome = 'Fulano'
 """)
 c.Speak("""Agora a variável 'nome' armazena o valor 'Fulano'. Quer ver o valor dessa variável?""")
@@ -101,7 +101,7 @@ c.Speak("""Listas são coleções de elementos em Python. Você pode criar uma l
 c.StudentComment("""Sim! Por favor... não vi isso nos materiais preparatórios... ou se vi fui um vacilão e não prestei atenção...""")
 c.Speak("""Vamos criar uma lista chamada 'numeros' e adicionar os números de 1 a 5 a ela. O que acha?""")
 c.StudentComment("""Legal!""")
-c.ShowCodeAndRun("""
+c.ShowCode("""
 numeros = [1, 2, 3, 4, 5]
 """)
 c.Speak("""Agora a lista 'numeros' contém os números de 1 a 5. Quer ver o conteúdo dessa lista?""")
@@ -281,17 +281,17 @@ c.StudentComment("""Está ficando mais claro, acho que eu que sou burro e demoro
 c.Speak("""Não se preocupe, é normal ter dúvidas. Estou aqui para te ajudar. Quer aprender mais sobre operadores de comparação?""")
 c.StudentComment("""Claro! Poderia de forma simples e bem resumida me explicar o que são esses operadores para tentar fixar aqui na cachola?""")
 c.Speak("""Claro! 
-        O operador de igualdade '==' verifica se dois valores são iguais. 
-        O operador de diferença '!=' verifica se dois valores são diferentes. 
-        O operador de maior que '>' verifica se um valor é maior que outro. 
-        O operador de menor que '<' verifica se um valor é menor que outro. 
-        O operador de maior ou igual a '>=' verifica se um valor é maior ou igual a outro. 
-        O operador de menor ou igual a '<=' verifica se um valor é menor ou igual a outro. 
-        O operador de 'not' inverte o valor de uma expressão.
-        O operador de 'in' verifica se um valor está contido em uma lista. 
-        O operador de 'not in' verifica se um valor não está contido em uma lista. 
-        O operador de 'is' verifica se dois objetos são o mesmo objeto. 
-        O operador de 'is not' verifica se dois objetos não são o mesmo objeto. 
+O operador de igualdade '==' verifica se dois valores são iguais. 
+O operador de diferença '!=' verifica se dois valores são diferentes. 
+O operador de maior que '>' verifica se um valor é maior que outro. 
+O operador de menor que '<' verifica se um valor é menor que outro. 
+O operador de maior ou igual a '>=' verifica se um valor é maior ou igual a outro. 
+O operador de menor ou igual a '<=' verifica se um valor é menor ou igual a outro. 
+O operador de 'not' inverte o valor de uma expressão.
+O operador de 'in' verifica se um valor está contido em uma lista. 
+O operador de 'not in' verifica se um valor não está contido em uma lista. 
+O operador de 'is' verifica se dois objetos são o mesmo objeto. 
+O operador de 'is not' verifica se dois objetos não são o mesmo objeto. 
 Entendeu?""")
 c.StudentComment("""Acho que sim... vamos em frente""")
 c.Speak("""Agora vamos falar dos operadores lógicos. Você sabe o que são operadores lógicos?""")
@@ -319,9 +319,9 @@ if not 5 == 10:
 c.Speak("""O operador 'not' inverte o valor da expressão. Entendeu?""")
 c.StudentComment("""Sim, entendi! Consegue resumir aqui para anotar na minha cola?""")
 c.Speak("""Claro! 
-        O operador 'and' verifica se duas expressões são verdadeiras. 
-        O operador 'or' verifica se pelo menos uma das expressões é verdadeira. 
-        O operador 'not' inverte o valor de uma expressão.
+O operador 'and' verifica se duas expressões são verdadeiras. 
+O operador 'or' verifica se pelo menos uma das expressões é verdadeira. 
+O operador 'not' inverte o valor de uma expressão.
 Entendeu?""")
 c.Speak("""Agora vamos falar sobre os loops em Python. Você sabe o que são loops?""")
 c.StudentComment("""É tipo algo que fica repetindo e acontecendo várias vezes? Eu sou meio lerdo, não sei direito na verdade...""")
