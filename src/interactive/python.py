@@ -380,7 +380,7 @@ c.Speak("""Um palíndromo é uma palavra que se lê da mesma forma de trás para
 c.StudentComment("""Entendi!""")
 c.Speak("""Vamos criar uma função que verifica se uma palavra é um palíndromo ou não. Vamos ver o exemplo""")
 c.ShowCodeAndRun("""
-def palindromo(str palavra) -> bool:
+def palindromo(palavra) -> bool:
     if palavra == palavra[::-1]:
         return True
     else:

@@ -146,14 +146,14 @@ class Chat:
 
     def StudentComment(self, msg):
         print(color.END + color.DARKCYAN + color.BOLD +
-              "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
+              "# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
         self.slowPrint(msg)
         print(color.END)
         self.Wait(self._wait)
 
     def Question(self, msg, wait=True):
         print(color.END + color.DARKCYAN + color.BOLD +
-              "\n# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
+              "# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
         self.slowPrint(msg)
         print(color.END)
         self.Wait(self._wait)
@@ -230,10 +230,9 @@ class Chat:
         print(color.END + color.CYAN + "# Result: {}".format(msg) + color.END)
 
     def AskEnter(self):
-        print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-              color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
-        key = input()
-
+        key = input(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
+              color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END, end="")
+        
         if key is not None and key != "":
             key = key.lower()
 
