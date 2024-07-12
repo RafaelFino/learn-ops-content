@@ -540,7 +540,7 @@ c.Speak("Ele define uma série de interfaces e funções que os sistemas operaci
 c.Speak("O LSB é muito importante porque garante a compatibilidade entre os sistemas operacionais Linux")
 c.Speak("Entendeu?")
 c.StudentComment("Um pouco, você poderia montar aquela tabela maneira de novo com todas essas informações de pastas suas finalidades?")
-c.Speak("Claro! Vamos fazer uma linda tabela em ASCII para você, com os diretórios do Linux, suas finalidades, quem pode acessa-los? 
+c.Speak("Claro! Vamos fazer uma linda tabela em ASCII para você, com os diretórios do Linux, suas finalidades, quem pode acessa-los?") 
 c.Speak("""
 +---------------------------------+---------------------------------+--------------------------------+--------------------------------+
 | Diretório                       | Finalidade                      | Quem pode acessar              | Quem pode modificar            |
