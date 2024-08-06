@@ -23,7 +23,7 @@ Verdade, a maioria de vcs sequer sabe o que é um git ou python é só uma cobra
 - Primeiro passo: Instale um *LINUX* 
 - Segundo passo: Instale o git
 
-Ciu? é fácil...
+Viu? é fácil... vc consegue!!!
 
 Brincadeira, vamos lá...
 - Acesse o site do git e baixe o instalador: https://git-scm.com/
@@ -56,6 +56,7 @@ Mas espere, vc não tem o python instalado, não é?
 Vamos resolver isso também
 
 ### No Windows
+- Formata seu computador e instala um linux: https://xubuntu.org/ (tá bom, brincadeira... vamos lá)
 - Acesse o site do python e baixe o instalador: https://www.python.org/
 - Execute o instalador e siga os passos
 - Abra o terminal
