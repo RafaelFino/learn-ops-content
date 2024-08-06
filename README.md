@@ -10,7 +10,7 @@ Bom, temos hoje a IA que tem me ajudado demais a economizar tempo e fazer coisas
 
 Básicamente todo o código dos bots está dentro da pasta *src/interative*, basta executar os programas python que a magia acontece.
 
-## Mas Fino, eu não faço ideia de como eu posso execvutar isso! 
+## Mas Fino, eu não faço ideia de como eu posso executar isso! 
 
 Verdade, a maioria de vcs sequer sabe o que é um git ou python é só uma cobra... ou talvez nem isso.. então vamos do começo
 
@@ -22,7 +22,8 @@ Verdade, a maioria de vcs sequer sabe o que é um git ou python é só uma cobra
 ### No Windows
 - Primeiro passo: Instale um *LINUX* 
 - Segundo passo: Instale o git
-viu?  fácil???
+
+Ciu? é fácil...
 
 Brincadeira, vamos lá...
 - Acesse o site do git e baixe o instalador: https://git-scm.com/
