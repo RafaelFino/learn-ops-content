@@ -359,75 +359,75 @@ c.Speak("E caso se sinta perdido, o comando 'pwd' mostra em qual diretório voc�
 c.Speak("Entendeu como navegar entre os diretórios?")
 c.StudentComment("Entendi sim! Obrigado pela explicação! Você poderia me mostrar como ficam essas estruturas? é Tipo uma árvore?")
 c.Speak("Claro! Vamos fazer um exemplo prático!")
-c.Speak(f"
+c.Speak(f"""
         /
         ├──  home
         │   ├──  aluno
         │   │   ├──  Documentos
-        │   │   │   ├──  arquivo1.txt
-        │   │   │   ├──  arquivo2.txt
+        │   │   │   ├──  arquivo1.txt
+        │   │   │   ├──  arquivo2.txt
         │   │   ├──  Downloads
-        │   │   │   ├──  arquivo3.txt
-        │   │   │   ├──  arquivo4.txt
+        │   │   │   ├──  arquivo3.txt
+        │   │   │   ├──  arquivo4.txt
         ├──  root
         ├──  etc
-        │   ├──  hosts
-        │   ├──  passwd
+        │   ├──  hosts
+        │   ├──  passwd
         ├──  bin
-        │   ├──  ls
-        │   ├──  cd
+        │   ├──  ls
+        │   ├──  cd
         ├──  usr
         │   ├──  bin
-        │   │   ├──  programaA
-        │   │   ├──  programaB
+        │   │   ├──  appA
+        │   │   ├──  appB
         │   ├──  local
         │   │   ├──  bin
-        │   │   │   ├──  ls
-        │   │   │   ├──  cd
-        ├──  var
-        │   ├──  log
-        |   |   ├── applicationLog
-        │   ├──  tmp
+        │   │   │   ├──  exa
+        │   │   │   ├──  htop
+        ├──  var
+        │   ├──   log
+        |   |   ├──  applicationLog
+        │   ├──  tmp
         ├──  tmp
-        │   ├──  arquivo7.txt
-        │   ├──  arquivo8.txt
+        │   ├──  arquivo7.txt
+        │   ├──  arquivo8.txt
         ├──  opt
-        │   ├──  programa1
-        │   ├──  programa2
+        │   ├──  httpd
+        │   ├──  docker
         ├──  mnt
-        │   ├──  disco1
-        │   ├──  disco2
+        │   ├──  disc1
+        │   ├──  disc2
         ├──  media
-        │   ├──  cdrom
-        │   ├──  pendrive
+        │   ├──  cdrom
+        │   ├──  pendrive
         ├──  proc
-        │   ├──  cpuinfo
-        │   ├──  meminfo
+        │   ├──  cpuinfo
+        │   ├──  meminfo
         ├──  sys
-        │   ├──  devices
-        │   ├──  modules
+        │   ├──  devices
+        │   ├──  modules
         ├──  dev
-        │   ├──  sda
-        │   ├──  sdb
+        │   ├──  sda
+        │   ├──  sdb
         ├──  run
-        │   ├──  lock
-        │   ├──  log
+        │   ├──  lock
+        │   ├──  log
         ├──  srv
-        │   ├──  www
-        │   ├──  ftp
+        │   ├──  www
+        │   ├──  ftp
         ├──  boot
-        │   ├──  vmlinuz
-        │   ├──  initrd
+        │   ├──  vmlinuz
+        │   ├──  initrd
         ├──  lib
-        │   ├──  libc.so
-        │   ├──  libm.so
+        │   ├──  libc.so
+        │   ├──  libm.so
         ├──  lib64
-        │   ├──  libc.so
-        │   ├──  libm.so
+        │   ├──  libc.so
+        │   ├──  libm.so
         ├──  sbin
-        │   ├──  passwd
+        │   ├──  passwd
         ├──  lost+found
-        ")  
+        """)  
 c.Speak("Entendeu como é a organização dos diretórios?")
 c.StudentComment("Entendi sim! Obrigado pela explicação! Isso tem a ver com aquele negócio, o LSB?")
 c.Speak("Sim, tem a ver!")
@@ -533,7 +533,7 @@ c.Speak("O comando 'rmdir' vai apagar o diretório 'diretório' do diretório at
 c.Speak("Se o diretório não estiver vazio, você pode usar o comando 'rm -r' para apagar o diretório e todos os arquivos e diretórios dentro dele")
 c.Speak("Por exemplo, se você quiser apagar o diretório 'diretório' e todos os arquivos e diretórios dentro dele, você só precisa digitar 'rm -r diretório' e pressionar 'Enter'")
 c.Speak("O comando 'rm -r' vai apagar o diretório 'diretório' e todos os arquivos e diretórios dentro dele")
-c.Speal("Ainda há a opção de usar o comando 'rm -rf diretório' para forçar a remoção de um diretório e todos os arquivos e diretórios dentro dele")
+c.Speak("Ainda há a opção de usar o comando 'rm -rf diretório' para forçar a remoção de um diretório e todos os arquivos e diretórios dentro dele")
 c.Speak("O comando 'rm -rf' é muito poderoso e deve ser usado com cuidado")
 c.ShowCommand("rmdir diretório")
 c.ShowCommand("rm -r diretório")
@@ -804,7 +804,7 @@ c.Speak("O Linux é um sistema operacional de código aberto, o que significa qu
 c.Speak("Isso torna o Linux muito popular entre os desenvolvedores e empresas")
 c.Speak("O MacOS, por outro lado, é um sistema operacional proprietário, desenvolvido pela Apple")
 c.Speak("Isso significa que o código fonte do MacOS não é aberto, você não pode ver como o sistema funciona por dentro")
-c.Speal("Olha essa linda tabela em Asciidoc que eu fiz para você!")
+c.Speak("Olha essa linda tabela em Asciidoc que eu fiz para você!")
 c.Speak("""
 +---------------------------------+--------------------------------+
 | Linux                           | MacOS                          |
@@ -922,7 +922,7 @@ c.Speak("Se você precisa de um sistema para servidores, o Ubuntu Server é uma 
 c.Speak("E se você precisa de um sistema para IoT, o Ubuntu Core é uma excelente escolha")
 c.Speak("Meu filho usa um Ubuntu Bunny, ele é muito bonito e tem uma interface muito amigável e customizada, é uma escolha bem pessoal!")
 c.Speak("Em meu notebook, por exemplo, eu uso uma distribuição chamada Linux Mint, que é baseada no Ubuntu e tem uma interface muito bonita e amigável, chamada Cinnamon, a experiência é muito boa também!!")
-c.StydentComment("Nossa, que legal! É um mundo novo... mas eu vi que vc falou sobre diferentes interfaces, como isso funciona?")
+c.StudentComment("Nossa, que legal! É um mundo novo... mas eu vi que vc falou sobre diferentes interfaces, como isso funciona?")
 c.Speak("As interfaces gráficas são os ambientes visuais que você usa para interagir com o sistema operacional")
 c.Speak("Elas são responsáveis por fornecer uma interface gráfica para o usuário")
 c.Speak("Existem várias interfaces gráficas disponíveis para o Linux, cada uma com suas próprias características e objetivos")
@@ -1233,3 +1233,4 @@ c.Speak("""
 +---------------------------------+-------------------------------------+--------------------------------+--------------------------------+
 | Hyper                           | Terminal moderno                    | apt install hyper              | yum install hyper              |
 +---------------------------------+-------------------------------------+--------------------------------+--------------------------------+""")
+c.Speak("E por hoje é só... espero que tenha gostado da aula, qualquer dúvida estou por aqui!")
