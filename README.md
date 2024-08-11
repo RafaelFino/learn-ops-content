@@ -51,7 +51,7 @@ complicado? não é não... vocês vão ver
 
 ## Legal! E agora?
 Vamos rodar esses bots e ver o que eles tem a dizer
-Vá até a pasta *src/interactive* e execute os arquivos python
+Vá até a pasta *src/lessons* e execute os arquivos python
 Mas espere, vc não tem o python instalado, não é?
 Vamos resolver isso também
 
@@ -71,20 +71,30 @@ Em alguns casos, pode ser que o comando para executar o python seja `python3`, e
 
 ## Executando os bots
 - Abra o terminal
-- Navegue até a pasta *src/interactive*
+- Navegue até a pasta *src/lessons*
 - Execute o arquivo python que vc quer rodar
 
-## Bots disponíveis
-Vamos ver uma tabela lindona em markdown com todos os bots?
+## Nâo entendi... como começar?
 
-| Bot | Descrição |
-| --- | --- |
-| code.py | Bot que fala sobre código, a estrutura básica de um programa python |
-| vars.py | Bot que fala sobre variáveis, o que são, como usar |
-| if.py | Bot que fala sobre estruturas condicionais, o que são, como usar |
-| git.py | Bot que fala sobre git, o que é, como usar, comandos básicos |
-| linux.py | Bot que fala sobre linux, o que é, como usar, comandos básicos |
-| python.py | Bot que fala sobre python, o que é, como usar, comandos básicos |
-| docker.py | Bot que fala sobre docker, o que é, como usar, comandos básicos |
+Bom, a ideia é que vc vá até a pasta *src/lessons* e execute os arquivos python que estão lá, eles vão simular uma conversa com um bot, que vai te ajudar a entender um pouco mais sobre os temas que a gente costuma conversar nas mentorias.
+
+Mas fiz um cara que deve te ajudar a começar, ele se chama `start.py`, execute ele e siga as instruções:
+
+- Abra o terminal
+- Navegue até a pasta *src*
+- Execute o arquivo `start.py`
+
+### No linux
+''' bash
+cd src
+./start.py
+'''
+
+### No Windows
+''' bash
+cd src
+python start.py
+'''
+
 
 E aí, o que achou? Legal, né?
