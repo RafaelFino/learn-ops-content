@@ -23,8 +23,6 @@ c = chat.Chat()
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
 # Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
-# Tema: uso do chatGPT para ajudar a estudar
-
 def t(m):
     c.Speak(m)
 
@@ -34,6 +32,8 @@ def s(m):
 def q(m):
     c.Question(m)
 
+
+# Tema: uso do chatGPT para ajudar a estudar
 # Sobre o tema:
 # O professor deve explicar de forma bem simples e descontraída sobre o uso do chatGPT para ajudar a estudar.
 # O professor deve explicar como o chatGPT pode ser usado para tirar dúvidas sobre um tema.
