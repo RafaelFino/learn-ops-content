@@ -85,16 +85,16 @@ Mas fiz um cara que deve te ajudar a começar, ele se chama `start.py`, execute 
 - Execute o arquivo `start.py`
 
 ### No linux
-''' bash
+``` bash
 cd src
 ./start.py
-'''
+```
 
 ### No Windows
-''' bash
+``` bash
 cd src
 python start.py
-'''
+```
 
 
 E aí, o que achou? Legal, né?
