@@ -93,7 +93,7 @@ t("Um agrupamento é um conjunto de elementos.")
 t("Você jura que quer ir nessa linha? Não estou achando muito produtivo...")
 s("É... ficou meio merda essse papo, mas vamos voltar... Já que ele tem todas as informações da internet, como que ele organiza isso tudo?")
 t("Ele usa um modelo de linguagem.")
-s(f"{c.Teacher()}} tá de sacanagem né? já falamos disso... pode ser mais didático e explicar melhor por favor?")
+s(f"{c.Teacher()} tá de sacanagem né? já falamos disso... pode ser mais didático e explicar melhor por favor?")
 t("Ok pequeno gafanhoto, vou parar de brincar com você... Ele usa um modelo de linguagem para organizar as informações. Mas vamos detalhar melhor")
 t("Um modelo de linguagem é como se fosse uma grande estrutura de dados relacionando palavras e frases gerando uma grande estrutura de grafos")
 t("Essa estrutura de grafos é usada para prever a próxima palavra em uma frase. Você sabe o que é um grafo?")
@@ -175,6 +175,3 @@ t("Em geral, ele aprendeu usando muitos códigos open source para aprender a ger
 t("Acho que foi muita informação, Doença! Entendeu?")
 s("Entendi, Fino! Obrigado!")
 t("De nada, Doença! Estou aqui para ajudar!")
-
-
-
