@@ -14,7 +14,17 @@ print("\nAulas disponíveis:")
 for i in range(len(lessons)):
     print(f" {i+1}: {lessons[i]}")
 
-lesson = int(input("\nEscolha uma aula: "))
+k = input("\nEscolha uma aula: ")
+
+try:
+    lesson = int(k)
+except:
+    exit()
+    
+if lesson < 1 or lesson > len(lessons):
+    print("Aula inválida")
+    exit()
+    
 lesson = lessons[lesson-1]
 print(f"Você escolheu a aula {lesson}")
 os.system(f"python3 {path}/{lesson}")
