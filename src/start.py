@@ -10,6 +10,8 @@ for f in listdir(path):
     if isfile(join(path, f)):
         lessons.append(f)
 
+lessons.sort()
+
 print("\nAulas disponíveis:")
 for i in range(len(lessons)):
     print(f" {i+1}: {lessons[i]}")
