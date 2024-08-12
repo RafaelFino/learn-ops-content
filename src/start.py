@@ -30,5 +30,7 @@ if lesson < 1 or lesson > len(lessons):
     exit()
     
 lesson = lessons[lesson-1]
-print(f"Você escolheu a aula {lesson}")
-os.system(f"'{sys.executable}' '{path}/{lesson}'")
+cmd = f"'{sys.executable}' '{os.getcwd()}/{path}/{lesson}'"
+print(f"Você escolheu a aula {lesson} -> {cmd}")
+
+os.system(cmd)
