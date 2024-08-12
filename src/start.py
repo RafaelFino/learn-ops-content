@@ -3,6 +3,7 @@
 from os import listdir
 from os.path import isfile, join
 import os
+import sys
 
 path = "lessons"
 lessons = []
@@ -29,4 +30,4 @@ if lesson < 1 or lesson > len(lessons):
     
 lesson = lessons[lesson-1]
 print(f"Você escolheu a aula {lesson}")
-os.system(f"python3 {path}/{lesson}")
+os.system(f"{sys.executable} {path}/{lesson}")
