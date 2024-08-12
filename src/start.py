@@ -8,14 +8,15 @@ import sys
 path = "lessons"
 lessons = []
 for f in listdir(path): 
-    if isfile(join(path, f)):
+    if isfile(join(path, f)) and f.endswith(".py"):
         lessons.append(f)
 
 lessons.sort()
 
 print("\nAulas disponíveis:")
 for i in range(len(lessons)):
-    print(f" {i+1}: {lessons[i]}")
+    pos = i+1
+    print(f" {pos:>3}: {os.path.splitext(lessons[i])[0]}")
 
 k = input("\nEscolha uma aula: ")
 
@@ -25,9 +26,9 @@ except:
     exit()
     
 if lesson < 1 or lesson > len(lessons):
-    print("Aula inválida")
+    print("Opção inválida")
     exit()
     
 lesson = lessons[lesson-1]
 print(f"Você escolheu a aula {lesson}")
-os.system(f"{sys.executable} {path}/{lesson}")
+os.system(f"'{sys.executable}' '{path}/{lesson}'")
