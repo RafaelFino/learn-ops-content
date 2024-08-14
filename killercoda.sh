@@ -14,6 +14,3 @@ pip3 install -r requirements.txt
 # Run the application
 cd src
 python3 start.py
-
-
-
