@@ -97,7 +97,7 @@ python start.py
 ```
 
 ## Mas Fino, não estou conseguindo fazer essa desgraça aí funcionar!
-Tenho uma dívida de sangue e uma promessa para um deus antigo que não vou tirar meu windows e estou tomando uma surra do prompt de comando... o que eu faço?
+> Tenho uma dívida de sangue e uma promessa para um deus antigo que não vou tirar meu windows e estou tomando uma surra do prompt de comando... o que eu faço?
 
 Calma, calma... vamos resolver isso também:
 - Acesse o site do killercoda e abra um playground de Ubuntu: https://killercoda.com/playgrounds/scenario/ubuntu
