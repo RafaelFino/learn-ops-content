@@ -10,7 +10,3 @@ cd learn-ops-content
 
 # Install Python packages
 pip3 install -r requirements.txt
-
-# Run the application
-cd src
-python3 start.py
