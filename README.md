@@ -10,11 +10,11 @@ Bom, temos hoje a IA que tem me ajudado demais a economizar tempo e fazer coisas
 
 Básicamente todo o código dos bots está dentro da pasta *src/interative*, basta executar os programas python que a magia acontece.
 
-## Mas Fino, eu não faço ideia de como eu posso executar isso! 
+> Mas Fino, eu não faço ideia de como eu posso executar isso! 
 
 Verdade, a maioria de vcs sequer sabe o que é um git ou python é só uma cobra... ou talvez nem isso.. então vamos do começo
 
-## Como pegar esse repositório e começar a brincar
+> Como pegar esse repositório e começar a brincar?
 
 - Primeiro, eu já devo ter dito isso, mas crie uma conta aqui no github.com
 - Dados isso, você vai precisar instalar o git aí no seu computador (caso vc ainda não saiba o que é git, tudo bem, vamos falar disso mais para frente)
@@ -56,7 +56,7 @@ Mas espere, vc não tem o python instalado, não é?
 Vamos resolver isso também
 
 ### No Windows
-- Formata seu computador e instala um linux: https://xubuntu.org/ (tá bom, brincadeira... vamos lá)
+- Formata seu computador e instala um linux: https://xubuntu.org/ (você já deve ter percebido que sua vida será mais complexa com Windows... pare de sofrer e resolve logo isso)
 - Acesse o site do python e baixe o instalador: https://www.python.org/
 - Execute o instalador e siga os passos
 - Abra o terminal
@@ -74,7 +74,7 @@ Em alguns casos, pode ser que o comando para executar o python seja `python3`, e
 - Navegue até a pasta *src/lessons*
 - Execute o arquivo python que vc quer rodar
 
-## Nâo entendi... como começar?
+> Não entendi... como começar?
 
 Bom, a ideia é que vc vá até a pasta *src/lessons* e execute os arquivos python que estão lá, eles vão simular uma conversa com um bot, que vai te ajudar a entender um pouco mais sobre os temas que a gente costuma conversar nas mentorias.
 
@@ -91,13 +91,14 @@ cd src
 ```
 
 ### No Windows
+Primeiro: respira fundo
 ``` bash
 cd src
 python start.py
 ```
 
-## Mas Fino, não estou conseguindo fazer essa desgraça aí funcionar!
-> Tenho uma dívida de sangue e uma promessa para um deus antigo que não vou tirar meu windows e estou tomando uma surra do prompt de comando... o que eu faço?
+> Mas Fino, não estou conseguindo fazer essa desgraça aí funcionar! Parece grego misturado com latim e um pouco de aramaico...
+Pelo visto você deve ter uma dívida de sangue e uma promessa para um deus antigo que não vai tirar o windows e está tomando uma surra do prompt de comando... certo? calma... você vai conseguir...
 
 Calma, calma... vamos resolver isso também:
 - Acesse o site do killercoda e abra um playground de Ubuntu: https://killercoda.com/playgrounds/scenario/ubuntu
