@@ -98,6 +98,7 @@ python start.py
 ```
 
 > Mas Fino, não estou conseguindo fazer essa desgraça aí funcionar! Parece grego misturado com latim e um pouco de aramaico...
+
 Pelo visto você deve ter uma dívida de sangue e uma promessa para um deus antigo que não vai tirar o windows e está tomando uma surra do prompt de comando... certo? calma... você vai conseguir...
 
 Calma, calma... vamos resolver isso também:
