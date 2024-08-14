@@ -1,7 +1,7 @@
 !#/bin/bash
 
 # Install dependencies
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y python3 python3-pip
 
 # Install Python packages
