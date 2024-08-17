@@ -32,6 +32,8 @@ lexers = {
     "json": JsonLexer(),
     "yaml": YamlLexer(),
     "yml": YamlLexer(),
+    "redis": BashLexer(),
+    "nginx": BashLexer(),
 }
 
 
