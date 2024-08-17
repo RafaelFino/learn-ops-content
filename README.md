@@ -86,13 +86,23 @@ Mas fiz um cara que deve te ajudar a começar, ele se chama `start.py`, execute 
 
 ### No linux
 ``` bash
+cd
+cd learn-ops-content
+python3 -m venv .
+source bin/activate
+pip3 install -r requirements.txt
 cd src
-./start.py
+./start.sh
 ```
 
 ### No Windows
-Primeiro: respira fundo
+Primeiro: respira fundo, se acalma, não é o fim do mundo, vc vai conseguir
 ``` bash
+cd
+cd learn-ops-content 
+python3 -m venv . 
+source bin/activate
+pip3 install -r requirements.txt 
 cd src
 python start.py
 ```
