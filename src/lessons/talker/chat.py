@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from operator import le
 import os
 import random
 from time import sleep
@@ -8,7 +9,7 @@ from pprint import pformat
 from typing import Any
 from pygments import highlight
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, RedisCliLexer, NginxConfLexer, CSharpLexer, HTMLLexer, XmlLexer, get_lexer_by_name
 import getpass
 
 class color:
@@ -32,8 +33,12 @@ lexers = {
     "json": JsonLexer(),
     "yaml": YamlLexer(),
     "yml": YamlLexer(),
-    "redis": BashLexer(),
-    "nginx": BashLexer(),
+    "redis": RedisCliLexer(),
+    "nginx": NginxConfLexer(),
+    "apache": BashLexer(),
+    "csharp": CSharpLexer(),
+    "html": HTMLLexer(),
+    "xml": XmlLexer(),
 }
 
 
@@ -166,7 +171,18 @@ class Chat:
         if lang.lower() in lexers:
             return lexers[lang]
         
-        return lexers["python"]
+        if not lang:
+            return lexers["python"]
+        
+        try:
+            ret = get_lexer_by_name(lang)
+            if not ret:
+                return lexers["python"]
+        except:
+            return lexers["python"]
+                
+        return ret
+                
     
     def isEmpty(self, line) -> bool:
             if line == "" or line.isspace() or line == "\n" or line == "\r" or line == "\r\n" or line == "\n\r" or line == "\r\n":
