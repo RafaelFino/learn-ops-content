@@ -14,7 +14,7 @@ RUN touch crontab /etc/cron.d/crontab \
 RUN cd /srv \
     && git clone https://github.com/RafaelFino/learn-ops-content 
 
-WORKDIR /srv/learn-ops-content/src
+WORKDIR /srv/learn-ops-content
 
 EXPOSE 5002
 
