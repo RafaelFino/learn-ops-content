@@ -9,7 +9,7 @@ from pprint import pformat
 from typing import Any
 from pygments import highlight
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, RedisCliLexer, NginxConfLexer, CSharpLexer, HTMLLexer, XmlLexer, get_lexer_by_name
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer
 import getpass
 
 class color:
@@ -33,12 +33,6 @@ lexers = {
     "json": JsonLexer(),
     "yaml": YamlLexer(),
     "yml": YamlLexer(),
-    "redis": RedisCliLexer(),
-    "nginx": NginxConfLexer(),
-    "apache": BashLexer(),
-    "csharp": CSharpLexer(),
-    "html": HTMLLexer(),
-    "xml": XmlLexer(),
 }
 
 
@@ -176,8 +170,6 @@ class Chat:
         
         try:
             ret = get_lexer_by_name(lang)
-            if not ret:
-                return lexers["python"]
         except:
             return lexers["python"]
                 

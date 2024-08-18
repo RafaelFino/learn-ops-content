@@ -6,6 +6,7 @@ import os
 import sys
 
 path = "lessons"
+
 lessons = []
 for f in listdir(path): 
     if isfile(join(path, f)) and f.endswith(".py"):
@@ -31,6 +32,6 @@ if lesson < 1 or lesson > len(lessons):
     
 lesson = lessons[lesson-1]
 cmd = f"'{sys.executable}' '{os.getcwd()}/{path}/{lesson}'"
-print(f"Você escolheu a aula {lesson} -> {cmd}")
+print(f"Você escolheu a aula {lesson}")
 
 os.system(cmd)
