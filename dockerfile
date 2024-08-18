@@ -1,17 +1,15 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pygments \
-    ttyd \
-    git \
-    vim \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean \
-    && apt-get autoremove
+RUN apt update -y \
+    && apt install -y git ttyd vim python3 python3-pygments \
+    && apt autoremove -y \
+    && apt autoclean -y \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/RafaelFino/learn-ops-content 
 
 WORKDIR /learn-ops-content/src
 
-CMD [ "ttyd", "-p", "8080", "-w", "./start.py" ]
+EXPOSE 8080
+
+ENTRYPOINT [ "ttyd-server.sh" ]
