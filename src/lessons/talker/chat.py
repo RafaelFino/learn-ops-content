@@ -94,14 +94,14 @@ class Chat:
     def __init__(self, teacher="Fino", student=getpass.getuser(), wait=1, fastMode=False):
         if student is None or student == "" or student == "root":
             student = "Doença"
-            
+
         self._student = student
         self._teacher = teacher
         self._wait = 0
         self._fastMode = True
 
         # Lista os comandos básicos
-        self.Speak(f"Olá, eu sou o {self._teacher} e estou aqui para tentear ajudar um pouco...")
+        self.Speak(f"Olá, eu sou o {self._teacher} e estou aqui para tentar ajudar um pouco...")
         self.Speak(f"Temos alguns comandos:")
         self.Speak("Caso queira sair, aperte CTRL+C a qualquer momento")
         self.Speak(f"No momento em que te pedirem para teclar um 'ENTER', você pode:")
