@@ -11,6 +11,6 @@ RUN cd /srv \
 
 WORKDIR /srv/learn-ops-content/src
 
-EXPOSE 8080
+EXPOSE 5002
 
 ENTRYPOINT [ "/srv/learn-ops-content/ttyd-server.sh" ]
