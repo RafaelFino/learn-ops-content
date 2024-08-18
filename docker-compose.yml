@@ -4,4 +4,5 @@ services:
   currencies:
     build: "./docker" 
     ports:
-      - 8080:8080
+      - 5002:8080
+    restart: always

@@ -92,6 +92,9 @@ class Chat:
     _fastMode = False
 
     def __init__(self, teacher="Fino", student=getpass.getuser(), wait=1, fastMode=False):
+        if student is None or student == "" or student == "root":
+            student = "Doença"
+            
         self._student = student
         self._teacher = teacher
         self._wait = 0
