@@ -1,0 +1,15 @@
+[Unit]
+Description=learn ops content bot service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=30
+User=root
+ExecStart=/srv/bot/learn-ops-content/ttyd-server.sh
+WorkingDirectory=/srv/bot/learn-ops-content/src
+
+[Install]
+WantedBy=multi-user.target
