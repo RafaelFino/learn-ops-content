@@ -6,10 +6,11 @@ RUN apt update -y \
     && apt autoclean -y \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/RafaelFino/learn-ops-content 
+RUN cd /srv \
+    && git clone https://github.com/RafaelFino/learn-ops-content 
 
-WORKDIR /learn-ops-content/src
+WORKDIR /srv/learn-ops-content/src
 
 EXPOSE 8080
 
-ENTRYPOINT [ "ttyd-server.sh" ]
+ENTRYPOINT [ "/srv/learn-ops-content/ttyd-server.sh" ]

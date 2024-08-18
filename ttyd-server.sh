@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Starting..."
-ttyd -p 8080 -w src/start.py
+ttyd -p 8080 -W ./start.py
