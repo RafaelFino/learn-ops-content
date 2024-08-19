@@ -1,5 +1,14 @@
 # learn-ops-content
 
+``` bash
+██      ███████  █████  ██████  ███    ██      ██████  ██████  ███████     ██████   ██████  ████████ 
+██      ██      ██   ██ ██   ██ ████   ██     ██    ██ ██   ██ ██          ██   ██ ██    ██    ██    
+██      █████   ███████ ██████  ██ ██  ██     ██    ██ ██████  ███████     ██████  ██    ██    ██    
+██      ██      ██   ██ ██   ██ ██  ██ ██     ██    ██ ██           ██     ██   ██ ██    ██    ██    
+███████ ███████ ██   ██ ██   ██ ██   ████      ██████  ██      ███████     ██████   ██████     ██   
+      
+```
+
 ## Vamos começar?
 
 Olá, eu sou o Fino, escrevi esse projeto para tentar resolver um velho problema: sou um só e as vezes não consigo estar em todos os lugares que gostaria
