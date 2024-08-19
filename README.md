@@ -163,6 +163,9 @@ cd src  # Entra na pasta src, onde estão os arquivos python
 - Entenda o que é o ambiente virtual do python e como ele funciona, isso vai te ajudar a entender o que está acontecendo
 - Se você não entendeu nada do que eu falei, não se preocupe, é normal, estamos aqui para aprender juntos, me procure e vou te ajudar
 
+# Se tudo mais der errado...
+Tente acessar a versão web: https://rgt-tools.duckdns.org/bot/
+
 
 # Tópicos que queremos estudar
 
