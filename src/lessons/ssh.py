@@ -108,9 +108,9 @@ s("E o que tem dentro desses arquivos?")
 t("Dentro da chave pública temos a chave que será compartilhada com o servidor remoto. E dentro da chave privada temos a chave que fica apenas no seu computador.")
 s("Como seria o resultado desse comando de cat?")
 t("O comando cat exibe o conteúdo do arquivo. Você verá uma sequência de caracteres que representam a chave SSH. Olha só como ficaria a chave pública:")
-c.ShowOutput("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQKz2Y2Q3z ...")
+c.ShowCommand("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQKz2Y2Q3z ...")
 t("E a chave privada seria parecida com isso:")
-c.ShowOutput("""-----BEGIN RSA PRIVATE KEY-----
+c.ShowCommand("""-----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEA0Cs9mNkN8
 ...
 -----END RSA PRIVATE KEY -----
