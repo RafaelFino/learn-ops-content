@@ -483,7 +483,7 @@ t("Não, JSON é um formato de dados que é muito usado na web, ele é um format
 t("O JSON é um formato de dados que é muito usado na web, ele é um formato de dados que é fácil de ler e escrever para humanos e fácil de gerar e interpretar para máquinas, ele é muito usado para enviar dados entre o servidor e o cliente")
 s(f"Entendi {c.Teacher}, JSON é um formato de dados que é muito usado na web, ele é um formato de dados que é fácil de ler e escrever para humanos e fácil de gerar e interpretar para máquinas, ele é muito usado para enviar dados entre o servidor e o cliente, consegue me dar alguns exemplos disso por favor?")
 t("Claro, vou te mostrar um exemplo de uma mensagem em formato JSON, vamos usar o nosso modelo de mensagem:")
-run("""
+code("""
 import datetime
 import json
     
