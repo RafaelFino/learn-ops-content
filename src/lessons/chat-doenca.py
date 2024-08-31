@@ -44,6 +44,9 @@ def code(code):
 def run(code):
     c.ShowCodeAndRun(code)
 
+def cmd(command):
+    c.ShowCommand(command)
+
 # Tema: Um exercício prático para criar uma aplicação em python, cliente de uma aplicação server de um chat feito para eles
 # O prefessor deve explicar como um chat funciona, a ideia de ter um servidor e um cliente
 # O professor deve explicar como funciona a comunicação entre o servidor e o cliente, com API HTTP
@@ -335,7 +338,7 @@ class Message:
 
     def ToStr(self):
         return f'[{self.id:06}] {self.when} {self.sender} -> {self.text}'
-    
+
     def ToJson(self):
         return {
             'id': self.id,
@@ -375,13 +378,13 @@ def post_message():
 
         logger.info(f'Received message: {message.ToStr()}')
 
-        return { 
+        return {
             "id": message.id,
             "timestamp": datetime.datetime.now().isoformat()
             }, 201
     except Exception as e:
         logger.error(f'Error processing message: {e}')
-        return { 
+        return {
             "error": str(e),
             "timestamp": datetime.datetime.now().isoformat()
             }, 500
@@ -400,19 +403,22 @@ def get_messages(last: int = 0):
             last = 0
 
         if last >= len(messages):
-            last = len(messages) - 1
-        
-        for m in messages[last:]:
+            return {
+                "messages": ret,
+                "timestamp": datetime.datetime.now().isoformat()
+                }, 200
+
+        for m in messages[last+1:]:
             ret.append(m.ToJson())
-        
+
         logger.info(f"Returning {len(ret)} messages messages from {last}: {ret}")
-        return { 
+        return {
             "messages": ret,
             "timestamp": datetime.datetime.now().isoformat()
             }, 200
     except Exception as e:
         logger.error(f'Error processing message: {e}')
-        return { 
+        return {
             "error": str(e),
             "timestamp": datetime.datetime.now().isoformat()
             }, 500
@@ -420,8 +426,9 @@ def get_messages(last: int = 0):
 def start_app():
     logger.info('Starting Chat Doenca API')
     from waitress import serve
-    serve(app, host="192.168.1.9", port=8080)    
+    serve(app, host="192.168.1.9", port=8080)
     logger.info('Exiting Chat Doenca API')
+
 """)
 s(f"PORRA {c.Teacher()}! é MUITA coisa, não entendi nada...")
 t("Calma, vou te explicar o que esse código faz, vamos lá!")
@@ -571,19 +578,22 @@ def get_messages(last: int = 0):
             last = 0
 
         if last >= len(messages):
-            last = len(messages) - 1
-        
-        for m in messages[last:]:
+            return {
+                "messages": ret,
+                "timestamp": datetime.datetime.now().isoformat()
+                }, 200
+
+        for m in messages[last+1:]:
             ret.append(m.ToJson())
-        
+
         logger.info(f"Returning {len(ret)} messages messages from {last}: {ret}")
-        return { 
+        return {
             "messages": ret,
             "timestamp": datetime.datetime.now().isoformat()
             }, 200
     except Exception as e:
         logger.error(f'Error processing message: {e}')
-        return { 
+        return {
             "error": str(e),
             "timestamp": datetime.datetime.now().isoformat()
             }, 500
@@ -613,7 +623,7 @@ t("Esse é o código do client:")
 code("""
 import requests
 import json
-import asyncio
+import threading
 import time
 
 server_url = "http://192.168.1.9:8080"
@@ -624,44 +634,103 @@ def post_message(sender: str, text: str) -> int:
         'sender': sender,
         'text': text
     }
+
     response = requests.post(url, data=data)
     if response.status_code != 201:
         print('Failed to send message')
         print(response.json())
-    else:
-        messageId = response.json()['id']
-        print(f'Message ID: {messageId}')
-        return int(messageId)
 
-    return 0
+class receiver(threading.Thread):
+    def set_sender(self, sender: str):
+        self.sender = sender
 
-def get_messages(last: int) -> int:
-    url = f"{server_url}/message/{last}"
-    response = requests.get(url)
-    last = 0
-    if response.status_code != 200:
-        print('Failed to get messages')
-        print(response.json())
-    else:
-        messages = response.json()['messages']
-        for message in messages:
-            id = int(message['id'])
-            if id > last:
-                print(f">> {message['when']}: {message['sender']} - {message['text']} id={id} last={last}")
-                last = int(message['id'])
+    def get_messages(self):
+        url = f"{server_url}/message/{self.last}"
+        response = requests.get(url)
+        if response.status_code != 200:
+            print('Failed to get messages')
+            print(response.json())
+        else:
+            messages = response.json()['messages']
+            for message in messages:
+                id = int(message['id'])
+                if id >= self.last:
+                    print(f">> [{message['when']}] {message['sender']}: {message['text']}")
+                    self.last = int(message['id'])
 
-    return last
+    def run(self, *args, **kwargs):
+        self.last = 0
+        #Loop para receber mensagens
+        while True:
+            self.get_messages()
+            time.sleep(5)
 
-async def receive_messages():
-    last = 0
-    while True:
-        last = get_messages(last)
-        time.sleep(5)
+sender = input('>> Digite seu nome: ')
 
+rcv = receiver()
+rcv.set_sender(sender)
+rcv.start()
+time.sleep(1)
 
-asyncio.run(receive_messages())
-sender = input('Digite seu nome: ')
+#Loop para envio de mensagens
 while True:
-    text = input('<< Digite sua mensagem: ')
-    id = post_message(sender, text)
+    text = input('\n$> ')
+    post_message(sender, text)
+    rcv.get_messages()
 """)
+s("Esse código é um pouco mais complexo, você acha que eu vou entender isso aí sozinho?")
+t("Não se preocupe, vou te explicar o que esse código faz, vamos lá!")
+t("Esse código é um client para o servidor que criamos, ele é responsável por enviar e buscar mensagens do servidor, ele tem duas funções principais, a post_message() que é responsável por enviar mensagens para o servidor e a receiver() que é responsável por buscar mensagens do servidor")
+t("A função post_message() recebe o remetente e o texto da mensagem, cria um objeto com esses dados e envia esse objeto para o servidor usando uma requisição POST, olha o código:")
+code("""
+def post_message(sender: str, text: str) -> int:
+    url = f"{server_url}/message"
+    data = {
+        'sender': sender,
+        'text': text
+    }
+
+    response = requests.post(url, data=data)
+    if response.status_code != 201:
+        print('Failed to send message')
+        print(response.json())
+""")
+t("A função receiver() é uma thread que fica rodando em background e busca as mensagens do servidor a cada 5 segundos, ela faz uma requisição GET para o servidor para buscar as mensagens, olha o código:")
+code("""
+class receiver(threading.Thread):
+    def set_sender(self, sender: str):
+        self.sender = sender
+
+    def get_messages(self):
+        url = f"{server_url}/message/{self.last}"
+        response = requests.get(url)
+        if response.status_code != 200:
+            print('Failed to get messages')
+            print(response.json())
+        else:
+            messages = response.json()['messages']
+            for message in messages:
+                id = int(message['id'])
+                if id >= self.last:
+                    print(f">> [{message['when']}] {message['sender']}: {message['text']}")
+                    self.last = int(message['id'])
+
+    def run(self, *args, **kwargs):
+        self.last = 0
+        #Loop para receber mensagens
+        while True:
+            self.get_messages()
+            time.sleep(5)
+""")
+t("Agora que você entendeu o que esse código faz, vamos rodar ele para ver como ele funciona, vamos lá?")
+s(f"Vamos lá {c.Teacher}, estou pronto para rodar o client!")
+t("Ótimo, vamos rodar o client, mas antes, você precisa entrar na sua VM para ter acesso ao server e instalar todos as dependencias necessárias, você sabe como fazer isso?")
+s(f"Não sei {c.Teacher}, você pode me ajudar?")
+t("Claro, vou te ajudar a fazer isso, vamos lá!")
+t("Primeiro, você precisa entrar na sua VM, você pode fazer isso usando o comando ssh, olha:")
+cmd("ssh -oPort=<SUA-PORTA> -i ~/.ssh/id_ed25519  dev@learnops.duckldns.org")
+t("Depois que você entrar na sua VM, você precisa instalar o Python e as dependências do client, você pode fazer isso usando o comando apt-get ou o pip, se não souber fazer isso, recomendo fortemente que faça a aulas de python aqui no nosso bot")
+t("Depois que você instalar o Python e as dependências do client, você pode rodar o client usando o comando python3 client.py, mas essa parte é com vc!")
+s(f"Entendi {c.Teacher}, vou fazer isso agora, obrigado pela ajuda!")
+t("De nada, qualquer coisa estou por aqui! Até mais!")
+q("Vai dar uma canseira fazer esse... mas vamos lá, obrigado pela ajuda {c.Teacher}, até mais!")
