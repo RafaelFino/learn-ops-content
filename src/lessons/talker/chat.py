@@ -9,7 +9,7 @@ from pprint import pformat
 from typing import Any
 from pygments import highlight
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer
 import getpass
 
 class color:
@@ -33,6 +33,7 @@ lexers = {
     "json": JsonLexer(),
     "yaml": YamlLexer(),
     "yml": YamlLexer(),
+    "html": HtmlLexer(),
 }
 
 

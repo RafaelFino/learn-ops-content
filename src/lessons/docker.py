@@ -204,6 +204,21 @@ c.Speak("Com o Dockerfile, você pode versionar e compartilhar suas configuraç�
 c.StudentComment("Entendi... você poderia me mostrar como criar um Dockerfile?")
 c.Speak("Claro, pequeno Gafanhoto! Vamos criar um Dockerfile juntos. Primeiro, você precisa criar um arquivo chamado Dockerfile no seu diretório de trabalho.")
 c.Speak("Depois, você pode adicionar os comandos necessários para construir sua imagem. Vamos criar um Dockerfile simples para rodar um servidor web.")
+c.Speak("Você pode usar o comando COPY para copiar arquivos para a imagem, o comando EXPOSE para expor portas, e o comando CMD para rodar o servidor web.")
+c.Speak("Depois de criar o Dockerfile, você pode construir a imagem com o comando docker build. Vamos construir a imagem com o nome webserver.")
+c.Speak("Vamos criar um arquivo html simples para usar como página inicial do servidor web. Você pode criar um arquivo chamado index.html com o conteúdo 'Hello, World!' no seu diretório de trabalho.")
+c.ShowCode("""
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello, World!</title>
+</head>
+<body>
+<h1>Hello, World!</h1>
+</body>
+</html>
+""", lexer="html")
+c.Speak("Agora, vamos criar o Dockerfile. Você pode criar um arquivo chamado Dockerfile com o seguinte conteúdo:")
 c.ShowCode("""
 FROM nginx:latest
 COPY index.html /usr/share/nginx/html/index.html
