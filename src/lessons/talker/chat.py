@@ -8,6 +8,7 @@ import sys
 from pprint import pformat
 from typing import Any
 from pygments import highlight
+from pygments.styles import get_style_by_name
 from pygments.formatters import Terminal256Formatter
 from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer
 import getpass
@@ -76,6 +77,9 @@ pressEnterMessages = [
     """Ah... nem é tão complicado assim, sei que vc já fez coisa pior.. aperta o ENTER aí...""",
     """Se precisar, vai buscar um café e depois aperta o ENTER aí...""",
 ]
+
+style = get_style_by_name("monokai")
+
 
 def ClearScreen():
     # Linux
@@ -151,14 +155,14 @@ class Chat:
 
     def StudentComment(self, msg):
         print(color.END + color.DARKCYAN + color.BOLD +
-              "# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
+              "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
         self.slowPrint(msg)
         print(color.END)
         self.Wait(self._wait)
 
     def Question(self, msg, wait=True):
         print(color.END + color.DARKCYAN + color.BOLD +
-              "# [{0}] ".format(self._student) + color.END + color.YELLOW, end="")
+              "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
         self.slowPrint(msg)
         print(color.END)
         self.Wait(self._wait)
@@ -194,7 +198,7 @@ class Chat:
             if self.isEmpty(line):
                 continue
 
-            print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter()), end="")
+            print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter(style=style)), end="")
             ln += 1
 
         self.printBar()
