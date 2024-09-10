@@ -33,10 +33,12 @@ k = input("\nEscolha uma aula: ")
 try:
     lesson = int(k)
 except:
+    print("Opção inválida, digite por favor o número da aula")
+    time.sleep(2)
     sys.exit()
     
 if lesson < 1 or lesson > len(lessons):
-    print("Opção inválida")
+    print("Opção inválida, escolha um número de aula válido")
     sys.exit()
     
 lesson = lessons[lesson-1]
