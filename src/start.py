@@ -43,5 +43,8 @@ lesson = lessons[lesson-1]
 cmd = f"'{sys.executable}' '{os.getcwd()}/{path}/{lesson}'"
 print(f"Você escolheu a aula {lesson}")
 
-os.system(cmd)
-time.sleep(5)
+try:
+    os.system(cmd)
+    time.sleep(2)
+except KeyboardInterrupt:
+    sys.exit(0)

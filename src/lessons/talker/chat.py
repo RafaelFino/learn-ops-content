@@ -134,40 +134,52 @@ class Chat:
         time.sleep(wait)
 
     def slowPrint(self, msg):
-        for char in msg:     
-            sys.stdout.write(char)
-            sys.stdout.flush()
-            if char == " ":
-                wait = 0.01*(random.randint(0,8))
-            else:
-                wait = 0.001*(random.randint(0,80))
-            self.Wait(wait)
+        try:
+            for char in msg:     
+                sys.stdout.write(char)
+                sys.stdout.flush()
+                if char == " ":
+                    wait = 0.01*(random.randint(0,8))
+                else:
+                    wait = 0.001*(random.randint(0,80))
+                self.Wait(wait)
+        except KeyboardInterrupt:
+            sys.exit(0)                            
 
     def Speak(self, msg):
-        for line in msg.splitlines():
-            print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-                  color.END + color.GREEN, end="")
-            self.slowPrint(line)
-            print(color.END)
+        try:
+            for line in msg.splitlines():
+                print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
+                    color.END + color.GREEN, end="")
+                self.slowPrint(line)
+                print(color.END)
 
-            # Espera um pouquinho para cada linha poder ser lida...
-            self.Wait(len(line)/200)
+                # Espera um pouquinho para cada linha poder ser lida...
+                self.Wait(len(line)/200)
+        except KeyboardInterrupt:
+            sys.exit(0)                            
 
     def StudentComment(self, msg):
-        print(color.END + color.DARKCYAN + color.BOLD +
-              "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
-        self.slowPrint(msg)
-        print(color.END)
-        self.Wait(self._wait)
+        try:
+            print(color.END + color.DARKCYAN + color.BOLD +
+                "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
+            self.slowPrint(msg)
+            print(color.END)
+            self.Wait(self._wait)
+        except KeyboardInterrupt:
+            sys.exit(0)                        
 
     def Question(self, msg, wait=True):
-        print(color.END + color.DARKCYAN + color.BOLD +
-              "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
-        self.slowPrint(msg)
-        print(color.END)
-        self.Wait(self._wait)
-        if wait:
-            self.NextStep()
+        try:
+            print(color.END + color.DARKCYAN + color.BOLD +
+                "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
+            self.slowPrint(msg)
+            print(color.END)
+            self.Wait(self._wait)
+            if wait:
+                self.NextStep()
+        except KeyboardInterrupt:
+            sys.exit(0)                            
     
     def getLexer(self, lang):
         if lang.lower() in lexers:
@@ -191,79 +203,97 @@ class Chat:
             return False
     
     def ShowCode(self, code, wait=True, lexer="python"):
-        print(color.END + color.BOLD + f"# [{lexer} code]:" + color.END)
-        ln = 1
-        self.printBar()
-        for line in code.splitlines():
-            if self.isEmpty(line):
-                continue
+        try:
+            print(color.END + color.BOLD + f"# [{lexer} code]:" + color.END)
+            ln = 1
+            self.printBar()
+            for line in code.splitlines():
+                if self.isEmpty(line):
+                    continue
 
-            print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter(style=style)), end="")
-            ln += 1
+                print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter(style=style)), end="")
+                ln += 1
 
-        self.printBar()
-        if wait:
-            self.AskEnter()
+            self.printBar()
+            if wait:
+                self.AskEnter()
+        except KeyboardInterrupt:
+            sys.exit(0)                        
 
     def printBar(self):
-        print(color.END + color.BOLD + color.BLUE + " ", end="")
-        width = os.get_terminal_size().columns
-        for s in range(width - 2):
-            print(chr(3196), end="")
-        print(color.END)
+        try:
+            print(color.END + color.BOLD + color.BLUE + " ", end="")
+            width = os.get_terminal_size().columns
+            for s in range(width - 2):
+                print(chr(3196), end="")
+            print(color.END)
+        except KeyboardInterrupt:
+            sys.exit(0)            
 
     def ShowCodeAndRun(self, code, wait=True, lexer="python"):
-        self.ShowCode(code, wait=False, lexer=lexer)
-        
-        print(color.END + color.BOLD +
-                f"# [{lexer} code] Result:" + color.END)
-        exec(code)
-        print(color.END, end="")
+        try:
+            self.ShowCode(code, wait=False, lexer=lexer)
+            
+            print(color.END + color.BOLD +
+                    f"# [{lexer} code] Result:" + color.END)
+            exec(code)
+            print(color.END, end="")
 
-        if wait:
-            self.AskEnter()
+            if wait:
+                self.AskEnter()
+        except KeyboardInterrupt:
+            sys.exit(0)            
 
     def ShowCommand(self, command, wait=True, run=False):
-        print(color.END + color.BOLD + "# [shell command]:" + color.END)
-        self.printBar()
-        for line in command.splitlines():
-            if self.isEmpty(line):
-                continue
+        try:
+            print(color.END + color.BOLD + "# [shell command]:" + color.END)
+            self.printBar()
+            for line in command.splitlines():
+                if self.isEmpty(line):
+                    continue
 
-            print(color.END + color.BOLD + color.BLUE + "| " + color.END + color.GREEN + color.BOLD + "$> " + color.END, end="")
-            print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
-        self.printBar()
-        if run:
-            print(color.END + color.BOLD +
-                  "# [shell command] Result:" + color.END)
-            os.system(command)
-        
-        if wait:
-            self.AskEnter()
+                print(color.END + color.BOLD + color.BLUE + "| " + color.END + color.GREEN + color.BOLD + "$> " + color.END, end="")
+                print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
+            self.printBar()
+            if run:
+                print(color.END + color.BOLD +
+                    "# [shell command] Result:" + color.END)
+                os.system(command)
+            
+            if wait:
+                self.AskEnter()
+        except KeyboardInterrupt:
+            sys.exit(0)
 
     def PrintResult(self, msg):
         print(color.END + color.CYAN + "# Result: {}".format(msg) + color.END)
 
     def AskEnter(self):
-        key = input(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-              color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
-        
-        if key is not None and key != "":
-            key = key.lower()
+        try:
+            key = input(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
+                color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
+            
+            if key is not None and key != "":
+                key = key.lower()
 
-        if key == "q":
-            self.Speak("Espero que você volte logo...")
-            exit()
-        
-        if key == "f":
-            self.SetFastMode(True)
-            self.Speak(f"Modo rápido ativado... tá com pressa {self._student}?")
+            if key == "q":
+                self.Speak("Espero que você volte logo...")
+                exit()
+            
+            if key == "f":
+                self.SetFastMode(True)
+                self.Speak(f"Modo rápido ativado... tá com pressa {self._student}?")
 
-        if key == "s":
-            self.SetFastMode(False)
-            self.Speak("Modo rápido desativado... melhor ir devagar né?")
+            if key == "s":
+                self.SetFastMode(False)
+                self.Speak("Modo rápido desativado... melhor ir devagar né?")
+        except KeyboardInterrupt:
+            sys.exit(0)                    
 
     def NextStep(self):
-        self.Speak(nextStepMessages[random.randint(
-            0, len(nextStepMessages)-1)])
-        self.AskEnter()
+        try:
+            self.Speak(nextStepMessages[random.randint(
+                0, len(nextStepMessages)-1)])
+            self.AskEnter()
+        except KeyboardInterrupt:
+            sys.exit(0)                        
