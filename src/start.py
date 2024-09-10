@@ -33,11 +33,11 @@ k = input("\nEscolha uma aula: ")
 try:
     lesson = int(k)
 except:
-    exit()
+    sys.exit()
     
 if lesson < 1 or lesson > len(lessons):
     print("Opção inválida")
-    exit()
+    sys.exit()
     
 lesson = lessons[lesson-1]
 cmd = f"'{sys.executable}' '{os.getcwd()}/{path}/{lesson}'"
