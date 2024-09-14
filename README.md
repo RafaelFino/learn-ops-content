@@ -101,7 +101,7 @@ python3 -m venv .
 source bin/activate
 pip3 install -r requirements.txt
 cd src
-./start.sh
+./start.py
 ```
 
 ### No Windows
@@ -149,7 +149,7 @@ cd # Vai para a pasta do usuário
 cd learn-ops-content  # Entra na pasta do repositório
 source bin/activate  # Ativa o ambiente virtual, caso não esteja ativo
 cd src  # Entra na pasta src, onde estão os arquivos python
-./start.sh # Executa o script diratemente, sem precisar do python
+./start.py # Executa o script diratemente, sem precisar do python
 # CASO QUEIRA FAZER CHAMANDO O PYTHON DIRETAMENTE:
 # python3 start.py # Mas o resultado é o mesmo
 ```
