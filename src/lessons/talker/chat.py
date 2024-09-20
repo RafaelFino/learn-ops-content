@@ -10,7 +10,7 @@ from typing import Any
 from pygments import highlight
 from pygments.styles import get_style_by_name
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer, CppLexer, CLexer, get_lexer_by_name
 import getpass
 
 class color:
@@ -35,6 +35,8 @@ lexers = {
     "yaml": YamlLexer(),
     "yml": YamlLexer(),
     "html": HtmlLexer(),
+    "cpp": CppLexer(),
+    "c": CLexer(),
 }
 
 
