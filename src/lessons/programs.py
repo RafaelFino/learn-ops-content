@@ -85,7 +85,7 @@ echo "Hello, $name!"
 """)
 
 t("Nesse script, a primeira linha indica que o interpretador de comandos que deve ser usado para executar o script é o bash. A segunda linha echo 'What is your name?' é um comando que imprime a mensagem 'What is your name?' na tela. A terceira linha read name é um comando que lê uma entrada do usuário e a armazena na variável name. A quarta linha echo 'Hello, $name!' é um comando que imprime a mensagem 'Hello, $name!' na tela, onde $name é substituído pelo valor da variável name.")
-s(f"Legal {c.Teacher()}! O que mais eles fazem? Consigo manipular arquivos ou chamar APIs por aí?")
+q(f"Legal {c.Teacher()}! O que mais eles fazem? Consigo manipular arquivos ou chamar APIs por aí?")
 t("Claro, pequeno gafanhoto! Com os scripts em bash, você pode fazer muitas coisas, como manipular arquivos, chamar APIs, e muito mais. Você pode usar comandos como cat, grep, sed, awk, curl, e muitos outros para fazer isso. Vamos ver alguns exemplos:")
 bash("""
 #!/bin/bash
@@ -147,7 +147,7 @@ python("""
 print("Hello, World!")
 """)
 t("Nesse script, a primeira linha indica que o interpretador de Python que deve ser usado para executar o script é o python3. A segunda linha print('Hello, World!') é um comando que imprime a mensagem 'Hello, World!' na tela. Meio besta né? Vamos fazer um igual ao que fizemos no bash, mas em python?")
-s(f"Claro, {c.Teacher()}! Pode mostrar?")
+q(f"Claro, {c.Teacher()}! Pode mostrar?")
 t("Claro, pequeno gafanhoto! Aqui está um exemplo de um script em Python um pouco mais complexo:")
 python("""
 #!/usr/bin/env python3
@@ -194,7 +194,7 @@ else:
     print("Failed to get repository information")       
 """)
 t("Nesse caso vemos que o python traz uma biblioteca para fazer requisições HTTP, a requests, que é muito poderosa e fácil de usar. Com ela, você pode chamar APIs, fazer requisições HTTP, e muito mais.")
-s(f"Entendi, {c.Teacher()}! Mas e os programas compilados e interpretados via máquina virtual? Como eles funcionam?")
+q(f"Entendi, {c.Teacher()}! Mas e os programas compilados e interpretados via máquina virtual? Como eles funcionam?")
 t("Calma, um de cada vez... agora faz sentido você entender o que é um arquivo compilado, você saberia me dizer isso?")
 s(f"Claro que não {c.Teacher()}! Sou meio lesado, se soubesse não estaria aqui vendo essa aula em um bot... agora você foi vacilão!")
 t("Ok, foi uma pergunta idiota mesmo, mas eu tenho mais fé do que racionalidade com vcs... vamos lá, vamos falar primeiro sobre o que é um programa, essa você sabe né?")
@@ -230,7 +230,7 @@ bash("""
 gcc -o sum sum.c
 """)
 t("Nesse caso, o gcc é um compilador de C que traduz o código do programa sum.c para um arquivo executável chamado sum. Esse arquivo executável contém o código do programa em linguagem de máquina, que é então executado pelo processador do computador.")
-s(f"Entendi, {c.Teacher()}! E como ficaria esse arquivo compilado? Poderia me mostrar? Tipo, o conteúdo do arquivo não será mais esse código humano, né?")
+q(f"Entendi, {c.Teacher()}! E como ficaria esse arquivo compilado? Poderia me mostrar? Tipo, o conteúdo do arquivo não será mais esse código humano, né?")
 t("Claro, pequeno gafanhoto! Aqui está o conteúdo do programa sum:")
 bash("""
 cat sum
@@ -260,7 +260,7 @@ s(f"Entendi, {c.Teacher()}! Então isso aí roda dentro daqueles programas que c
 t("Não cara... porra... vc tava indo bem... mas é um erro compreensível, essa VM que você está falando é um virtualizador de máquinas, que é um programa que simula um computador completo, com hardware e software, e permite que você execute sistemas operacionais inteiros dentro dele. Uma máquina virtual, no contexto dos programas interpretados via máquina virtual, é um programa que simula um computador e executa programas escritos em uma linguagem de programação de alto nível.")
 s(f"Entendi, {c.Teacher()}! Mas como isso funciona?")
 t("Quando compilamos um código para linguagem de máquina, ele é feito para rodar em um determinado SO, com um determinado hardware, por exemplo, aqui usamos um linux em x86_64, veja a aula sobre raspberrys q eu explico bem sobre isso, mas o ponto é que o código de máquina gerado, é feito para rodar em um contexto bem específico, esse código de máquina não é portável, ou seja, não roda em qualquer lugar. Já os programas interpretados via máquina virtual, são feitos para rodar em qualquer lugar, pois a máquina virtual é quem interpreta o código e executa ele.")
-s(f"Acho que entendi, {c.Teacher()}... mas e o q é essa joça de máquina virtual que você falou aí? de onde saiu isso? para que ela serve? qual o sentido da vida?")
+q(f"Acho que entendi, {c.Teacher()}... mas e o q é essa joça de máquina virtual que você falou aí? de onde saiu isso? para que ela serve? qual o sentido da vida?")
 t("A máquina virtual, pequeno gafanhoto, é um programa que simula um computador e executa programas escritos em uma linguagem de programação de alto nível. Ela é como um computador dentro de um computador, que executa programas como se fossem scripts. O sentido da vida é 42, mas isso é outra história.")
 t("A ideia aqui surgiu no final dos anos 90, onde haviam muitos tipos diferentes de hardwares e plataformas e era super dificil programar para todos eles, eles eram muito incompatíveis entre si. Então, a ideia de uma máquina virtual era criar um ambiente de execução que fosse independente de hardware e sistema operacional, onde você pudesse escrever um programa uma vez e ele rodasse em qualquer lugar.")
 t("O conceito é mais antigo que isso, mas o Java acho que foi o maior representante dessa ideia, onde você escreve um programa em Java, compila ele para um bytecode, que é um código intermediário, e esse bytecode é executado por uma máquina virtual Java, que interpreta e executa o programa.")
@@ -302,7 +302,7 @@ t("""
 |                     |        | Python              |        |                     |
 +---------------------+        +---------------------+        +---------------------+
 """)
-s(f"Entendi, {c.Teacher()}! Mas e para o bash? Como seria?")
+q(f"Entendi, {c.Teacher()}! Mas e para o bash? Como seria?")
 t("Para o bash, pequeno gafanhoto, o fluxo de funcionamento é um bem parecido com o do python. Vamos ver como seria:")
 t("""
 +---------------------+        +---------------------+        +---------------------+
@@ -334,8 +334,9 @@ t("""
 |                     |        |  - Código mais complexo |        |                           |
 +---------------------+        +-------------------------+        +---------------------------+
 """)
-s(f"Entendi, {c.Teacher()}! Mas e aí, qual é o melhor tipo de programa para usar?")
+q(f"Entendi, {c.Teacher()}! Mas e aí, qual é o melhor tipo de programa para usar?")
 t("Depende, pequeno gafanhoto! Cada tipo de programa tem suas vantagens e desvantagens, e o melhor tipo de programa a ser usado depende do que você quer fazer. Se você precisa de um programa que seja rápido e eficiente, um programa compilado pode ser a melhor opção. Se você precisa de um programa que seja portável e fácil de usar, um programa interpretado pode ser a melhor opção. E se você precisa de um programa que seja flexível e fácil de escrever, um script pode ser a melhor opção.")
 s(f"É a hora da tua frase {c.Teacher()}?")
 t("Sim, tava esperando... QUAL PROBLEMA VOCÊ PRECISA RESOLVER??? É isso... baseado no seu requisito, sempre escolha a melhor ferramenta para resolver o seu problema. E lembre-se, pequeno gafanhoto, a aula não acabou, ainda temos muito o que aprender juntos!")
 s(f"Valeu, {c.Teacher()}! Até a próxima aula!")
+q("Até a próxima aula! :)")
