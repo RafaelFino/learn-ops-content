@@ -389,6 +389,11 @@ t("Vamos começar com a API de criação de usuário.")
 s("Vixi... antes eu só mandava o tal de 'sender' e 'text' e agora tem 'name' e 'password'... tá ficando complicado, hein?")
 t("Calma, Doença! Vou te explicar como funciona.")
 t("Primeiro vamos ter que criar um usuário... antes era só mandar qlqr coisa que funcionava, agora a coisa está ficando mais profissional, temos várias APIs para criar, autenticar e deslogar usuários.")
+t("pegue um papel e anote isso, é importante...")
+s("Oi?")
+t("Tá dormindo Doença? se liga nisso, pq EU SEI Q VCS VÃO VACILAR AQUI:")
+t(" #### Informação importante, anote isso #### ")
+t("QUANDO CRIAREM UM USUÁRIO, APENAS UM USUÁRIO JÁ AUTENTICADO SERÁ CAPAZ DE AUTORIZAR UM NOVO USUÁRIO, LOGO, VCS PRECISAM ME AVISAR QUE CRIARAM UM USUÁRIO!!!!")
 t("Vamos começar com a API de criação de usuário.")
 code("""
 POST /user/
