@@ -100,7 +100,7 @@ teacherName = [
     "Mestre", 
     "Mestre Yoda",
     "Mestre dos Magos",
-    "Dombledore",
+    "Dumbledore",
     "Gandalf",
     "Merlin",
     "Sr. Miyagi",
