@@ -459,39 +459,39 @@ t("Boa observação, em um banco de dados NoSQL, você não tem a mesma garantia
 q(f"Entendi, {c.Teacher()}, é tipo um conjunto de comandos para fazer tudo no banco de dados, não? E quais são os principais bancos de dados NoSQL e suas aplicações e tipos de licença?")
 t("Os principais bancos de dados NoSQL são o MongoDB, o Cassandra, o Redis, o Couchbase, o Amazon DynamoDB, entre outros. Cada um tem suas características e vantagens, clientes, e a escolha vai depender das necessidades do projeto. Vamos fazer uma tabelinha:")
 t("""
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Banco de Dados   | Características                               | Casos comuns de uso               | Aplicações cliente para administração           | Tipo de licença   |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| MongoDB          | Flexível, escalável, suporta dados semiestru | Aplicações web, IoT, Big Data, BI  | MongoDB Compass, Robo 3T, Studio 3T             | SSPL              |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Cassandra        | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | DataStax Studio, Cassandra Query Language       | Apache 2.0        |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Redis            | Rápido, escalável, suporta dados em memória  | Cache, sessões, filas de mensagens | RedisInsight, Redis Commander, Redis Desktop    | BSD               |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Couchbase        | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Couchbase Web Console, Couchbase CLI            | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Amazon DynamoDB  | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | AWS Management Console, AWS CLI                 | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Amazon DocumentDB| Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | AWS Management Console, AWS CLI                 | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Google Firestore  | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI | Google Cloud Console, gcloud CLI                | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| CouchDB          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Fauxton, CouchDB CLI                            | Apache 2.0        |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Neo4j            | Flexível, escalável, suporta dados semiestru | Big Data, IoT, aplicações web, BI  | Neo4j Browser, Neo4j Desktop, Cypher Shell      | GPL               |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| ArangoDB         | Flexível, escalável, suporta dados semiestru | Big Data, IoT, aplicações web, BI  | ArangoDB Web Interface, arangosh                | Apache 2.0        |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| RavenDB          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | RavenDB Studio, RavenDB Management Studio       | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Firebase         | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Firebase Console, Firebase CLI                  | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| ScyllaDB         | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Scylla Manager, Scylla Monitoring               | AGPL              |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| DataStax Astra   | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | DataStax Studio, Cassandra Query Language       | Proprietária      |
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
-| Spanner          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Google Cloud Console, gcloud CLI                | Proprietária      |  
-+------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Banco de Dados   | Características                               | Casos comuns de uso                | Aplicações cliente para administração           | Tipo de licença   |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| MongoDB          | Flexível, escalável, suporta dados semiestru  | Aplicações web, IoT, Big Data, BI  | MongoDB Compass, Robo 3T, Studio 3T             | SSPL              |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Cassandra        | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | DataStax Studio, Cassandra Query Language       | Apache 2.0        |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Redis            | Rápido, escalável, suporta dados em memória   | Cache, sessões, filas de mensagens | RedisInsight, Redis Commander, Redis Desktop    | BSD               |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Couchbase        | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | Couchbase Web Console, Couchbase CLI            | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| AWS DynamoDB     | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | AWS Management Console, AWS CLI                 | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| AWS DocumentDB   | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | AWS Management Console, AWS CLI                 | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Google Firestore | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | Google Cloud Console, gcloud CLI                | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| CouchDB          | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | Fauxton, CouchDB CLI                            | Apache 2.0        |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Neo4j            | Flexível, escalável, suporta dados semiestru  | Big Data, IoT, aplicações web, BI  | Neo4j Browser, Neo4j Desktop, Cypher Shell      | GPL               |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| ArangoDB         | Flexível, escalável, suporta dados semiestru  | Big Data, IoT, aplicações web, BI  | ArangoDB Web Interface, arangosh                | Apache 2.0        |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| RavenDB          | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | RavenDB Studio, RavenDB Management Studio       | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Firebase         | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | Firebase Console, Firebase CLI                  | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| ScyllaDB         | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | Scylla Manager, Scylla Monitoring               | AGPL              |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| DataStax Astra   | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | DataStax Studio, Cassandra Query Language       | Proprietária      |
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
+| Spanner          | Escalável, distribuído, suporta dados semies  | Big Data, IoT, aplicações web, BI  | Google Cloud Console, gcloud CLI                | Proprietária      |  
++------------------+-----------------------------------------------+------------------------------------+-------------------------------------------------+-------------------+
 """)
 q("Caramba! Quantos?! E esses aí são os principais? Como vou saber quando usar cada um deles?")
 t("Esses são alguns dos principais bancos de dados NoSQL e suas aplicações clientes de administração, pequeno gafanhoto! Cada um tem suas vantagens e desvantagens, e a escolha vai depender das necessidades do projeto.")
