@@ -41,6 +41,94 @@ lexers = {
     "sql": sql.SqlLexer(),
 }
 
+sudentName = [
+    "Doença", 
+    "Pobre", 
+    "Padawan", 
+    "Pequeno Gafanhoto", 
+    "Jovem Tartaruga", 
+    "Baby Yoda", 
+    "Aprendiz", 
+    "Daniel San", 
+    "Cavaleiro de Bronze", 
+    "Juninho", 
+    "Aluninho", 
+    "Newbie", 
+    "Iniciante", 
+    "Stag",
+    "Zé Ruéla",
+    "Pedro Bóh",
+    "João Ninguém",
+    "Zé Mané",
+    "Aspira",
+    "Goiaba",
+    "Pamonha",
+    "Banana",
+    "Recruta",
+    "Pudim",
+    "Sandy",
+    "Junior",
+    "Huguinho",
+    "Zezinho",
+    "Luizinho",
+    "Xuxa",
+    "Chiquinha",
+    "Chaves",
+    "Chapolin",
+    "Chaves",    
+    "Dona Florinda",
+    "Kiko",
+    "Quico",
+    "Bruxa do 71",
+    "Nhonho",
+    "Godinez",
+    "Sr. Potter",
+    "Frodo",
+    "Sam",
+    "Gohan",
+    "Leonardo",
+    "Rafael",
+    "Michelangelo",
+    "Donatelo",
+    "Ash",
+    "Pica-Pau",
+    "Patolino",    
+]
+
+teacherName = [
+    "Fino", 
+    "Mestre", 
+    "Mestre Yoda",
+    "Mestre dos Magos",
+    "Dombledore",
+    "Gandalf",
+    "Merlin",
+    "Sr. Miyagi",
+    "Mestre Kame",
+    "Mestre Splinter",
+    "Optimus Prime",
+    "Mestre Shifu",
+    "Zordon",
+    "Morpheus",
+    "Obi-Wan Kenobi",
+    "Dewey Finn",
+    "Dr. Emmett Brown",
+    "Stick",
+    "Professor X",
+    "Professor Xavier",
+    "Professor Girafales",
+    "Pai Mei",
+    "Mestre Ancião",
+    "Gouken",
+    "Seu Madruga",
+    "Capitão Kirk",
+    "Spock",
+    "Walter White",
+    "Professor Jones",
+    "Professor Carvalho",
+    "Professor Raimundo",
+    "Mufasa",
+]
 
 nextStepMessages = [
     """Ok, entendi...""",
@@ -107,9 +195,12 @@ class Chat:
     _wait = 1
     _fastMode = False
 
-    def __init__(self, teacher="Fino", student=getpass.getuser(), wait=1, fastMode=False):
+    def __init__(self, teacher=None, student=getpass.getuser(), wait=1, fastMode=False):
+        if teacher is None or teacher == "":
+            teacher = self.getTeacherName()
+        
         if student is None or student == "" or student == "root":
-            student = "Padawan"
+            student = self.getStudentName()
 
         self._student = student
         self._teacher = teacher
@@ -300,6 +391,12 @@ class Chat:
                 self.Speak("Modo rápido desativado... melhor ir devagar né?")
         except KeyboardInterrupt:
             sys.exit(0)                    
+
+    def getStudentName(self):
+        return sudentName[random.randint(0, len(sudentName)-1)]
+    
+    def getTeacherName(self):
+        return teacherName[random.randint(0, len(teacherName)-1)]
 
     def NextStep(self):
         try:
