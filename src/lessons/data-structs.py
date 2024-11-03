@@ -620,7 +620,7 @@ class Program {
     }   
 }
 """)
-s("Entendi! Agora sim {c.Teacher()}! Entendi! Parece bem tranquilo de usar... e como ficaria em C? (talvez eu me arrependa disso)")
+s(f"Entendi! Agora sim {c.Teacher()}! Entendi! Parece bem tranquilo de usar... e como ficaria em C? (talvez eu me arrependa disso)")
 t("Vamos ver um exemplo de como usar um dicionário em C.")
 code_c("""
 #include <stdio.h>
@@ -681,10 +681,10 @@ int main() {
     return 0;
 }
 """)
-s("Entendi! Agora sim {c.Teacher()}! Entendi! Parece bem tranquilo de usar... são meio parecidos na ideia né?")
+s(f"Entendi! Agora sim {c.Teacher()}! Entendi! Parece bem tranquilo de usar... são meio parecidos na ideia né?")
 t("Isso mesmo! E essas são apenas algumas das estruturas de dados que podemos usar. Existem muitas outras, como árvores, grafos, conjuntos, entre outras. Mas essas são as mais comuns e mais utilizadas.")
 t("O importante aqui é ter noção de que os conceitos são os mesmos, independente da linguagem de programação que você estiver usando. Entender como as estruturas de dados funcionam é essencial para se tornar um bom programador.")
 t("E lembre-se sempre: 'QUAL PROBLEMA VOCÊ PRECISA RESOLVER?'")
 s("Entendi! Obrigado {c.Teacher()} por me ajudar a entender esses conceitos! Vou continuar estudando para me tornar um bom programador!")
 t("De nada! Estou aqui para ajudar no que precisar! Continue estudando e praticando, que você vai longe! Se precisar de ajuda, estou por aqui! Para se tornar mestre nisso aí, use o livro de estruturas de dados fundamentais do Silvio do Lago Pereira, é um dos melhores que temos no Brasil!")
-s("Valeu {c.Teacher()}! Até a próxima!")
+s(f"Valeu {c.Teacher()}! Até a próxima!")
