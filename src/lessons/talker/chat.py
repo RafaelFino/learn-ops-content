@@ -42,7 +42,7 @@ lexers = {
 }
 
 sudentName = [
-    "Doença", 
+    "padawan", 
     "Pobre", 
     "Padawan", 
     "Pequeno Gafanhoto", 
@@ -141,7 +141,7 @@ nextStepMessages = [
     """Olha... vc tem razão, um passo de cada vez, vamos explicar essa parte...""",
     """Estamos indo bem, vamos chegar lá...""",
     """Vamos com calma... vou te explicar isso...""",
-    """Um passo de cada vez querido Doença...""",
+    """Um passo de cada vez querido padawan...""",
     """Vamos chegar nesse dia...""",
     """Qual problema você quer resolver? (tenho q dizer isso... rs...)""",
     """Vamos ver isso aí...""",

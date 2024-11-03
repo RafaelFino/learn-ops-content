@@ -23,7 +23,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 # O professor deve ser ironico para brincar com os alunos, mas sempre de forma respeitosa e descontraída.
 # Os alunos devem se comportar como aprendizes, curiosos e com vontade de aprender, mas sem muito conhecimento sobre o tema, sempre questionando sobre explicações mais formais e pedindo exemplosp práticos.
 # Sempre que o aluno tentar se referir ao professor, ele deve usar o método c.Teacher() para se referir ao professor, nunca diretamente. Dessa forma o nome do professor irá aparecer na tela do aluno. Nessas linhas a string sempre deve ser formatada com o nome do professor usando o 'f' antes das aspas.
@@ -382,16 +382,16 @@ swagger = """
 }
 """
 
-t("Olá Doença, hoje vamos falar sobre a versão 3 do nosso chat, onde vamos implementar um sistema de autenticação para os usuários, agora sim parece uma API de verdade, não é mesmo?")
+t("Olá padawan, hoje vamos falar sobre a versão 3 do nosso chat, onde vamos implementar um sistema de autenticação para os usuários, agora sim parece uma API de verdade, não é mesmo?")
 s(f"Legal, {c.Teacher()}! Mas como funciona esse sistema de autenticação?")
 t("Bom, para começar, vamos falar sobre as APIs que vamos implementar nessa versão.")
 t("Vamos começar com a API de criação de usuário.")
 s("Vixi... antes eu só mandava o tal de 'sender' e 'text' e agora tem 'name' e 'password'... tá ficando complicado, hein?")
-t("Calma, Doença! Vou te explicar como funciona.")
+t("Calma, padawan! Vou te explicar como funciona.")
 t("Primeiro vamos ter que criar um usuário... antes era só mandar qlqr coisa que funcionava, agora a coisa está ficando mais profissional, temos várias APIs para criar, autenticar e deslogar usuários.")
 t("pegue um papel e anote isso, é importante...")
 s("Oi?")
-t("Tá dormindo Doença? se liga nisso, pq EU SEI Q VCS VÃO VACILAR AQUI:")
+t("Tá dormindo padawan? se liga nisso, pq EU SEI Q VCS VÃO VACILAR AQUI:")
 t(" #### Informação importante, anote isso #### ")
 t("QUANDO CRIAREM UM USUÁRIO, APENAS UM USUÁRIO JÁ AUTENTICADO SERÁ CAPAZ DE AUTORIZAR UM NOVO USUÁRIO, LOGO, VCS PRECISAM ME AVISAR QUE CRIARAM UM USUÁRIO!!!!")
 t("Vamos começar com a API de criação de usuário.")
@@ -464,7 +464,7 @@ response = requests.post(url, headers=headers, json=data)
      
 print(response.json())
 """)
-t("E é isso aí, Doença! Com isso você já pode enviar mensagens para o servidor. Não é dificil vai?")
+t("E é isso aí, padawan! Com isso você já pode enviar mensagens para o servidor. Não é dificil vai?")
 s(f"Acho que entendi, {c.Teacher()}! Mas e para receber mensagens?")
 t("Para receber mensagens é a mesma coisa, você deve passar o token no header da requisição. Acorda aí jovem tartaruga!")
 t("Vamos ver como você deve passar o token no header de uma requisição para receber mensagens, veja por exemplo como faremos para receber mensagens com o header de autenticação:")
@@ -487,7 +487,7 @@ response = requests.get(url, headers=headers)
      
 print(response.json())
 """)
-t("E é isso aí, Doença! Com isso você já pode receber mensagens do servidor. E vc aí batendo cabeça... não é dificil vai? Logo vai piorar...")
+t("E é isso aí, padawan! Com isso você já pode receber mensagens do servidor. E vc aí batendo cabeça... não é dificil vai? Logo vai piorar...")
 s(f"Deus me livre, a cada dia eu me sinto mais burro... mas acho que entendi, {c.Teacher()}! Mas e se eu quiser deslogar?")
 t("Para deslogar, você deve passar o token no header da requisição.")
 t("Vamos ver como você deve passar o token no header de uma requisição para deslogar, veja por exemplo como faremos para deslogar com o header de autenticação:")
@@ -512,13 +512,13 @@ response = requests.delete(url, headers=headers)
 print(response.json())
 """)
 
-t("E é isso aí, Doença! Com isso você já pode deslogar do servidor. Tranquilo né?")
+t("E é isso aí, padawan! Com isso você já pode deslogar do servidor. Tranquilo né?")
 s(f"Mas {c.Teacher()}, e se eu não deslogar, o que esse nosso server faz? o token dura para sempre?")
 t("O token tem um tempo de vida, ele expira depois de um tempo. Aqui no nosso servidor, o token expira depois de 5 minutos de inatividade.")
 s("Inatividade?")
-t("Isso mesmo, Doença! Se você ficar 5 minutos sem enviar ou receber mensagens, o token expira e você precisa se autenticar novamente. Caso contrário, você não poderá enviar ou receber mensagens.")
+t("Isso mesmo, padawan! Se você ficar 5 minutos sem enviar ou receber mensagens, o token expira e você precisa se autenticar novamente. Caso contrário, você não poderá enviar ou receber mensagens.")
 s(f"Entendi, {c.Teacher()}! Acho que já consigo fazer um client em python aqui... você poderia por favor me mostrar, usando um 'curl' como eu poderia fazer todos os processos? desde criar um usuário, autenticar, mandar e receber mensagens por favor?")
-t("Claro, Doença! Vou te mostrar como você pode fazer isso usando o curl.")
+t("Claro, padawan! Vou te mostrar como você pode fazer isso usando o curl.")
 t("Vamos começar criando um usuário:")
 cmd("curl -X POST -sS -H 'Content-Type: application/json' -d '{\"name\": \"user1\", \"password\": \"123456\"}' http://learnops.duckdns.org:7111/user/")
 t("Agora vamos autenticar o usuário:")
@@ -529,7 +529,7 @@ t("E para receber mensagens, a partir da mensagem de id=1:")
 cmd("curl -X GET -sS -H \"Authorization: <TOKEN>\" http://learnops.duckdns.org:7111/message/?last=1")
 t("E para deslogar:")
 cmd("curl -X DELETE -sS -H \"Authorization: <TOKEN>\" http://learnops.duckdns.org:7111/auth/1")
-t("E é isso aí, Doença! Com isso você já pode criar um cliente para se comunicar com o servidor do chat.")
+t("E é isso aí, padawan! Com isso você já pode criar um cliente para se comunicar com o servidor do chat.")
 s(f"Entendi, {c.Teacher()}! Acho que consigo fazer isso... mas e se eu quiser saber mais sobre as APIs?")
 t("Você pode acessar a documentação da API para saber mais sobre as APIs. No caminho http://learnops.duckdns.org:7111/ você encontra a documentação da API.")
 s("E você teriam mais alguns materiais para estudar mais APIs?")

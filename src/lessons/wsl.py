@@ -21,7 +21,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
 def t(m):
     c.Speak(m)
@@ -51,7 +51,7 @@ def q(m):
 # O professor deve falar sobre os problemas mais comuns ao utilizar o WSL e como resolvê-los.
 # O professor deve explicar como é um melhor caminho usar um linux nativo no lugar de WSL.
 
-t("Olá, pequno Doença! Hoje vamos falar sobre o WSL - Windows Subsystem for Linux. Você sabe o que é o isso?")
+t("Olá, pequno padawan! Hoje vamos falar sobre o WSL - Windows Subsystem for Linux. Você sabe o que é o isso?")
 s(f"Sei não {c.Teacher()}, é de comer ou de passar no cabelo?")
 t("Hahaha, não, não é nada disso. O WSL é um recurso do Windows que permite executar comandos Linux no Windows.")
 s("Ah, entendi. Rodar um linux dentro do Windows? Tipo uma VM?")

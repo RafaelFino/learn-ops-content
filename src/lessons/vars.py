@@ -247,7 +247,7 @@ c.Speak("Uma das ferramentas mais poderosas para lidar com strings se chama Expr
 c.Speak("Por enquanto, é importante entender os conceitos básicos de strings e como manipulá-las em Python e em outras linguagens mais comuns")
 c.Speak("E lembre-se, a prática leva à perfeição, então pratique bastante e se divirta programando!")
 c.StudentComment("Obrigado, Fino! Aprendi muito com você!")
-c.Speak("Fico feliz em ajudar, pequeno Doença, mas não acabou não, respira que ainda tem chão pela frente...")
+c.Speak("Fico feliz em ajudar, pequeno padawan, mas não acabou não, respira que ainda tem chão pela frente...")
 c.StudentComment("Uau! mal posso esperar para a próxima aula!")
 c.Speak("Como assim próxima aula? ainda vamos falar de MUITAS COISAS AQUI MESMO. Tá com preguicinha é?")
 c.StudentComment("Claro que não, Fino! Estou pronto para aprender mais!")
@@ -275,7 +275,7 @@ c.Speak("Sim, existem várias plataformas online onde você pode executar códig
 c.Speak("Alguns exemplos são o Repl.it, o Jupyter Notebook e o Google Colab")
 c.Speak("Essas plataformas são ótimas para praticar programação e testar seus códigos")
 c.StudentComment("Muito obrigado, Fino! Vou começar a praticar agora mesmo!")
-c.Speak("Não vai não, nossa aula ainda não acabou... tá desmotivado Doença?")
+c.Speak("Não vai não, nossa aula ainda não acabou... tá desmotivado padawan?")
 c.Speak("Nem falamos ainda sobre listas, dicitionários, tuplas, conjuntos, bytes, bytearray, range e None")
 c.StudentComment("Nossa, ainda temos muito o que aprender juntos! Estou animado para continuar!")
 c.Speak("Bom, para começar: ARRAYS!! vc sabe q desgraça é essa?")
@@ -368,10 +368,10 @@ c.StudentComment("Entendi! E se eu quiser criar um array de strings?")
 c.Speak("Você pode criar um array de strings da mesma forma que cria um array de números")
 c.Speak("Basta colocar as strings entre colchetes [] e separá-las por vírgulas")
 c.ShowCode("""
-nomes = ["João", "Maria", "José", "Ana", "Doença", "Fulano", "Beltrano"]
+nomes = ["João", "Maria", "José", "Ana", "padawan", "Fulano", "Beltrano"]
 print(nomes)
 """)
-c.Speak("Neste exemplo, criamos um array de strings chamado nomes com os elementos 'João', 'Maria', 'José', 'Ana', 'Doença', 'Fulano' e 'Beltrano'")
+c.Speak("Neste exemplo, criamos um array de strings chamado nomes com os elementos 'João', 'Maria', 'José', 'Ana', 'padawan', 'Fulano' e 'Beltrano'")
 c.Speak("E depois imprimimos o array na tela")
 c.StudentComment("E se eu quiser criar um array de booleanos?")
 c.Speak("Você pode criar um array de booleanos da mesma forma que cria um array de números ou strings")
@@ -392,9 +392,9 @@ c.Speak("Neste exemplo, criamos uma matriz, que é um array de arrays, com três
 c.Speak("E depois imprimimos a matriz na tela, para esse tipo de estrutura, chamamos de array multidimensional")
 c.Speak("Usamos esse tipo de estrutura para representar dados tabulares, como uma planilha de Excel ou até uma imagem")
 c.StudentComment("Entendi! E se eu quiser criar um array de arrays de strings?")
-c.Speak("Você pode criar um array de arrays de strings da mesma forma que cria um array de arrays de números, tomou muito café hj querido doença?")
+c.Speak("Você pode criar um array de arrays de strings da mesma forma que cria um array de arrays de números, tomou muito café hj querido padawan?")
 c.ShowCode("""
-matriz = [["João", "Maria", "José"], ["Ana", "Doença", "Fulano"], ["Beltrano", "Ciclano", "Sicrano"]]
+matriz = [["João", "Maria", "José"], ["Ana", "padawan", "Fulano"], ["Beltrano", "Ciclano", "Sicrano"]]
 print(matriz)
 """)
 c.Speak("Neste exemplo, criamos uma matriz de strings com três linhas e três colunas")
@@ -512,7 +512,7 @@ c.Speak("Você não pode adicionar um elemento à tupla, pois as tuplas são imu
 c.Speak("Se você precisar adicionar novos elementos, é melhor usar uma lista em vez de uma tupla")
 c.StudentComment("E se eu quiser remover um elemento da tupla?")
 c.Speak("Você não pode remover um elemento da tupla, pois as tuplas são imutáveis")
-c.Speak("Se você precisar remover elementos, é melhor usar uma lista em vez de uma tupla... POW DOENÇA!! qual parte dos Imutáveis você não entendeu???")
+c.Speak("Se você precisar remover elementos, é melhor usar uma lista em vez de uma tupla... POW padawan!! qual parte dos Imutáveis você não entendeu???")
 c.StudentComment("Ops, foi mal... mas eu tinha que perguntar!! E se eu quiser saber o tamanho da tupla?")
 c.Speak("Você pode usar a função len() para obter o tamanho de uma tupla em Python")
 c.ShowCode("""
@@ -610,7 +610,7 @@ c.Speak("Esse e outros livros você encontra em https://drive.google.com/drive/f
 c.StudentComment("Muito obrigado, Fino! Vou começar a estudar agora mesmo!")
 c.StudentComment("Acho que já aprendi bastante por hoje, Fino! Obrigado por tudo!")
 c.Speak("Nem começa com corpo mole... ainda precisamos falar sobre ponteiros, referências e garbage collector, tá desmotivado é?") 
-c.Speak("Ainda temos muito o que aprender juntos, pequeno Doença!")
+c.Speak("Ainda temos muito o que aprender juntos, pequeno padawan!")
 c.StudentComment("Uau! mal posso esperar para a próxima aula!")
 c.Speak("Como assim próxima aula? ainda vamos falar de MUITAS COISAS AQUI MESMO. Vai tomar um café e vamos continuar...")
 c.StudentComment("Claro que não, Fino! Estou pronto para aprender")
@@ -658,7 +658,7 @@ c.Speak("Realmente, foi bastante informação para absorver de uma vez só")
 c.Speak("Mas é importante entender esses conceitos para se tornar um programador melhor")
 c.Speak("Se tiver mais alguma dúvida, pode me perguntar a qualquer momento")
 c.StudentComment("Muito obrigado, Fino! Vou descansar e estudar mais depois!")
-c.Speak("Descanse bem, pequeno Doença! E até a próxima aula!")
+c.Speak("Descanse bem, pequeno padawan! E até a próxima aula!")
 
 
            

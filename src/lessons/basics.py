@@ -6,6 +6,7 @@ from time import sleep
 print("""# E aí? td bem?
 #
 # A primeira coisa que você vai ver em um programa python normalmente são os "import", mas que raio é isso?
+# Esse primeiro modulo é para te explicar o que são esses comandos e como eles funcionam como fizemos o nosso bot responder e ter cara de chat, ok? 
 # Os "imports" são os comando que você passa para o interpretador olhar fora do seu arquivo de programa e trazer recursos que estão em outros lugares para serem usados aqui
 #
 # Eles seguem os seguintes modelos:
@@ -443,7 +444,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
 def t(m):
     c.Speak(m)

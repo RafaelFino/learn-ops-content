@@ -22,7 +22,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 # O professor deve ser ironico para brincar com os alunos, mas sempre de forma respeitosa e descontraída.
 # Os alunos devem se comportar como aprendizes, curiosos e com vontade de aprender, mas sem muito conhecimento sobre o tema, sempre questionando sobre explicações mais formais e pedindo exemplosp práticos.
 # Sempre que o aluno tentar se referir ao professor, ele deve usar o método c.Teacher() para se referir ao professor, nunca diretamente. Dessa forma o nome do professor irá aparecer na tela do aluno. Nessas linhas a string sempre deve ser formatada com o nome do professor usando o 'f' antes das aspas.
@@ -205,7 +205,7 @@ t("Claro, pequeno gafanhoto! Os programas compilados são programas que são tra
 s("Tá meio confuso, lembra q sou lerdo, pobre e meio burro... mas o que é uma linguagem de máquina?")
 t("Uma linguagem de máquina, pequeno gafanhoto, é uma linguagem que é compreendida diretamente pelo processador de um computador. Ela é composta por instruções que são executadas pelo processador, como adicionar dois números, armazenar um valor em um endereço de memória, e assim por diante.")
 s(f"Entendi, {c.Teacher()}! Mas como o compilador faz essa tradução?")
-t("O compilador faz essa tradução, jovem doença, analisando o código do programa escrito em uma linguagem de programação de alto nível e gerando um código equivalente em linguagem de máquina. Esse código em linguagem de máquina é então executado pelo processador do computador.")
+t("O compilador faz essa tradução, jovem padawan, analisando o código do programa escrito em uma linguagem de programação de alto nível e gerando um código equivalente em linguagem de máquina. Esse código em linguagem de máquina é então executado pelo processador do computador.")
 s(f"Tá confuso {c.Teacher()}! Me explica com exemplos mais simples para que eu possa entender melhor.")
 t("Claro, pequeno gafanhoto! Vamos ver um exemplo de um programa em C que soma dois números:")
 clang("""

@@ -21,7 +21,7 @@ from talker import chat
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 # Sobre o tema:
 # O professor deve explicar o que é virtualização e containers.
 # O professor deve explicar a diferença entre virtualização e containers.
@@ -70,7 +70,7 @@ from talker import chat
 
 c = chat.Chat()
 
-c.Speak("Olá, querido Doença! Tá bem? Hoje vamos falar sobre virtualização, containers e Docker. Você sabe o que é virtualização?")
+c.Speak("Olá, querido padawan! Tá bem? Hoje vamos falar sobre virtualização, containers e Docker. Você sabe o que é virtualização?")
 c.StudentComment("Olá, Fino! Tudo bem! Eu sei mais ou menos o que é virtualização, mas não sei muito bem a diferença entre virtualização e containers.")
 c.Speak("Então, virtualização é uma técnica que permite criar uma versão virtual de um dispositivo ou recurso, como um servidor, um sistema operacional, um dispositivo de armazenamento ou uma rede. Já os containers são uma forma de virtualização que permite executar aplicações isoladas em um sistema operacional compartilhado.")
 c.Question("Não entendi nada... pode explicar de novo de uma forma mais simples? Não esquece que eu sou meio burro e não entendo nada dessa coisa toda")
@@ -159,7 +159,7 @@ c.Speak("Com o Docker, você pode rodar aplicações isoladas em containers, sem
 c.Speak("Mas, lembre-se, com grandes poderes vêm grandes responsabilidades! Brinque com cuidado e sempre pense na segurança e integridade dos seus dados.")
 c.StudentComment("Obrigado, Fino! Vou começar a brincar com o Docker agora mesmo! Você tem alguma dica para eu começar?")
 c.Speak("Claro, meu jovem Padawan! Minha dica é: comece com o básico e vá evoluindo aos poucos. Experimente criar containers simples, rodar aplicações conhecidas e explorar o Docker Hub.")
-c.Speak("Mas pequeno Doença, você sabe como instalar o Docker no seu PC?")
+c.Speak("Mas pequeno padawan, você sabe como instalar o Docker no seu PC?")
 c.StudentComment("Não sei, Fino! Pode me ensinar?")
 c.Speak("Claro, meu jovem Padawan! Para instalar o Docker no Linux, você pode seguir esses passos:")
 c.Speak("Primeiro, SEMPRE LEIA A DOCUMENTAÇÃO OFICIAL DO DOCKER, ela é a melhor fonte de informação sobre como instalar o Docker no seu sistema. https://docs.docker.com/engine/install/ubuntu/")
@@ -256,7 +256,7 @@ c.Speak("Você precisa usar o ID da imagem ou o nome da imagem para removê-la. 
 c.Speak("Depois de remover a imagem, você pode limpar o cache do Docker com o comando docker system prune. Esse comando vai remover todas as imagens, containers e volumes não utilizados.")
 c.ShowCommand("docker system prune")
 c.StudentComment("E se eu quiser executar um comando dentro de um container? Consigo executar um comando com Docker?")
-c.Speak("Sim, querido Doença! Você pode executar um comando dentro de um container com o comando docker exec. Esse comando vai executar o comando no container.")
+c.Speak("Sim, querido padawan! Você pode executar um comando dentro de um container com o comando docker exec. Esse comando vai executar o comando no container.")
 c.ShowCommand("docker exec <container_id> <command>")
 c.Speak("Você precisa usar o ID do container ou o nome do container para executar o comando. Você pode ver o ID do container com o comando docker ps.")
 c.Speak("Com o comando docker exec, você pode executar comandos como ls, pwd e cat dentro do container. É uma forma rápida e fácil de interagir com o container.")
@@ -275,7 +275,7 @@ c.Speak("Para configurar um container com variáveis de ambiente, você pode usa
 c.ShowCommand("docker run -e VAR=VALUE <image>")
 c.Speak("Você precisa usar o nome da variável e o valor da variável para configurar o container. Você pode definir várias variáveis de ambiente no mesmo comando.")
 c.StudentComment("E se eu quiser mapear um diretório do meu PC para um container? Consigo mapear diretórios com Docker?")
-c.Speak("Sim, pequeno Doença! Você pode mapear diretórios do seu PC para um container com o parâmetro -v no comando docker run. Esse parâmetro define um volume no container.")
+c.Speak("Sim, pequeno padawan! Você pode mapear diretórios do seu PC para um container com o parâmetro -v no comando docker run. Esse parâmetro define um volume no container.")
 c.ShowCommand("docker run -v /host/dir:/container/dir <image>")
 c.Speak("Você precisa usar o caminho do diretório do host e o caminho do diretório do container para mapear o volume. Você pode mapear vários volumes no mesmo comando.")
 c.Speak("Com o parâmetro -v, você pode compartilhar arquivos e diretórios entre o host e o container. É uma forma rápida e fácil de transferir arquivos e dados.")
@@ -285,7 +285,7 @@ c.ShowCommand("docker run -v /host/volume:/container/volume <image>")
 c.Speak("Você precisa usar o caminho do volume do host e o caminho do volume do container para mapear o volume. Você pode mapear vários volumes no mesmo comando.")
 c.Speak("Com o parâmetro -v, você pode compartilhar volumes entre o host e o container. É uma forma rápida e fácil de armazenar e compartilhar dados.")
 c.StudentComment("E se eu quiser criar um Dockerfile? Consigo criar um Dockerfile com Docker?")
-c.Speak("Sim, pequeno Doença! Você pode criar um Dockerfile com o Docker. Um Dockerfile é um arquivo de configuração que descreve como construir uma imagem.")
+c.Speak("Sim, pequeno padawan! Você pode criar um Dockerfile com o Docker. Um Dockerfile é um arquivo de configuração que descreve como construir uma imagem.")
 c.Speak("Você pode usar comandos como FROM, RUN, COPY, CMD e EXPOSE para construir sua imagem. Depois de criar o Dockerfile, você pode construir a imagem com o comando docker build.")
 c.Speak("Mas já falamos disso, acho que sua pergunta é outra...")
 c.StudentComment("E se eu quiser criar vários containers com Docker se comunicando, como eu faria isso?")
@@ -310,7 +310,7 @@ c.Speak("Você pode usar o Kubernetes para implantar, escalar, atualizar e monit
 c.Speak("O Kubernetes simplifica o processo de orquestração de containers. Ele é ideal para ambientes de produção, nuvem e data centers.")
 c.Speak("Com o Kubernetes, você pode criar e gerenciar clusters de containers de forma rápida e eficiente. É uma forma poderosa de orquestrar seus containers com Docker.")
 c.StudentComment("Preciso estudar mais isso, parece algo incrível! Obrigado, Fino! Você é o melhor professor de todos!")
-c.Speak("Disponha, pequeno Doença! Estou aqui para te ajudar no que precisar! Nunca pare de aprender e evoluir, o conhecimento é o seu maior tesouro!")
+c.Speak("Disponha, pequeno padawan! Estou aqui para te ajudar no que precisar! Nunca pare de aprender e evoluir, o conhecimento é o seu maior tesouro!")
 c.Speak("Agora, vá e conquiste o mundo com o seu conhecimento! Que a força esteja com você, pequeno Gafanhoto!")
 
 

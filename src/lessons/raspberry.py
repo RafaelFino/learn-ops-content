@@ -21,7 +21,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
 def t(m):
     c.Speak(m)
@@ -44,7 +44,7 @@ def q(m):
 # O professor deve explicar como executar comandos no Raspberry Pi.
 # O professor deve explicar como acessar arquivos do Raspberry Pi.
 
-t("Olá, pequeno Doença! Hoje vamos falar sobre o Raspberry Pi. Você sabe o que é o Raspberry Pi?")
+t("Olá, pequeno padawan! Hoje vamos falar sobre o Raspberry Pi. Você sabe o que é o Raspberry Pi?")
 s(f"Sei não {c.Teacher()}, é um bolo?")
 t("Hahaha, não, não é um bolo. O Raspberry Pi é um computador do tamanho de um cartão de crédito.")
 s("Sério? Um computador tão pequeno?")
@@ -80,7 +80,7 @@ t("As características de um SBC incluem processador, memória, portas de entrad
 s("E como eu escolho o melhor SBC para o meu projeto?")
 t("Você deve escolher o SBC de acordo com as necessidades do seu projeto, como processamento, memória, portas de entrada e saída, entre outros.")
 s("Entendi! Obrigado pela aula, professor! Acho que vou comprar um Raspberry Pi para mim!")
-t("Hahaha, a aula ainda não acabou, pequeno Doença! Ainda temos muito mais para aprender sobre o Raspberry Pi!")
+t("Hahaha, a aula ainda não acabou, pequeno padawan! Ainda temos muito mais para aprender sobre o Raspberry Pi!")
 s("Hahaha, ok! Vamos continuar então!")
 s("Eu vi que eles usam um tal de ARM, o que é isso?")
 t("O ARM é uma arquitetura de processadores utilizada em dispositivos móveis e sistemas embarcados.")
@@ -91,7 +91,7 @@ t("Sim, os processadores ARM são diferentes dos processadores x86 utilizados em
 s("E qual a diferença entre eles?")
 t("Os processadores ARM são mais eficientes em termos de energia e são utilizados em dispositivos móveis e sistemas embarcados.")
 s("Isso está ficando complicado... Mas eu estou gostando de aprender sobre esses ARM e X86... poderia me contar a história deles por favor?")
-t("Claro, pequeno Doença! Os processadores ARM foram criados pela empresa britânica Acorn Computers na década de 1980.")
+t("Claro, pequeno padawan! Os processadores ARM foram criados pela empresa britânica Acorn Computers na década de 1980.")
 t("Os processadores x86 foram criados pela empresa americana Intel na década de 1970.")
 s("Eles são inimigos?")
 t("Não, eles são concorrentes no mercado de processadores, cada um com suas características e aplicações. Caramba, 40 anos atrás? E o que aconteceu até hoje? onde estão os ARM e os X86?")
@@ -114,7 +114,7 @@ t("Tem sido uma longa jornada para migrar a maior parte dos aplicativos para a n
 t("E o raspberry usa ARM, então os aplicativos que rodam nele precisam ser compilados para ARM. No futuro, a tendência é que mais aplicativos sejam compilados para ARM, devido às vantagens dessa arquitetura.")
 t("O Raspberry Pi é um ótimo exemplo de como a arquitetura ARM pode ser utilizada em sistemas embarcados e projetos DIY. Ele em muitos aspectos, se assemelha a um computador convencional, mas seu hardware se parece muito com o de um celular.")
 s("Entendi! Obrigado pela aula, professor! Acho que vou comprar um Raspberry Pi para mim!")
-t("Hahaha, a aula ainda não acabou, pequeno Doença! Ainda temos muito mais para aprender sobre o Raspberry Pi!")
+t("Hahaha, a aula ainda não acabou, pequeno padawan! Ainda temos muito mais para aprender sobre o Raspberry Pi!")
 s("Hahaha, ok! Vamos continuar então!")
 q("É verdade que podemos rodar um video game em um raspberry, com emuladores de consoles antigos?")
 t("Sim, é possível rodar emuladores de consoles antigos no Raspberry Pi e jogar jogos clássicos.")
@@ -125,7 +125,7 @@ t("Sim, é uma forma divertida de relembrar os jogos clássicos e experimentar c
 s("E é fácil de fazer?")
 t("Sim, é relativamente fácil de instalar os emuladores e configurar os controles para jogar. Existem algumas distribuições linux que resolvem esse problema para você.")
 q("E você conhece alguma dessas? poderia me ajudar?")
-t("Claro, pequeno Doença! Você pode usar a distribuição RetroPie, que é uma distribuição linux voltada para emulação de consoles antigos.")
+t("Claro, pequeno padawan! Você pode usar a distribuição RetroPie, que é uma distribuição linux voltada para emulação de consoles antigos.")
 t("A RetroPie possui uma interface amigável e suporte para diversos emuladores e controles.")
 s("E existem outras?")
 t("Sim, existem outras distribuições linux voltadas para emulação de consoles antigos, como o Lakka, o Recalbox e o Batocera.")

@@ -21,7 +21,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
 def t(m):
     c.Speak(m)
@@ -61,7 +61,7 @@ def code(code):
 # devemos mostrar tabelas em ASCII para comparar os casos de uso onde cada estrutura faz mais sentido e também ao explicar cada uma delas, mostrar uma matriz SWOT para mostrar as vantagens e desvantagens de cada estrutura
 # Sempre devemos usar exemplos bem didáticos de como usar cada uma delas e mostrar que elas são ferramentas para resolver problemas
 
-t("Olá, Doenças! Hoje vamos falar sobre memória RAM e estruturas de dados. Você sabe o que é a memória RAM do computador?")
+t("Olá, padawans! Hoje vamos falar sobre memória RAM e estruturas de dados. Você sabe o que é a memória RAM do computador?")
 s(f"Olá, {c.Teacher()} Memória RAM? é tipo uma memória que parece um SAPO?")
 t("Hahaha, não, A memória RAM é a memória de acesso aleatório do computador, onde os dados são armazenados temporariamente enquanto o computador está ligado.")
 s("Ah, entendi! Então quando desligamos o computador, os dados são perdidos?")

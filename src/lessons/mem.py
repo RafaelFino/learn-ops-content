@@ -21,7 +21,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
 # Tema: Memórias RAM, ROM, SSD, HHD e etc
 # O professor deve explicar de forma bem simples e descontraída sobre os tipos de memórias existentes, como RAM, ROM, SSD, HHD e etc.
@@ -46,14 +46,14 @@ def s(m):
 def q(m):
     c.Question(m)
 
-t("Olá, Doença! Hoje vamos falar sobre memórias.")
+t("Olá, padawan! Hoje vamos falar sobre memórias.")
 t("Você sabe o que é memória?")
 s("Não, Fino. Que desgraça é essa?")
-t("Calma, Doença! Memória é um qualquer coisa que armazena dados. Simples assim...")
+t("Calma, padawan! Memória é um qualquer coisa que armazena dados. Simples assim...")
 s("Você fala que é simples, mas eu não entendi nada.")
-t("Vamos lá, Doença! Memória é onde a gente guarda as coisas. Como um HD, por exemplo.")
+t("Vamos lá, padawan! Memória é onde a gente guarda as coisas. Como um HD, por exemplo.")
 s("HD? É de comer ou de passar no cabelo?")
-t("Não, Doença! HD é um disco rígido. É onde a gente guarda os arquivos no computador.")
+t("Não, padawan! HD é um disco rígido. É onde a gente guarda os arquivos no computador.")
 s("Ah... disco rígido? Ele é duro? Existe um mole?")
 t("Olha, já existiu... é uma ótima observação! No passado, não haviam muitas formas de armazenar dados")
 t("Os disquetes eram flexíveis, por exemplo. Mas hoje em dia, temos os HDs, que são rígidos.")
@@ -95,4 +95,4 @@ t("Sim, existem muitos tipos de memórias, mas essas são as principais")
 t("Existem também as memórias cache, que são memórias muito rápidas, mas muito pequenas")
 t("Elas são usadas para armazenar dados temporários que são acessados com muita frequência")
 t("Então, quando você acessa um arquivo, ele é carregado para a memória cache, para que o acesso seja mais rápido")
-t("Acho que com isso você já tem uma boa noção sobre memórias, Doença!")    
+t("Acho que com isso você já tem uma boa noção sobre memórias, padawan!")    

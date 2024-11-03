@@ -23,7 +23,7 @@ c = chat.Chat()
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
-# Os alunos devem ser chamados de "Doenças", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
+# Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 # O professor deve ser ironico para brincar com os alunos, mas sempre de forma respeitosa e descontraída.
 # Os alunos devem se comportar como aprendizes, curiosos e com vontade de aprender, mas sem muito conhecimento sobre o tema, sempre questionando sobre explicações mais formais e pedindo exemplosp práticos.
 # Sempre que o aluno tentar se referir ao professor, ele deve usar o método c.Teacher() para se referir ao professor, nunca diretamente. Dessa forma o nome do professor irá aparecer na tela do aluno.
@@ -86,7 +86,7 @@ def cmd(command):
 # A rota para o envio de mensagens é /message, o POST envia mensagens e o GET recebe mensagens usando parametros de query, por exemplo /message/10, onde 10 é a ultima mensagem recebida, portanto o server vai enviar a partir da mensagem 10
 # O método de post, devolve o ID da mensagem criada e o método de get, devolve uma lista de mensagens, sempre em json
 
-t("Olá Doença, hoje vamos falar sobre como criar um chat simples em python, usando um servidor e um cliente")
+t("Olá padawan, hoje vamos falar sobre como criar um chat simples em python, usando um servidor e um cliente")
 t("Você sabe o que é um chat? Já parou para pensar como um funciona?")
 s(f"Ah, eu tenho uma noção {c.Teacher()}, mas acho que nunca parei para pensar como um chat funciona...")
 t("Então, um chat é uma aplicação que permite a comunicação entre duas ou mais pessoas, em tempo real, é um lugar para guardar mensagens e enviar mensagens, simples assim, que nem seu whatsapp")
@@ -165,7 +165,7 @@ t("Então, os códigos de status HTTP 1xx são códigos informativos, eles infor
 s(f"Entendi {c.Teacher()}, mas quais são os códigos de status HTTP mais comuns? E o que cada um deles significa?")
 t("Então, os códigos de status HTTP mais comuns são 200, 201, 204, 400, 401, 403, 404, 500, 503, cada um deles tem um significado específico e deve ser usado em um contexto específico")
 s(f"Entendi {c.Teacher()}, complicado isso... lembra q eu sou novo nesse negócio, então é muita informação... consegue me dar exemplo de cada uma dessas classes de retorno e quando eles acontecem?")
-t("Ok doença, vamos devagar... começar pelo começo: os retornos 1xx:")
+t("Ok padawan, vamos devagar... começar pelo começo: os retornos 1xx:")
 t("Os retornos 1xx são códigos informativos, eles informam que a requisição foi recebida e está sendo processada, por exemplo, o código 100 informa que a requisição foi recebida e o servidor está processando a requisição")
 t("Os mais comuns são, considerando o código, seu nome, o que siginifica em palavras simples e quando costuma acontecer:")
 t("100 - Continue, quer dizer que a requisição foi recebida e o servidor está processando a requisição, é usado quando você tentar enviar uma informação e o servidor está processando a requisição")
