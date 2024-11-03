@@ -10,7 +10,7 @@ from typing import Any
 from pygments import highlight
 from pygments.styles import get_style_by_name
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer, CppLexer, CLexer, get_lexer_by_name
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer, CppLexer, CLexer, get_lexer_by_name, dotnet
 import getpass
 
 class color:
@@ -37,6 +37,7 @@ lexers = {
     "html": HtmlLexer(),
     "cpp": CppLexer(),
     "c": CLexer(),
+    "cs": dotnet.CSharpLexer(),
 }
 
 
@@ -55,6 +56,10 @@ nextStepMessages = [
     """Vamos chegar nesse dia...""",
     """Qual problema você quer resolver? (tenho q dizer isso... rs...)""",
     """Vamos ver isso aí...""",
+    """Próximo!!!""",
+    """Ai ai... vamos lá...""",
+    """Uma coisa de cada vez... vamos em frente!""",
+    """Vai ficar melhor com o tempo, prometo... vamos seguindo...""",    
 ]
 
 pressEnterMessages = [
@@ -78,6 +83,9 @@ pressEnterMessages = [
     """Sei que é muita coisa, mas temos que continuar, aperta o ENTER aí...""",
     """Ah... nem é tão complicado assim, sei que vc já fez coisa pior.. aperta o ENTER aí...""",
     """Se precisar, vai buscar um café e depois aperta o ENTER aí...""",
+    """Calma, respira, vai dar tudo certo, aperta o ENTER aí...""",
+    """Vamos com calma, aperta o ENTER aí...""",
+    """Cansou? Ainda tem muito chão pela frente, vamos seguir... aperta o ENTER aí...""",    
 ]
 
 style = get_style_by_name("monokai")
