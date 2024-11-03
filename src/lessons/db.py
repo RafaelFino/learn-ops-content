@@ -192,47 +192,47 @@ t("""
 +------------------+---------------------------------------------------------------+
 | CREATE TABLE     | Cria uma tabela no banco de dados                             |
 +------------------+---------------------------------------------------------------+
-| ALTER TABLE      | Altera a estrutura de uma tabela no banco de dados             |
+| ALTER TABLE      | Altera a estrutura de uma tabela no banco de dados            |
 +------------------+---------------------------------------------------------------+
-| DROP TABLE       | Exclui uma tabela do banco de dados                            |
+| DROP TABLE       | Exclui uma tabela do banco de dados                           |
 +------------------+---------------------------------------------------------------+
-| INSERT INTO      | Insere um registro em uma tabela no banco de dados             |
+| INSERT INTO      | Insere um registro em uma tabela no banco de dados            |
 +------------------+---------------------------------------------------------------+
-| UPDATE           | Atualiza um registro em uma tabela no banco de dados           |
+| UPDATE           | Atualiza um registro em uma tabela no banco de dados          |
 +------------------+---------------------------------------------------------------+
-| DELETE           | Exclui um registro de uma tabela no banco de dados             |
+| DELETE           | Exclui um registro de uma tabela no banco de dados            |
 +------------------+---------------------------------------------------------------+
-| GRANT            | Concede permissões de acesso a um usuário no banco de dados    |
+| GRANT            | Concede permissões de acesso a um usuário no banco de dados   |
 +------------------+---------------------------------------------------------------+
-| REVOKE           | Revoga permissões de acesso a um usuário no banco de dados     |
+| REVOKE           | Revoga permissões de acesso a um usuário no banco de dados    |
 +------------------+---------------------------------------------------------------+
-| SELECT           | Seleciona dados de uma tabela no banco de dados                |
+| SELECT           | Seleciona dados de uma tabela no banco de dados               |
 +------------------+---------------------------------------------------------------+
 """)
 q(f"Entendi, {c.Teacher()}, você falou um monte de coisas e não me falou quais deles são DML, DDL, DCL ou DQL, consegue refazer essa tabela aí correlacionando os comandos com as siglas?")
 t("Claro, pequeno gafanhoto! Vou refazer a tabela para você entender melhor:")
 t("""
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| Tipo      | Comando          | Descrição                                                     | Exemplo                                           |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DDL       | CREATE TABLE     | Cria uma tabela no banco de dados                             | CREATE TABLE Alunos (id INT PRIMARY KEY);         |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DDL       | ALTER TABLE      | Altera a estrutura de uma tabela no banco de dados             | ALTER TABLE Alunos ADD COLUMN nome VARCHAR(100); |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DDL       | DROP TABLE       | Exclui uma tabela do banco de dados                            | DROP TABLE Alunos;                               |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DML       | INSERT INTO      | Insere um registro em uma tabela no banco de dados             | INSERT INTO Alunos VALUES (1, 'João', 25);       |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DML       | UPDATE           | Atualiza um registro em uma tabela no banco de dados           | UPDATE Alunos SET idade = 26 WHERE id = 1;       |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DML       | DELETE           | Exclui um registro de uma tabela no banco de dados             | DELETE FROM Alunos WHERE id = 1;                 |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DCL       | GRANT            | Concede permissões de acesso a um usuário no banco de dados    | GRANT SELECT ON Alunos TO 'usuario';             |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DCL       | REVOKE           | Revoga permissões de acesso a um usuário no banco de dados     | REVOKE SELECT ON Alunos FROM 'usuario';          |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
-| DQL       | SELECT           | Seleciona dados de uma tabela no banco de dados                | SELECT * FROM Alunos;                            |
-+-----------+------------------+---------------------------------------------------------------+---------------------------------------------------+
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| Tipo      | Comando      | Descrição                                                   | Exemplo                                          |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DDL       | CREATE TABLE | Cria uma tabela no banco de dados                           | CREATE TABLE Alunos (id INT PRIMARY KEY);        |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DDL       | ALTER TABLE  | Altera a estrutura de uma tabela no banco de dados          | ALTER TABLE Alunos ADD COLUMN nome VARCHAR(100); |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DDL       | DROP TABLE   | Exclui uma tabela do banco de dados                         | DROP TABLE Alunos;                               |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DML       | INSERT INTO  | Insere um registro em uma tabela no banco de dados          | INSERT INTO Alunos VALUES (1, 'João', 25);       |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DML       | UPDATE       | Atualiza um registro em uma tabela no banco de dados        | UPDATE Alunos SET idade = 26 WHERE id = 1;       |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DML       | DELETE       | Exclui um registro de uma tabela no banco de dados          | DELETE FROM Alunos WHERE id = 1;                 |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DCL       | GRANT        | Concede permissões de acesso a um usuário no banco de dados | GRANT SELECT ON Alunos TO 'usuario';             |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DCL       | REVOKE       | Revoga permissões de acesso a um usuário no banco de dados  | REVOKE SELECT ON Alunos FROM 'usuario';          |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
+| DQL       | SELECT       | Seleciona dados de uma tabela no banco de dados             | SELECT * FROM Alunos;                            |
++-----------+--------------+-------------------------------------------------------------+--------------------------------------------------+
 """)
 s(f"Entendi, {c.Teacher()}, é tipo um conjunto de comandos para fazer tudo no banco de dados, não? Consegue agora só fazer uma tabelinha só com os tipos e suas descrições?")
 t("Claro, pequeno gafanhoto! Vou fazer uma tabelinha para você entender melhor:")
@@ -282,19 +282,19 @@ t("""
 q("Caramba! Quantos?! E esses aí são os principais? Como vou saber quando usar cada um deles?")
 t("Esses são alguns dos principais SGDBs e suas aplicações clientes de administração, pequeno gafanhoto! Cada um tem suas vantagens e desvantagens, e a escolha vai depender das necessidades do projeto. Deixa eu te explicar um pouco sobre cada um deles, com uma tabela e principais características:")
 t("""
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| SGDB             | Principais Características                                     | Casos comuns de uso                             | Tipo de licença                                 |
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| MySQL            | Open-source, fácil, rápido, escalável, suporta transações     | Sites, blogs, e-commerce, aplicações web         | GPL                                             |
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| PostgreSQL       | Open-source, robusto, poderoso, suporta transações            | Aplicações críticas, BI, data warehousing        | PostgreSQL License                              |
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Oracle           | Poderoso, escalável, suporta transações, suporte comercial    | Empresas, aplicações críticas, BI                | Proprietária                                    |
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| SQL Server       | Poderoso, escalável, suporta transações, integração com Azure | Empresas, aplicações críticas, BI                | Proprietária                                    |
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| SQLite           | Leve, rápido, fácil, não requer servidor                      | Aplicações mobile, IoT, pequenos projetos        | Public Domain                                   |
-+------------------+----------------------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
+| SGDB             | Principais Características                                     | Casos comuns de uso                      | Tipo de licença    |
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
+| MySQL            | Open-source, fácil, rápido, escalável, suporta transações     | Sites, blogs, e-commerce, aplicações web  | GPL                |
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
+| PostgreSQL       | Open-source, robusto, poderoso, suporta transações            | Aplicações críticas, BI, data warehousing | PostgreSQL License |
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
+| Oracle           | Poderoso, escalável, suporta transações, suporte comercial    | Empresas, aplicações críticas, BI         | Proprietária       |
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
+| SQL Server       | Poderoso, escalável, suporta transações, integração com Azure | Empresas, aplicações críticas, BI         | Proprietária       |
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
+| SQLite           | Leve, rápido, fácil, não requer servidor                      | Aplicações mobile, IoT, pequenos projetos | Public Domain      |
++------------------+----------------------------------------------------------------+------------------------------------------+--------------------+
 """)
 s(f"Entendi, {c.Teacher()}, é tipo um conjunto de comandos para fazer tudo no banco de dados, não? Consegue agora só fazer uma tabelinha só com os tipos e suas descrições?")
 t("Claro, pequeno gafanhoto! Vou fazer uma tabelinha para você entender melhor:")
@@ -343,17 +343,17 @@ t("Por fim, a durabilidade é importante para garantir que as alterações feita
 s(f"Entendi, {c.Teacher()}, é tipo um conjunto de comandos para fazer tudo no banco de dados, não? Consegue agora só fazer uma tabelinha só com os tipos e suas descrições?")
 t("Claro, pequeno gafanhoto! Vou fazer uma tabelinha para você entender melhor:")
 t("""
-+------------------+----------------------------------------------------------------+----------------------------------------------------+--------------------------------------------------+
-| Tipo             | Descrição                                                      | Importância                                        | Riscos de não usar                               |
-+------------------+----------------------------------------------------------------+----------------------------------------------------+--------------------------------------------------+
-| Atômica          | A transação é executada como uma única unidade                 | Evita operações parciais                           | Estado inválido do banco de dados                |
-+------------------+----------------------------------------------------------------+----------------------------------------------------+--------------------------------------------------+
-| Consistente      | A transação leva o banco de dados de um estado consistente     | Evita estado inválido do banco de dados            | Erros e corrupção de dados                       |
-+------------------+----------------------------------------------------------------+----------------------------------------------------+--------------------------------------------------+
-| Isolada          | A transação é executada de forma isolada                       | Evita problemas de concorrência                    | Inconsistência de dados                          |
-+------------------+----------------------------------------------------------------+----------------------------------------------------+--------------------------------------------------+
-| Durável          | As alterações feitas por uma transação são permanentes         | Evita perda de dados e corrupção do banco de dados | Perda de dados e corrupção do banco de dados     |
-+------------------+----------------------------------------------------------------+----------------------------------------------------+--------------------------------------------------+
++------------------+------------------------------------------------------------+----------------------------------------------------+----------------------------------------------+
+| Tipo             | Descrição                                                  | Importância                                        | Riscos de não usar                           |
++------------------+------------------------------------------------------------+----------------------------------------------------+----------------------------------------------+
+| Atômica          | A transação é executada como uma única unidade             | Evita operações parciais                           | Estado inválido do banco de dados            |
++------------------+------------------------------------------------------------+----------------------------------------------------+----------------------------------------------+
+| Consistente      | A transação leva o banco de dados de um estado consistente | Evita estado inválido do banco de dados            | Erros e corrupção de dados                   |
++------------------+------------------------------------------------------------+----------------------------------------------------+----------------------------------------------+
+| Isolada          | A transação é executada de forma isolada                   | Evita problemas de concorrência                    | Inconsistência de dados                      |
++------------------+------------------------------------------------------------+----------------------------------------------------+----------------------------------------------+
+| Durável          | As alterações feitas por uma transação são permanentes     | Evita perda de dados e corrupção do banco de dados | Perda de dados e corrupção do banco de dados |
++------------------+------------------------------------------------------------+----------------------------------------------------+----------------------------------------------+
 """)
 s("Acho que o negócio tá fazendo mais sentido... mas e o que é uma visão lógica dos dados, um MER?")
 t("Uma visão lógica dos dados, ou Modelo Entidade-Relacionamento (MER), é uma representação visual dos dados de um banco de dados, que mostra as entidades, os atributos e os relacionamentos entre as entidades.")
@@ -440,15 +440,15 @@ t("No banco de dados de chave e valor, teremos os comandos: GET, PUT, DELETE par
 t("No banco de dados de documentos, teremos os comandos: FIND, INSERT, UPDATE para consultar e manipular os dados.")
 t("Vamos modelar o banco de dados NoSQL para você entender melhor, desenhando o que seriam cada uma dessas entidades e suas capacidades e características:")
 t("""
-+------------------+-----------------------------------------------+-------------------------------------------------+
-| Entidade         | Comandos                                      | Campos                                          |
-+------------------+-----------------------------------------------+-------------------------------------------------+
-| Produto          | GET, PUT, DELETE                              | id, nome, preço, categoria_id                   |
-+------------------+-----------------------------------------------+-------------------------------------------------+
-| Categoria        | GET, PUT, DELETE                              | id, nome                                        |
-+------------------+-----------------------------------------------+-------------------------------------------------+
-| Pedido           | GET, PUT, DELETE                              | id, produto_id, quantidade, total               |
-+------------------+-----------------------------------------------+-------------------------------------------------+
++------------------+-----------------------------------------------+------------------------------------+
+| Entidade         | Comandos                                      | Campos                             |
++------------------+-----------------------------------------------+------------------------------------+
+| Produto          | GET, PUT, DELETE                              | id, nome, preço, categoria_id      |
++------------------+-----------------------------------------------+------------------------------------+
+| Categoria        | GET, PUT, DELETE                              | id, nome                           |
++------------------+-----------------------------------------------+------------------------------------+
+| Pedido           | GET, PUT, DELETE                              | id, produto_id, quantidade, total  |
++------------------+-----------------------------------------------+------------------------------------+
 """)
 t("Em casos de bancos de chave e valor, de documentos, uma das características é a flexibilidade, onde você pode adicionar campos sem precisar alterar a estrutura do banco de dados, o que é uma grande vantagem em relação aos bancos de dados relacionais.")
 t("Dizemos que a estrutura das colunas não é rígida, o que permite armazenar dados semiestruturados, como JSON, XML, entre outros.")
@@ -456,46 +456,46 @@ s("Caramba! então eu não vou usar aquele CREATE TABLE dizendo quais são os ca
 t("Exatamente, querido pobre sofredor! Em um banco de dados NoSQL, você não precisa definir a estrutura do banco de dados antes de inserir os dados, como em um banco de dados relacional. Mas, cada escolha é uma renúncia, e você perde a garantia de integridade dos dados.")
 s("Então aquele negócio de chave estrangeria não existe aqui?")
 t("Boa observação, em um banco de dados NoSQL, você não tem a mesma garantia de integridade dos dados que em um banco de dados relacional, pois não há a mesma rigidez na definição da estrutura do banco de dados. Daó inclusive o nome de BANCO RELACIONAL, é dessa relação que falamos...")
-q("Entendi, {c.Teacher()}, é tipo um conjunto de comandos para fazer tudo no banco de dados, não? E quais são os principais bancos de dados NoSQL e suas aplicações e tipos de licença?")
+q(f"Entendi, {c.Teacher()}, é tipo um conjunto de comandos para fazer tudo no banco de dados, não? E quais são os principais bancos de dados NoSQL e suas aplicações e tipos de licença?")
 t("Os principais bancos de dados NoSQL são o MongoDB, o Cassandra, o Redis, o Couchbase, o Amazon DynamoDB, entre outros. Cada um tem suas características e vantagens, clientes, e a escolha vai depender das necessidades do projeto. Vamos fazer uma tabelinha:")
 t("""
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Banco de Dados   | Características                               | Casos comuns de uso                             | Aplicações cliente para administração           | Tipo de licença                                 |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| MongoDB          | Flexível, escalável, suporta dados semiestru | Aplicações web, IoT, Big Data, BI                | MongoDB Compass, Robo 3T, Studio 3T             | SSPL                                            |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Cassandra        | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | DataStax Studio, Cassandra Query Language       | Apache 2.0                                      |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Redis            | Rápido, escalável, suporta dados em memória  | Cache, sessões, filas de mensagens               | RedisInsight, Redis Commander, Redis Desktop    | BSD                                             |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Couchbase        | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | Couchbase Web Console, Couchbase CLI            | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Amazon DynamoDB  | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | AWS Management Console, AWS CLI                 | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Amazon DocumentDB| Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | AWS Management Console, AWS CLI                 | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Google Firestore  | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI               | Google Cloud Console, gcloud CLI                | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| CouchDB          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | Fauxton, CouchDB CLI                            | Apache 2.0                                      |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Neo4j            | Flexível, escalável, suporta dados semiestru | Big Data, IoT, aplicações web, BI                | Neo4j Browser, Neo4j Desktop, Cypher Shell      | GPL                                             |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| ArangoDB         | Flexível, escalável, suporta dados semiestru | Big Data, IoT, aplicações web, BI                | ArangoDB Web Interface, arangosh                | Apache 2.0                                      |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| RavenDB          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | RavenDB Studio, RavenDB Management Studio       | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Firebase         | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | Firebase Console, Firebase CLI                  | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| ScyllaDB         | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | Scylla Manager, Scylla Monitoring               | AGPL                                            |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| DataStax Astra   | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | DataStax Studio, Cassandra Query Language       | Proprietária                                    |
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-| Spanner          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI                | Google Cloud Console, gcloud CLI                | Proprietária                                    |  
-+------------------+-----------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Banco de Dados   | Características                               | Casos comuns de uso               | Aplicações cliente para administração           | Tipo de licença   |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| MongoDB          | Flexível, escalável, suporta dados semiestru | Aplicações web, IoT, Big Data, BI  | MongoDB Compass, Robo 3T, Studio 3T             | SSPL              |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Cassandra        | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | DataStax Studio, Cassandra Query Language       | Apache 2.0        |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Redis            | Rápido, escalável, suporta dados em memória  | Cache, sessões, filas de mensagens | RedisInsight, Redis Commander, Redis Desktop    | BSD               |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Couchbase        | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Couchbase Web Console, Couchbase CLI            | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Amazon DynamoDB  | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | AWS Management Console, AWS CLI                 | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Amazon DocumentDB| Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | AWS Management Console, AWS CLI                 | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Google Firestore  | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI | Google Cloud Console, gcloud CLI                | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| CouchDB          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Fauxton, CouchDB CLI                            | Apache 2.0        |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Neo4j            | Flexível, escalável, suporta dados semiestru | Big Data, IoT, aplicações web, BI  | Neo4j Browser, Neo4j Desktop, Cypher Shell      | GPL               |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| ArangoDB         | Flexível, escalável, suporta dados semiestru | Big Data, IoT, aplicações web, BI  | ArangoDB Web Interface, arangosh                | Apache 2.0        |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| RavenDB          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | RavenDB Studio, RavenDB Management Studio       | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Firebase         | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Firebase Console, Firebase CLI                  | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| ScyllaDB         | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Scylla Manager, Scylla Monitoring               | AGPL              |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| DataStax Astra   | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | DataStax Studio, Cassandra Query Language       | Proprietária      |
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
+| Spanner          | Escalável, distribuído, suporta dados semies | Big Data, IoT, aplicações web, BI  | Google Cloud Console, gcloud CLI                | Proprietária      |  
++------------------+-----------------------------------------------+-----------------------------------+-------------------------------------------------+-------------------+
 """)
 q("Caramba! Quantos?! E esses aí são os principais? Como vou saber quando usar cada um deles?")
 t("Esses são alguns dos principais bancos de dados NoSQL e suas aplicações clientes de administração, pequeno gafanhoto! Cada um tem suas vantagens e desvantagens, e a escolha vai depender das necessidades do projeto.")
 t("Por exemplo, se você precisa de alta disponibilidade e escalabilidade, pode escolher o Cassandra. Se você precisa de um banco de dados em memória, pode escolher o Redis. Se você precisa de um banco de dados distribuído, pode escolher o Couchbase.")
 t("Cada banco de dados NoSQL tem suas características e vantagens, e a escolha vai depender das necessidades do projeto. Se tiver alguma dúvida, é só perguntar!")
-s("Acho que cansei... se precisar de mais alguma coisa eu te chamo, {c.Teacher()}.")
-t("Fique à vontade, pequeno gafanhoto! Estou aqui para te ajudar a entender o mundo mágico dos bancos de dados. Se tiver alguma dúvida, é só chamar! Até mais!")
+s(f"Acho que cansei... se precisar de mais alguma coisa eu te chamo, {c.Teacher()}.")
+t("Fique à vontade, pequeno gafanhoto! Estou aqui para te ajudar a entender o mundo mágico dos bancos de dados. Se tiver alguma dúvida, é só chamar! Caso queira uma super aula sobre bancos de dados Mongo, recomendo esse conteúdo: https://learn.mongodb.com/learning-paths/mongodb-python-developer-path e https://learn.mongodb.com/learning-paths/mongodb-atlas-administrator-path ")
