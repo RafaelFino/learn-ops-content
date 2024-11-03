@@ -10,7 +10,7 @@ from typing import Any
 from pygments import highlight
 from pygments.styles import get_style_by_name
 from pygments.formatters import Terminal256Formatter
-from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer, CppLexer, CLexer, get_lexer_by_name, dotnet
+from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer, CppLexer, CLexer, get_lexer_by_name, dotnet, sql
 import getpass
 
 class color:
@@ -38,6 +38,7 @@ lexers = {
     "cpp": CppLexer(),
     "c": CLexer(),
     "cs": dotnet.CSharpLexer(),
+    "sql": sql.SqlLexer(),
 }
 
 
