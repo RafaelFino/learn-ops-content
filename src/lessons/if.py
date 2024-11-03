@@ -37,7 +37,7 @@ chat.Speak("""primeiro vamos criar uma veriável chamada minhaVar e colocar o um
 chat.ShowCode("""
 minhaVar = False
 print(minhaVar)
-""", False, True)
+""")
 
 chat.Speak("""No python, os valores de verdadeiro e falso são constantes na linguagem, isso acontece em praticamente todas as linguagens
 no python o verdadeiro corresponde a constante chamada True (com o 'T' maiúsculo) e o falso responde por False (com o 'F' maiúsculo)
@@ -51,7 +51,7 @@ minhaVar = False
 if minhaVar == False:
     print('Minha variável é Falsa')
 
-""", False, True)
+""")
 
 chat.Speak("""Viu que legal? agora só vai tentar imprimir a mensagem se o valor da variável for falso, vamos melhorar isso aí?""")
 
@@ -70,7 +70,7 @@ if minhaVar == False:
 
 # a segunda mensagem não foi exibida, pois mudamos a condição do IF
 
-""", True, True)
+""")
 
 chat.Speak("""A segunda mensagem não foi exibida... vamos tentar o ELSE agora?""")
 
@@ -91,7 +91,7 @@ if minhaVar == False:
 else:
     print('segundo IF, mas no ELSE: Minha variável é verdadeira - DEVE APARECER ESSE!')
 
-""", True, True)
+""")
 
 chat.Question(
     """Isso tá começando a ficar bom, mas como exatamente isso aí fica no python? explica no detalhe... """)
@@ -140,7 +140,7 @@ if minhaVar != 5:
 else:
     print('segundo IF, mas no ELSE: O valor é 5 e estamos testando se é diferente de 5, logo a expressão é falsa - DEVE APARECER ESSE!')
 
-""", True, True)
+""")
 
 
 chat.Speak("""Da mesma forma que usamos simbolos para comparar a igualdade ou não de valores
