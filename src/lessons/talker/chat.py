@@ -12,6 +12,7 @@ from pygments.styles import get_style_by_name
 from pygments.formatters import Terminal256Formatter
 from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, YamlLexer, HtmlLexer, CppLexer, CLexer, get_lexer_by_name, dotnet, sql
 import getpass
+import sqlite3
 
 class color:
     PURPLE = '\033[95m'
@@ -44,6 +45,8 @@ lexers = {
 sudentName = [
     "padawan", 
     "Pobre", 
+    "Marty McFly",
+    "Morty",
     "Padawan", 
     "Pequeno Gafanhoto", 
     "Jovem Tartaruga", 
@@ -92,18 +95,25 @@ sudentName = [
     "Donatelo",
     "Ash",
     "Pica-Pau",
-    "Patolino",    
+    "Patolino",  
+    "Neo",  
 ]
 
 teacherName = [
     "Fino", 
-    "Mestre", 
+    "Root",
+    "Admin",
+    "Mestre",
+    "Sapo Kako",
+    "Rick Sanches", 
     "Mestre Yoda",
     "Mestre dos Magos",
     "Dumbledore",
     "Gandalf",
     "Merlin",
     "Sr. Miyagi",
+    "Magneto",
+    "Fera",
     "Mestre Kame",
     "Mestre Splinter",
     "Optimus Prime",
@@ -127,7 +137,11 @@ teacherName = [
     "Professor Jones",
     "Professor Carvalho",
     "Professor Raimundo",
+    "Professor Tibúrcio",
     "Mufasa",
+    "Qui-Gon",
+    "Conde Dookan",
+    "O Arquiteto",
 ]
 
 nextStepMessages = [
@@ -219,7 +233,25 @@ class Chat:
         self._wait = wait
         self._fastMode = fastMode
 
+        self.insertMetric(f"""teacher.{teacher}""")
+        self.insertMetric(f"""student.{student}""")
+
         self.AskEnter()
+
+    def insertMetric(self, name: str, value: float = 1):
+        db = sqlite3.connect('metrics.db', isolation_level=None, check_same_thread=False)
+        cursor = db.cursor()
+        cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS metrics (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        name TEXT NOT NULL, 
+                        value decimal DEFAULT 1,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+                    );""")
+        
+        cursor.execute("INSERT INTO metrics (name, value) VALUES (?, ?)", (name, value,))    
+        db.close()
+
 
     def Teacher(self) -> str:
         return self._teacher

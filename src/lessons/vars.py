@@ -43,7 +43,7 @@ from talker import chat
 # O professor deve explicar como funciona a tipagem de variáveis e como linguagens diferentes lidam com isso
 # O professor deve explicar como atribuir valores a variáveis
 
-c = chat.Chat("Fino", "Aluno")
+c = chat.Chat()
 c.Speak("Vamos falar sobre variáveis em Python?")
 c.StudentComment("Claro, o que são variáveis?")
 c.Speak("Variáveis são espaços na memória do computador que armazenam valores")
