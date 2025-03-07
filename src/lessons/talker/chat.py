@@ -437,3 +437,7 @@ class Chat:
             self.AskEnter()
         except KeyboardInterrupt:
             sys.exit(0)                        
+
+    def LastStep(self):
+        self.Speak("Aeeee!!! Fim dessa aula... parabéns se vc conseguiu ficar vivo até aqui...")
+        self.Wait(5000)
