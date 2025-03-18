@@ -16,7 +16,7 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
@@ -37,14 +37,18 @@ c = chat.Chat()
 # O professor deve explicar sobre a importância da memória RAM para o processamento de dados.
 # O professor deve explicar sobre a importância da memória ROM para o armazenamento de dados.
 
+
 def t(m):
     c.Speak(m)
+
 
 def s(m):
     c.StudentComment(m)
 
+
 def q(m):
     c.Question(m)
+
 
 t("Olá, padawan! Hoje vamos falar sobre memórias.")
 t("Você sabe o que é memória?")
@@ -95,4 +99,5 @@ t("Sim, existem muitos tipos de memórias, mas essas são as principais")
 t("Existem também as memórias cache, que são memórias muito rápidas, mas muito pequenas")
 t("Elas são usadas para armazenar dados temporários que são acessados com muita frequência")
 t("Então, quando você acessa um arquivo, ele é carregado para a memória cache, para que o acesso seja mais rápido")
-t("Acho que com isso você já tem uma boa noção sobre memórias, padawan!")    
+t("Acho que com isso você já tem uma boa noção sobre memórias, padawan!")
+c.LastStep()

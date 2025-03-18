@@ -14,6 +14,7 @@ from pygments.lexers import PythonLexer, BashLexer, DockerLexer, JsonLexer, Yaml
 import getpass
 import sqlite3
 
+
 class color:
     PURPLE = '\033[95m'
     CYAN = '\033[96m'
@@ -25,6 +26,7 @@ class color:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     END = '\033[0m'
+
 
 lexers = {
     "python": PythonLexer(),
@@ -43,21 +45,21 @@ lexers = {
 }
 
 sudentName = [
-    "padawan", 
-    "Pobre", 
+    "padawan",
+    "Pobre",
     "Marty McFly",
     "Morty",
-    "Padawan", 
-    "Pequeno Gafanhoto", 
-    "Jovem Tartaruga", 
-    "Baby Yoda", 
-    "Aprendiz", 
-    "Daniel San", 
-    "Cavaleiro de Bronze", 
-    "Juninho", 
-    "Aluninho", 
-    "Newbie", 
-    "Iniciante", 
+    "Padawan",
+    "Pequeno Gafanhoto",
+    "Jovem Tartaruga",
+    "Baby Yoda",
+    "Aprendiz",
+    "Daniel San",
+    "Cavaleiro de Bronze",
+    "Juninho",
+    "Aluninho",
+    "Newbie",
+    "Iniciante",
     "Stag",
     "Zé Ruéla",
     "Pedro Bóh",
@@ -78,7 +80,7 @@ sudentName = [
     "Chiquinha",
     "Chaves",
     "Chapolin",
-    "Chaves",    
+    "Chaves",
     "Dona Florinda",
     "Kiko",
     "Quico",
@@ -95,17 +97,17 @@ sudentName = [
     "Donatelo",
     "Ash",
     "Pica-Pau",
-    "Patolino",  
-    "Neo",  
+    "Patolino",
+    "Neo",
 ]
 
 teacherName = [
-    "Fino", 
+    "Fino",
     "Root",
     "Admin",
     "Mestre",
     "Sapo Kako",
-    "Rick Sanches", 
+    "Rick Sanches",
     "Mestre Yoda",
     "Mestre dos Magos",
     "Dumbledore",
@@ -162,7 +164,7 @@ nextStepMessages = [
     """Próximo!!!""",
     """Ai ai... vamos lá...""",
     """Uma coisa de cada vez... vamos em frente!""",
-    """Vai ficar melhor com o tempo, prometo... vamos seguindo...""",    
+    """Vai ficar melhor com o tempo, prometo... vamos seguindo...""",
 ]
 
 pressEnterMessages = [
@@ -175,7 +177,7 @@ pressEnterMessages = [
     """No seu tempo campeão... aperta o ENTER aí quando vc quiser...""",
     """E aí? td bem com vc? quando estiver de boa, aperta o ENTER aí que continuamos... """,
     """Tá divertido? quando quiser, aperta o ENTER que vamos em frente...""",
-    """Vamos com calma...mas vc precisa apertar o ENTER para continuarmos...""",    
+    """Vamos com calma...mas vc precisa apertar o ENTER para continuarmos...""",
     """Aperta o ENTER aí...""",
     """Quando vc estiver de boa, aperta o ENTER aí que continuamos...""",
     """Aperta o ENTER aí que vamos em frente...""",
@@ -188,7 +190,26 @@ pressEnterMessages = [
     """Se precisar, vai buscar um café e depois aperta o ENTER aí...""",
     """Calma, respira, vai dar tudo certo, aperta o ENTER aí...""",
     """Vamos com calma, aperta o ENTER aí...""",
-    """Cansou? Ainda tem muito chão pela frente, vamos seguir... aperta o ENTER aí...""",    
+    """Cansou? Ainda tem muito chão pela frente, vamos seguir... aperta o ENTER aí...""",
+]
+
+pressEnterToExit = [
+    """A aula terminou! Aperta o ENTER aí se quiser dar aquele tchauzinho...""",
+    """A aula acabou, pode apertar o ENTER e partir pra próxima...""",
+    """Hora de sair da aula, aperta o ENTER aí e vai curtir um descanso...""",
+    """A aula foi boa, né? Aperta o ENTER aí e bora sair com estilo...""",
+    """Tá liberado! Aperta o ENTER aí e deixa a aula para trás...""",
+    """A aula terminou, mas aperta o ENTER aí para sair com aquele sorriso...""",
+    """Missão cumprida! Aperta o ENTER aí para encerrar e dar aquele rolê...""",
+    """Já deu, né? Aperta o ENTER aí e vamos nessa...""",
+    """A aula acabou, mas se quiser sair com elegância, aperta o ENTER aí...""",
+    """Apertou o ENTER e deu tchau para a aula! Agora, é só curtir...""",
+    """Aperta o ENTER e vaza, a aula já foi...""",
+    """Liberado! Aperta o ENTER e bora pra próxima...""",
+    """Já foi! Aperta o ENTER aí para sair da aula e aproveitar o resto do dia...""",
+    """A aula terminou, agora é só apertar o ENTER e seguir para o próximo rolê...""",
+    """A aula terminou, é hora de apertar o ENTER e relaxar...""",
+    """Apertou o ENTER e a aula ficou no passado... vamos seguir..."""
 ]
 
 style = get_style_by_name("monokai")
@@ -212,7 +233,7 @@ class Chat:
     def __init__(self, teacher=None, student=getpass.getuser(), wait=1, fastMode=False):
         if teacher is None or teacher == "":
             teacher = self.getTeacherName()
-        
+
         if student is None or student == "" or student == "root":
             student = self.getStudentName()
 
@@ -222,10 +243,12 @@ class Chat:
         self._fastMode = True
 
         # Lista os comandos básicos
-        self.Speak(f"Olá, eu sou o {self._teacher} e estou aqui para tentar ajudar um pouco...")
+        self.Speak(
+            f"Olá, eu sou o {self._teacher} e estou aqui para tentar ajudar um pouco...")
         self.Speak(f"Temos alguns comandos:")
         self.Speak("Caso queira sair, aperte CTRL+C a qualquer momento")
-        self.Speak(f"No momento em que te pedirem para teclar um 'ENTER', você pode:")
+        self.Speak(
+            f"No momento em que te pedirem para teclar um 'ENTER', você pode:")
         self.Speak(" - Apertar a tecla ENTER para continuar")
         self.Speak(" - Apertar a tecla 'Q' para sair")
         self.Speak(" - Apertar a tecla 'F' para ativar o modo rápido")
@@ -239,7 +262,8 @@ class Chat:
         self.AskEnter()
 
     def insertMetric(self, name: str, value: float = 1):
-        db = sqlite3.connect('metrics.db', isolation_level=None, check_same_thread=False)
+        db = sqlite3.connect(
+            'metrics.db', isolation_level=None, check_same_thread=False)
         cursor = db.cursor()
         cursor.execute("""
                     CREATE TABLE IF NOT EXISTS metrics (
@@ -248,20 +272,20 @@ class Chat:
                         value decimal DEFAULT 1,
                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
                     );""")
-        
-        cursor.execute("INSERT INTO metrics (name, value) VALUES (?, ?)", (name, value,))    
-        db.close()
 
+        cursor.execute(
+            "INSERT INTO metrics (name, value) VALUES (?, ?)", (name, value,))
+        db.close()
 
     def Teacher(self) -> str:
         return self._teacher
-    
+
     def Student(self) -> str:
         return self._student
-    
+
     def SetFastMode(self, fast: bool):
         self._fastMode = fast
-    
+
     def Wait(self, wait: float):
         if self._fastMode:
             return
@@ -269,73 +293,72 @@ class Chat:
 
     def slowPrint(self, msg):
         try:
-            for char in msg:     
+            for char in msg:
                 sys.stdout.write(char)
                 sys.stdout.flush()
                 if char == " ":
-                    wait = 0.01*(random.randint(0,8))
+                    wait = 0.01*(random.randint(0, 8))
                 else:
-                    wait = 0.001*(random.randint(0,80))
+                    wait = 0.001*(random.randint(0, 80))
                 self.Wait(wait)
         except KeyboardInterrupt:
-            sys.exit(0)                            
+            sys.exit(0)
 
     def Speak(self, msg):
         try:
             for line in msg.splitlines():
                 print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-                    color.END + color.GREEN, end="")
+                      color.END + color.GREEN, end="")
                 self.slowPrint(line)
                 print(color.END)
 
                 # Espera um pouquinho para cada linha poder ser lida...
                 self.Wait(len(line)/200)
         except KeyboardInterrupt:
-            sys.exit(0)                            
+            sys.exit(0)
 
     def StudentComment(self, msg):
         try:
             print(color.END + color.DARKCYAN + color.BOLD +
-                "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
+                  "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
             self.slowPrint(msg)
             print(color.END)
             self.Wait(self._wait)
         except KeyboardInterrupt:
-            sys.exit(0)                        
+            sys.exit(0)
 
     def Question(self, msg, wait=True):
         try:
             print(color.END + color.DARKCYAN + color.BOLD +
-                "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
+                  "# [{0}] ".format(self._student) + color.END + color.CYAN, end="")
             self.slowPrint(msg)
             print(color.END)
             self.Wait(self._wait)
             if wait:
                 self.NextStep()
         except KeyboardInterrupt:
-            sys.exit(0)                            
-    
+            sys.exit(0)
+
     def getLexer(self, lang):
         if lang.lower() in lexers:
             return lexers[lang]
-        
+
         if not lang:
             return lexers["python"]
-        
+
         try:
             ret = get_lexer_by_name(lang)
         except:
             return lexers["python"]
-                
+
         return ret
-                
-    
+
     def isEmpty(self, line) -> bool:
-            if line == "" or line.isspace() or line == "\n" or line == "\r" or line == "\r\n" or line == "\n\r" or line == "\r\n":
-                return True
-            
-            return False
-    
+        if line == "" or line.isspace() or line == "\n" or line == "\r" or line == "\r\n" or line == "\n\r" or line == "\r\n":
+            return True
+
+        return False
+
     def ShowCode(self, code, wait=True, lexer="python"):
         try:
             print(color.END + color.BOLD + f"# [{lexer} code]:" + color.END)
@@ -345,14 +368,15 @@ class Chat:
                 if self.isEmpty(line):
                     continue
 
-                print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(line, self.getLexer(lexer), Terminal256Formatter(style=style)), end="")
+                print(color.END + color.BOLD + color.BLUE + "| {:03d} ".format(ln) + color.END + highlight(
+                    line, self.getLexer(lexer), Terminal256Formatter(style=style)), end="")
                 ln += 1
 
             self.printBar()
             if wait:
                 self.AskEnter()
         except KeyboardInterrupt:
-            sys.exit(0)                        
+            sys.exit(0)
 
     def printBar(self):
         try:
@@ -362,21 +386,21 @@ class Chat:
                 print(chr(3196), end="")
             print(color.END)
         except KeyboardInterrupt:
-            sys.exit(0)            
+            sys.exit(0)
 
     def ShowCodeAndRun(self, code, wait=True, lexer="python"):
         try:
             self.ShowCode(code, wait=False, lexer=lexer)
-            
+
             print(color.END + color.BOLD +
-                    f"# [{lexer} code] Result:" + color.END)
+                  f"# [{lexer} code] Result:" + color.END)
             exec(code)
             print(color.END, end="")
 
             if wait:
                 self.AskEnter()
         except KeyboardInterrupt:
-            sys.exit(0)            
+            sys.exit(0)
 
     def ShowCommand(self, command, wait=True, run=False):
         try:
@@ -386,14 +410,15 @@ class Chat:
                 if self.isEmpty(line):
                     continue
 
-                print(color.END + color.BOLD + color.BLUE + "| " + color.END + color.GREEN + color.BOLD + "$> " + color.END, end="")
+                print(color.END + color.BOLD + color.BLUE + "| " + color.END +
+                      color.GREEN + color.BOLD + "$> " + color.END, end="")
                 print(highlight(line, BashLexer(), Terminal256Formatter()), end="")
             self.printBar()
             if run:
                 print(color.END + color.BOLD +
-                    "# [shell command] Result:" + color.END)
+                      "# [shell command] Result:" + color.END)
                 os.system(command)
-            
+
             if wait:
                 self.AskEnter()
         except KeyboardInterrupt:
@@ -405,28 +430,29 @@ class Chat:
     def AskEnter(self):
         try:
             key = input(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
-                color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
-            
+                        color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
+
             if key is not None and key != "":
                 key = key.lower()
 
             if key == "q":
                 self.Speak("Espero que você volte logo...")
                 exit()
-            
+
             if key == "f":
                 self.SetFastMode(True)
-                self.Speak(f"Modo rápido ativado... tá com pressa {self._student}?")
+                self.Speak(
+                    f"Modo rápido ativado... tá com pressa {self._student}?")
 
             if key == "s":
                 self.SetFastMode(False)
                 self.Speak("Modo rápido desativado... melhor ir devagar né?")
         except KeyboardInterrupt:
-            sys.exit(0)                    
+            sys.exit(0)
 
     def getStudentName(self):
         return sudentName[random.randint(0, len(sudentName)-1)]
-    
+
     def getTeacherName(self):
         return teacherName[random.randint(0, len(teacherName)-1)]
 
@@ -436,8 +462,19 @@ class Chat:
                 0, len(nextStepMessages)-1)])
             self.AskEnter()
         except KeyboardInterrupt:
-            sys.exit(0)                        
+            sys.exit(0)
+
+    def AskEnterToExit(self):
+        try:
+            key = input(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
+                        color.END + color.BOLD + pressEnterToExit[random.randint(0, len(pressEnterToExit)-1)] + color.END)
+
+            if key is not None and key != "":
+                key = key.lower()
+        except KeyboardInterrupt:
+            sys.exit(0)
 
     def LastStep(self):
-        self.Speak("Aeeee!!! Fim dessa aula... parabéns se vc conseguiu ficar vivo até aqui...")
-        self.Wait(5000)
+        self.Speak(
+            "Aeeee!!! Fim dessa aula... parabéns se vc conseguiu ficar vivo até aqui...")
+        self.AskEnterToExit()
