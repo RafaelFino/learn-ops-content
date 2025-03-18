@@ -151,3 +151,4 @@ t("Se você quiser Aspira, eu te passo a minha imagem pronta, que foi baseada no
 s("Sério? Você tem uma imagem pronta?")
 t("Sim, eu tenho a imagem pronta do finoPI, com muitos jogos clássicos já configurados e prontos para jogar. Eu fiz para o meu filho em 2016, é uma imagem bem madura e estável.")
 s(f"Nossa, que legal! Eu quero sim! Obrigado {c.Teacher()}!")
+c.LastStep()

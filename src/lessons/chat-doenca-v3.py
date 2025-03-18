@@ -18,7 +18,7 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
@@ -29,20 +29,26 @@ c = chat.Chat()
 # Sempre que o aluno tentar se referir ao professor, ele deve usar o método c.Teacher() para se referir ao professor, nunca diretamente. Dessa forma o nome do professor irá aparecer na tela do aluno. Nessas linhas a string sempre deve ser formatada com o nome do professor usando o 'f' antes das aspas.
 # O aluno geralmente se perde nas explicações e não entende na primeira explicação, forçando o professor a tentar sempre simplificar o tema com exemplos práticos e analogias simplificadas.
 
+
 def t(m):
     c.Speak(m)
+
 
 def s(m):
     c.StudentComment(m)
 
+
 def q(m):
     c.Question(m)
+
 
 def code(code):
     c.ShowCode(code)
 
+
 def run(code):
     c.ShowCodeAndRun(code)
+
 
 def cmd(command):
     c.ShowCommand(command)
@@ -58,7 +64,7 @@ def cmd(command):
 # - GET /message/<last> para receber mensagens, onde <last> é o id da última mensagem recebida. Essa API retorna um array de mensagens e um código de status 200 -> OK. O formato das mensagens é um objeto com o id, o texto da mensagem e o nome do usuário:
 # {
 #   "messages": [
-#     { 
+#     {
 #       'id': 1,
 #       'when': '2021-09-01T12:00:00',
 #       'sender': 'user1',
@@ -72,7 +78,7 @@ def cmd(command):
 #     }
 #   ],
 #   "timestamp": "2021-09-01T12:00:02"
-#}, 200
+# }, 200
 
 # A versão 2:
 # Nessa versão, foi implementado um banco de dados SQLITE3 para persistir as mensagens, ou seja, as mensagens não são perdidas quando o servidor é reiniciado. Também foi implementado uma mudança para buscar as mensagens, no lugar de ir no path o last, agora ele é um query parameter, ou seja, ele é passado na URL como um parâmetro de query.
@@ -106,6 +112,7 @@ def cmd(command):
 # - DELETE /auth/<id> para deslogar um usuário, passando no header da requisição o token de autenticação. Essa API retorna um código de status 200 -> OK.
 # Para o envio de mensagens, o usuário deve passar o token de autenticação no header da requisição, com a chave "Authorization" e o valor do token e não é mais ncessário passar o id do usuário no corpo da requisição, pois o token já resolve isso.
 # Para o recebimento de mensagens, o usuário deve passar o token de autenticação no header da requisição, com a chave "Authorization" e o valor do token e o last como um query parameter na URL.
+
 
 swagger = """
 {
@@ -520,11 +527,14 @@ t("Isso mesmo, padawan! Se você ficar 5 minutos sem enviar ou receber mensagens
 s(f"Entendi, {c.Teacher()}! Acho que já consigo fazer um client em python aqui... você poderia por favor me mostrar, usando um 'curl' como eu poderia fazer todos os processos? desde criar um usuário, autenticar, mandar e receber mensagens por favor?")
 t("Claro, padawan! Vou te mostrar como você pode fazer isso usando o curl.")
 t("Vamos começar criando um usuário:")
-cmd("curl -X POST -sS -H 'Content-Type: application/json' -d '{\"name\": \"user1\", \"password\": \"123456\"}' http://learnops.duckdns.org:7111/user/")
+cmd(
+    "curl -X POST -sS -H 'Content-Type: application/json' -d '{\"name\": \"user1\", \"password\": \"123456\"}' http://learnops.duckdns.org:7111/user/")
 t("Agora vamos autenticar o usuário:")
-cmd("curl -X POST -sS -H 'Content-Type: application/json' -d '{\"password\": \"123456\"}' http://learnops.duckdns.org:7111/auth/1")
+cmd(
+    "curl -X POST -sS -H 'Content-Type: application/json' -d '{\"password\": \"123456\"}' http://learnops.duckdns.org:7111/auth/1")
 t("você irá ver no retorno o token de autenticação. Vamos usar ele nos próximos comandos, olha só:")
-cmd("curl -X POST -sS -H 'Content-Type: application/json' -d '{\"text\": \"Hello World\"}' -H \"Authorization: <TOKEN>\" http://learnops.duckdns.org:7111/message/")
+cmd(
+    "curl -X POST -sS -H 'Content-Type: application/json' -d '{\"text\": \"Hello World\"}' -H \"Authorization: <TOKEN>\" http://learnops.duckdns.org:7111/message/")
 t("E para receber mensagens, a partir da mensagem de id=1:")
 cmd("curl -X GET -sS -H \"Authorization: <TOKEN>\" http://learnops.duckdns.org:7111/message/?last=1")
 t("E para deslogar:")
@@ -535,6 +545,4 @@ t("Você pode acessar a documentação da API para saber mais sobre as APIs. No 
 s("E você teriam mais alguns materiais para estudar mais APIs?")
 t("Você pode acessar o site da Swagger para saber mais sobre APIs RESTful. Eu também criei um material para um curso de pós graduação que pode ajudar bastante, ele está no meu repositório: https://github.com/RafaelFino/learnops-api-python")
 s(f"Entendi, {c.Teacher()}! Muito obrigado por me ensinar sobre APIs RESTful! Acho que agora consigo fazer um client para o nosso chat!")
-
-
-     
+c.LastStep()

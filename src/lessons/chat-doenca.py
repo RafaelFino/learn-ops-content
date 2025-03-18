@@ -18,7 +18,7 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
@@ -29,20 +29,26 @@ c = chat.Chat()
 # Sempre que o aluno tentar se referir ao professor, ele deve usar o método c.Teacher() para se referir ao professor, nunca diretamente. Dessa forma o nome do professor irá aparecer na tela do aluno.
 # O aluno geralmente se perde nas explicações e não entende na primeira explicação, forçando o professor a tentar sempre simplificar o tema com exemplos práticos e analogias simplificadas.
 
+
 def t(m):
     c.Speak(m)
+
 
 def s(m):
     c.StudentComment(m)
 
+
 def q(m):
     c.Question(m)
+
 
 def code(code):
     c.ShowCode(code)
 
+
 def run(code):
     c.ShowCodeAndRun(code)
+
 
 def cmd(command):
     c.ShowCommand(command)
@@ -85,6 +91,7 @@ def cmd(command):
 # O servidor onde o chat está rodando responder pelo IP 192.168.1.9 e a porta 8080
 # A rota para o envio de mensagens é /message, o POST envia mensagens e o GET recebe mensagens usando parametros de query, por exemplo /message/10, onde 10 é a ultima mensagem recebida, portanto o server vai enviar a partir da mensagem 10
 # O método de post, devolve o ID da mensagem criada e o método de get, devolve uma lista de mensagens, sempre em json
+
 
 t("Olá padawan, hoje vamos falar sobre como criar um chat simples em python, usando um servidor e um cliente")
 t("Você sabe o que é um chat? Já parou para pensar como um funciona?")
@@ -651,7 +658,7 @@ def start_app():
     from waitress import serve
     serve(app, host="192.168.1.9", port=8080)    
     logger.info('Exiting Chat Doenca API')
-""")     
+""")
 s("Entendi {c.Teacher()}, acho que agora eu entendi melhor como funciona o servidor, mas ainda é muita coisa para mim, acho que vou precisar de mais tempo para entender tudo isso")
 t("Não tem problema, é muita informação mesmo, mas com o tempo você vai pegando o jeito, e se precisar de ajuda, pode contar comigo! Vou te pentelhar até você entender tudo!")
 s("Obrigado {c.Teacher()}, e como seria o client disso aí???")
@@ -773,3 +780,4 @@ t("Depois que você instalar o Python e as dependências do client, você pode r
 s(f"Entendi {c.Teacher()}, vou fazer isso agora, obrigado pela ajuda!")
 t("De nada, qualquer coisa estou por aqui! Até mais!")
 q(f"Vai dar uma canseira fazer esse... mas vamos lá, obrigado pela ajuda {c.Teacher()}, até mais!")
+c.LastStep()

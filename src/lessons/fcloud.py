@@ -17,18 +17,21 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
 # Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
+
 def t(m):
     c.Speak(m)
 
+
 def s(m):
     c.StudentComment(m)
+
 
 def q(m):
     c.Question(m)
@@ -43,7 +46,7 @@ def q(m):
 # A arquitetura usa um servidor hospedado na OCI, servindo como ponto de entrada para essa infraestrutura, o professor deve explicar o que é a OCI e como ela funciona.
 # Nesse servidor, usamos um DNS de um serviço gratuito, chamado DuckDNS, o professor deve explicar o que é um DNS e como ele funciona.
 # Nessa arquitetura, uma máquina virtual na OCI, hospeda o lado servidor do FRP, o FRPS, que abre uma porta específica, usando um token de segurança para garantir a comunicação, o professor deve explicar como funciona o FRPS.
-# Dentro da rede privada da casa do professor, existe um servidor Xeon muito poderoso onde um proxmox está instalado. 
+# Dentro da rede privada da casa do professor, existe um servidor Xeon muito poderoso onde um proxmox está instalado.
 # Para garantir a segregação das redes, existe uma rede separada dentro do virtualizador, onde as máquinas virtuais são criadas.
 # Existe uma VM chamada Proxy, que faz papel de proxy de internet usando um serviço chamado Squid, o professor deve explicar o que é um proxy de internet e como ele funciona.
 # Existe uma VM chamada Tools, onde o FRPC (cliente do FRP) está instalado, o professor deve explicar como funciona o FRPC.
@@ -51,11 +54,12 @@ def q(m):
 # Para ter acesso a essas VMs, o professor criou um sistema que usa os usuários do github para autenticação, o professor deve explicar como funciona esse sistema.
 # Usando o comando http://github.com/USUARIO.keys, o professor consegue pegar a chave pública do usuário e adicionar ao arquivo authorized_keys, permitindo o acesso via SSH.
 # O professor deve explicar como acessar as máquinas virtuais via SSH.
-# O professor criou uma automação, que de hora em hora, usando esse serviço, atualiza as chaves públicas dos usuários, garantindo que sempre tenham acesso. 
+# O professor criou uma automação, que de hora em hora, usando esse serviço, atualiza as chaves públicas dos usuários, garantindo que sempre tenham acesso.
 # O professor deve explicar como funciona essa automação.
 # Existem 20 vms criadas, partindo da porta 7112 até a porta 7132, o professor deve explicar como acessar cada uma dessas vms.
 # Os Jedis vão apoiar os alunos a acessar essas vms, para que possam fazer exercícios práticos. Eles possuem acesso a todas as VMs dos alunos.
 # O professor deve explicar como os alunos podem acessar as VMs, com o comando 'ssh -oPort=PORTA -i ~/.ssh/id_ed25519 dev@learnops.duckdns.org'
+
 
 t("Olá, Pequenos Gafanhotos! Hoje vamos explorar uma cloud privada, usando um Proxmox como virtualizador. Já ouviu falar sobre isso?")
 s(f"Oi, {c.Teacher()}! Já ouvi um pouco, mas não entendo muito bem o que é. Pode me explicar?")
@@ -74,7 +78,8 @@ c.ShowCommand("ssh -oPort=PORTA -i ~/.ssh/id_ed25519 dev@learnops.duckdns.org")
 t("Você consegue acessar as máquinas virtuais com o seu usuário do GitHub.")
 t("Os Jedis vão apoiar vocês a acessar essas VMs, para que possam fazer exercícios práticos. Eles possuem acesso a todas as VMs dos alunos.")
 t("Para ver todos os usuários disponíveis, você pode acessar o arquivo com o seguinte comando:")
-c.ShowCommand("curl https://rgt-tools.duckdns.org/drive/api/public/dl/JzcWHOIA/plataforma/vm-users.json")
+c.ShowCommand(
+    "curl https://rgt-tools.duckdns.org/drive/api/public/dl/JzcWHOIA/plataforma/vm-users.json")
 q(f"PUTA MERDA CALMA! Me perdi geral {c.Teacher()}, eu não sei nem oq é uma VM, um proxy, um container, um ssh, um curl... nada! Vamos do começo cara...")
 t("Sem problemas, Pequeno Gafanhoto! Vamos começar do começo. Uma máquina virtual é como um computador dentro de outro computador. Ela simula um ambiente de hardware e software independente.")
 t("Um proxy é um intermediário entre o cliente e o servidor. Ele recebe as solicitações do cliente e as encaminha para o servidor, mantendo a comunicação segura e eficiente.")
@@ -114,7 +119,7 @@ t("...")
 t("Tô contando até 10 aqui para não te ofender mais uma vez... eu acho aqui q o seu google é igual ao meu, vc já tentou pesquisar lá?")
 s("é... tô vacilando né? vou pesquisar aqui...")
 s("Pronto, achei esse link aqui: https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent , é isso?")
-t("Isso mesmo! Esse link explica como gerar uma nova chave SSH e adicionar ao seu agente SSH. Siga os passos e você vai conseguir adicionar a sua chave ao GitHub.") 
+t("Isso mesmo! Esse link explica como gerar uma nova chave SSH e adicionar ao seu agente SSH. Siga os passos e você vai conseguir adicionar a sua chave ao GitHub.")
 t("Mas vou te contar aqui como vc pode gerar uma chave aí no seu linux (LINUX, não no Windows... se vc quiser usar windows, dá teus pulos aí...)")
 c.ShowCommand("ssh-keygen -t ed25519 -C 'seu@email.com'")
 t("Esse comando vai gerar um par de chaves SSH, uma pública e uma privada. A chave pública você adiciona ao GitHub e a chave privada você guarda com muito cuidado.")
@@ -126,7 +131,7 @@ t("Teu google quebrou?")
 s("Ops... não, desculpa... vou pesquisar aqui...")
 q("Pronto, achei esse link aqui: https://www.cyberciti.biz/faq/how-to-install-ssh-on-ubuntu-linux-using-apt-get/ , é isso?")
 t("Isso mesmo! Esse link explica como instalar o OpenSSH no Ubuntu. O OpenSSH é uma implementação livre do protocolo SSH e é muito utilizado em sistemas Linux.")
-t("Mas vou te ajudar... caso não tenha instalado, você pode instalar o OpenSSH com o comando:") 
+t("Mas vou te ajudar... caso não tenha instalado, você pode instalar o OpenSSH com o comando:")
 c.ShowCommand("sudo apt-get install -y openssh-client openssh-server")
 t("Esse comando vai instalar o cliente e o servidor SSH no seu sistema. Com isso, você vai poder acessar as máquinas virtuais e fazer muitas outras coisas.")
 s("Entendi... mas e agora? O que eu faço?")
@@ -165,7 +170,7 @@ t("Com esse comando, você vai acessar a VM Server e poder explorar o que tem l�
 s("Entendi... mas e se eu não conseguir acessar?")
 t("Se você não conseguir acessar, pode ser que a porta esteja errada, a chave não esteja configurada corretamente ou a máquina esteja fora do ar.")
 t("Nesse caso, você pode pedir ajuda aos Jedis, que vão te ajudar a resolver o problema e acessar a máquina. Eles são os mestres da força e vão te guiar no caminho certo.")
-t("Conseguiu entrar aí? Se você conseguiu, deve ver o prompt do terminal da VM, algo como dev@vm125:~$... se não conseguiu, me avise que eu chamo um Jedi para te ajudar.") 
+t("Conseguiu entrar aí? Se você conseguiu, deve ver o prompt do terminal da VM, algo como dev@vm125:~$... se não conseguiu, me avise que eu chamo um Jedi para te ajudar.")
 s("Consegui acessar sim! Mas não entendi uma coisa, a porta é a 7125 e o nome da VM é vm125, por que?")
 t("Boa pergunta, Pobre Aprendiz! A porta é o número que você usa para acessar a máquina, enquanto o nome da VM é o nome que você dá para identificar a máquina.")
 t("Dentro do virtualizador, cada VM possui um ID, indentificando essa VM. Esse ID é usado para mapear a porta de acesso e o nome da VM.")
@@ -201,9 +206,9 @@ t("As clouds podem ser públicas, privadas ou híbridas. As clouds públicas sã
 t("As clouds híbridas combinam os recursos das clouds públicas e privadas, permitindo maior flexibilidade e escalabilidade.")
 q("E como eu posso usar uma cloud?")
 t("Você pode usar uma cloud para hospedar sites, aplicativos, bancos de dados, armazenar arquivos, executar testes e muito mais.")
-t("É muito caro e trabalhoso ter o seu prṕprio datacenter, então esses provedores de cloud, oferecem um modelo em que você aluga a capacidade e usa e eles cuidam da parte de infraestrutura.") 
+t("É muito caro e trabalhoso ter o seu prṕprio datacenter, então esses provedores de cloud, oferecem um modelo em que você aluga a capacidade e usa e eles cuidam da parte de infraestrutura.")
 s("Acho que entendi, é como se fossem o Uber dos datacenters? no lugar de você ter o seu carro, você aluga um quando precisa?")
-t("Exatamente! É como o Uber dos datacenters. Você aluga a capacidade de computação, armazenamento e rede de acordo com a sua necessidade e paga apenas pelo que usar.")    
+t("Exatamente! É como o Uber dos datacenters. Você aluga a capacidade de computação, armazenamento e rede de acordo com a sua necessidade e paga apenas pelo que usar.")
 t("Agora que você entendeu o conceito de cloud, virtualização e servidores, você pode explorar a cloud privada e ver como tudo funciona na prática. Vamos continuar?")
 s("Entendi... mas e se eu quiser aprender mais sobre isso?")
 t("Se você quiser aprender mais sobre cloud, virtualização e servidores, existem muitos recursos disponíveis na internet. Vale estudar sobre AWS, GCP, OCI, Azure e etc")
@@ -241,4 +246,4 @@ s(f"Nossa, bastante coisa... vou dar uma olhada nesses links... muito obrigado p
 t("De nada, Pobre Aprendiz! Fico feliz em poder te ajudar e compartilhar conhecimento. Se precisar de mais alguma coisa, pode me chamar. Estou aqui para te apoiar no que precisar.")
 t("Agora que você entendeu o conceito de cloud, virtualização e servidores, você pode explorar a cloud privada e ver como tudo funciona na prática. Vamos continuar?")
 s("Vamos sim! Obrigado mais uma vez!")
-
+c.LastStep()

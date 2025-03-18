@@ -659,7 +659,7 @@ c.Speak("Mas é importante entender esses conceitos para se tornar um programado
 c.Speak("Se tiver mais alguma dúvida, pode me perguntar a qualquer momento")
 c.StudentComment("Muito obrigado, Fino! Vou descansar e estudar mais depois!")
 c.Speak("Descanse bem, pequeno padawan! E até a próxima aula!")
-
+c.LastStep()
 
            
 

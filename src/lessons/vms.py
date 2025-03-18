@@ -207,3 +207,4 @@ t(" - .NET Core: Versão multiplataforma do .NET Framework, mais leve e rápido.
 t(" - Conclusão: A virtualização de computadores, VMs, hiper-visor, VirtualBox, cgroups, namespaces, containers, Docker, JVM, .NET Framework e .NET Core são tecnologias que permitem criar ambientes virtuais e executar programas em diferentes plataformas.")
 s("Obrigado professor, você explicou muito bem! Agora eu entendi a diferença entre todas essas tecnologias. Vou tentar criar uma VM, um container e executar um programa Java e um programa .NET. Obrigado por tudo!")
 t("De nada, pequeno Padawan! Se tiver alguma dúvida, é só me chamar. Boa sorte com os seus experimentos e que a força esteja com você!")
+c.LastStep()

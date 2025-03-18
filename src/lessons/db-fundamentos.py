@@ -16,21 +16,25 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
 # Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
+
 def t(m):
     c.Speak(m)
+
 
 def s(m):
     c.StudentComment(m)
 
+
 def q(m):
     c.Question(m)
+
 
 def sql(code):
     c.ShowCode(code, lexer="sql")
@@ -56,6 +60,7 @@ def sql(code):
 # O professor deve explicar o que é um NoSQL, ou seja, um banco de dados de chave e valor ou um banco de dados de documentos.
 # O professor deve explicar o que é um banco de dados em memória.
 # O professor deve explicar o que é um banco de dados distribuído.
+
 
 t("Olá, jovens aprendizes da arte de conjurar sistemas! Hoje vamos falar sobre banco de dados. Você sabe o que é um banco de dados?")
 s(f"Então {c.Teacher()}, é uma cadeira feita com dados, tipo aqueles de jogos de tabuleiro?")
@@ -499,3 +504,4 @@ t("Por exemplo, se você precisa de alta disponibilidade e escalabilidade, pode 
 t("Cada banco de dados NoSQL tem suas características e vantagens, e a escolha vai depender das necessidades do projeto. Se tiver alguma dúvida, é só perguntar!")
 s(f"Acho que cansei... se precisar de mais alguma coisa eu te chamo, {c.Teacher()}.")
 t("Fique à vontade, pequeno gafanhoto! Estou aqui para te ajudar a entender o mundo mágico dos bancos de dados. Se tiver alguma dúvida, é só chamar! Caso queira uma super aula sobre bancos de dados Mongo, recomendo esse conteúdo: https://learn.mongodb.com/learning-paths/mongodb-python-developer-path e https://learn.mongodb.com/learning-paths/mongodb-atlas-administrator-path ")
+c.LastStep()

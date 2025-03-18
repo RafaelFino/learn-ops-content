@@ -443,3 +443,4 @@ t("Você pode instalar o SQLite Studio no Windows baixando o arquivo de instala�
 s("E como eu posso começar a praticar com o SQLite Studio?")
 t("Você pode começar a praticar com o SQLite Studio criando um banco de dados, criando tabelas, inserindo dados, atualizando dados, excluindo dados e executando consultas SQL. O importante é praticar e se familiarizar com a linguagem.")
 s(f"Entendi! Obrigado por todas as informações, {c.Teacher()}! Vou começar a praticar com o SQLite e o SQLite Studio para aprender mais sobre SQL.")
+c.LastStep()

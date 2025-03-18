@@ -16,7 +16,7 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
@@ -26,11 +26,14 @@ c = chat.Chat()
 # O professor deve sempre se referir ao aluno como "padawan", "Pobre", "Padawan", "Pequeno Gafanhoto", "Jovem Tartaruga" e outros jargões da cultura pop para se referir a aprendizes.
 # Os alunos sempre fazem piadas e brincadeiras com os conteúdos, o professor deve sempre responder com bom humor e descontração.
 
+
 def t(m):
     c.Speak(m)
 
+
 def s(m):
     c.StudentComment(m)
+
 
 def q(m):
     c.Question(m)
@@ -47,7 +50,7 @@ def q(m):
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
 # O aluno pode fazer perguntas e o professor responde.
 # O professor deve expor cenários com bom humor, trazendo leveza e descontração para a aula, tentando ao máximo descomplicar o assunto para o aluno.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno não possui muito conhecimento sobre o assunto, não sabe muito sobre o tema, mas sempre se mostra muito curioso e quer saber as aplicações práticas do tema.
 # O professor deve sempre que possível, explicar o tema com exemplos práticos e cenários reais.
 # O Professor deve explicar os diferentes tipos de cache e suas aplicações práticas.
@@ -55,9 +58,10 @@ def q(m):
 # O professor deve explicar como o cache é utilizado na prática.
 # O foco do aluno deve ser entender como um cache de backend funciona, quando utilizar e principalmente, quando não utilizar e quais problemas um cache pode resolver.
 
+
 t("Olá padawan, tudo bem? Hoje vamos falar sobre cache. Você sabe o que é um cache e para que ele serve?")
 s(f"Olá {c.Teacher()}, tudo bem! Não faço ideia, estou meio com sono hoje, mas estou curioso para saber mais sobre o assunto.")
-t("Então, um cache é um tipo de armazenamento temporário de dados que tem como objetivo acelerar o acesso a esses dados. Ele é utilizado para armazenar dados que são frequentemente acessados, para que não seja necessário acessar o banco de dados ou o disco toda vez que esses dados forem necessários.")  
+t("Então, um cache é um tipo de armazenamento temporário de dados que tem como objetivo acelerar o acesso a esses dados. Ele é utilizado para armazenar dados que são frequentemente acessados, para que não seja necessário acessar o banco de dados ou o disco toda vez que esses dados forem necessários.")
 s("Não entendi nada, professor. Pode explicar melhor? Lembra q eu sou só um estudante, não sei muito sobre o assunto e hoje estou com preguiça de estudar.")
 t("Claro, padawan! Vamos lá. Imagine que você tem um livro que você lê todos os dias. Se você deixar esse livro na sua mesa, você não precisa ir até a estante toda vez que quiser ler. O livro na sua mesa é como um cache, pois ele armazena o livro que você mais acessa, facilitando o seu acesso a ele. Entendeu?")
 q("Entendi, professor! O cache é como um livro que eu leio todos os dias e deixo na minha mesa para facilitar o acesso. Parece simples... mas por que eu iria ficar lendo esse livro tantas vezes?")
@@ -87,7 +91,7 @@ q("Parece que vc já me disse isso assim, consegue explicar como se eu tivesse 8
 t("Claro, padawan! O cache do processador é como uma memória temporária que armazena dados e instruções que são frequentemente acessados pelo processador. Esses dados e instruções são armazenados no cache para que o acesso a eles seja mais rápido e eficiente.")
 t("Por exemplo, em um computador, o cache do processador pode ser utilizado para armazenar instruções e dados que são frequentemente acessados pelos programas, para que o acesso a esses dados seja mais rápido e eficiente. Isso ajuda a reduzir o tempo de execução dos programas e a melhorar o desempenho do computador.")
 s("É {c.Teacher{}}, tá complicado ainda, conseguimos fazer alguma analogia simples sobre esse cache do processador para eu entender melhor?")
-t("Vou tentar, essa parada é simples padawan, acho q vc precisa de um café... mas vamos lá: Pensa no processador como uma grande calculadora que fica fazendo muitas contas ao mesmo tempo, sabe quando você faz uma conta aí no papel? e fica por exemplo anotando em um rascunho algo que será importante para essa conta mais para frente e vai precisar lebrar disso? Então, o cache do processador é como esse rascunho, ele armazena dados e instruções que são frequentemente acessados pelo processador, para que o acesso a eles seja mais rápido e eficiente.")    
+t("Vou tentar, essa parada é simples padawan, acho q vc precisa de um café... mas vamos lá: Pensa no processador como uma grande calculadora que fica fazendo muitas contas ao mesmo tempo, sabe quando você faz uma conta aí no papel? e fica por exemplo anotando em um rascunho algo que será importante para essa conta mais para frente e vai precisar lebrar disso? Então, o cache do processador é como esse rascunho, ele armazena dados e instruções que são frequentemente acessados pelo processador, para que o acesso a eles seja mais rápido e eficiente.")
 s("E eu vou ter que lidar com isso quando estiver programando minhas coisas em Python ou C# aqui?")
 t("Na verdade não, o cache do processador é só dele, você não precisa se preocupar com isso quando estiver programando em Python ou C#. O cache do processador é gerenciado pelo hardware e é utilizado para acelerar o acesso a dados e instruções que são frequentemente acessados pelo processador.")
 q("E quando que eu, um padawan retardado vou precisar me preocupar com isso? Ficou conufso agora...")
@@ -142,3 +146,4 @@ t("""Com esse comando você define um tempo de vida de 24 horas para os dados ar
 s(f"Entendi, {c.Teacher()}! No REDIS, eu posso armazenar diferentes tipos de dados, como strings, listas, conjuntos, hashes, etc. Para armazenar um dado no REDIS, eu posso usar o comando SET. Para recuperar o dado armazenado no REDIS, eu posso usar o comando GET. E para definir um tempo de vida para os dados armazenados no REDIS, eu posso usar o comando EXPIRE. Parece bem útil! Obrigado por explicar!")
 s("Acho que entendi um pouco melhor o que é cache e como ele funciona na prática. Obrigado por explicar!")
 t("De nada, padawan! TMJ!")
+c.LastStep()

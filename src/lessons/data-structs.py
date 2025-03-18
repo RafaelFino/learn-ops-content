@@ -16,30 +16,36 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
 # Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
+
 def t(m):
     c.Speak(m)
+
 
 def s(m):
     c.StudentComment(m)
 
+
 def q(m):
     c.Question(m)
+
 
 def code_c(code):
     c.ShowCode(code, lexer="c")
 
+
 def code_cs(code):
     c.ShowCode(code, lexer="cs")
 
+
 def code(code):
-    c.ShowCode(code)    
+    c.ShowCode(code)
 
 # Sobre o tema:
 # Vamos falar sobre o que é a memória RAM do computador
@@ -60,6 +66,7 @@ def code(code):
 # Vamos mostrar também que essas estruturas podem ser combinadas, como um dicionário de listas, ou uma lista de dicionários
 # devemos mostrar tabelas em ASCII para comparar os casos de uso onde cada estrutura faz mais sentido e também ao explicar cada uma delas, mostrar uma matriz SWOT para mostrar as vantagens e desvantagens de cada estrutura
 # Sempre devemos usar exemplos bem didáticos de como usar cada uma delas e mostrar que elas são ferramentas para resolver problemas
+
 
 t("Olá, padawans! Hoje vamos falar sobre memória RAM e estruturas de dados. Você sabe o que é a memória RAM do computador?")
 s(f"Olá, {c.Teacher()} Memória RAM? é tipo uma memória que parece um SAPO?")
@@ -688,3 +695,4 @@ t("E lembre-se sempre: 'QUAL PROBLEMA VOCÊ PRECISA RESOLVER?'")
 s("Entendi! Obrigado {c.Teacher()} por me ajudar a entender esses conceitos! Vou continuar estudando para me tornar um bom programador!")
 t("De nada! Estou aqui para ajudar no que precisar! Continue estudando e praticando, que você vai longe! Se precisar de ajuda, estou por aqui! Para se tornar mestre nisso aí, use o livro de estruturas de dados fundamentais do Silvio do Lago Pereira, é um dos melhores que temos no Brasil!")
 s(f"Valeu {c.Teacher()}! Até a próxima!")
+c.LastStep()

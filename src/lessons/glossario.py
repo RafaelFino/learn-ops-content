@@ -16,7 +16,7 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
@@ -24,16 +24,23 @@ c = chat.Chat()
 # Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas", "Baby Yoda", "Aprendiz", "Daniel San", "Cavaleiros de Bronze", "Juninho", "Aluninhos", "Newbie", "Iniciante", "Stag" e outros jargões da cultura pop para se referir a aprendizes iniciantes e com muita determinação.
 
 # Deve ser usado sempre que o professor tentar explicar algo
+
+
 def t(m):
     c.Speak(m)
 
 # Deve ser usado sempre que o aluno quiser fazer um comentário ao professor.
+
+
 def s(m):
     c.StudentComment(m)
 
 # Deve ser usado sempre que o aluno quiser fazer uma pergunta ao professor.
+
+
 def q(m):
     c.Question(m)
+
 
 # Sobre a aula:	é um glossario de termos técnicos que o aluno deve aprender.
 # Termos que devem ser explicados, de forma direta, clara, descontraída e com exemplos práticos e em ordem alfabética:
@@ -247,7 +254,7 @@ t("""IPv4:	é a quarta versão do protocolo de internet, que usa endereços de 3
 t("""IPv6:	é a sexta versão do protocolo de internet, que usa endereços de 128 bits, permitindo mais endereços.""")
 t("""IT ops:	é a operação de TI, um conjunto de práticas e processos que são usados para gerenciar e manter sistemas de TI. Serve para gerenciar e manter sistemas de TI. Significa Information Technology Operations.""")
 q(f"""Uau {c.Teacher()}! De onde saiu tanto nome??""")
-t("""Você ficaria impressionado se soubesse que aqui só estão uns poucos""") 
+t("""Você ficaria impressionado se soubesse que aqui só estão uns poucos""")
 t("""Java:	é uma linguagem de programação de código aberto que é projetada para ser simples, segura e portátil. Serve para desenvolver aplicativos e serviços. É mantida pela Oracle.""")
 t("""JavaScript:	é uma linguagem de programação de código aberto que é projetada para ser dinâmica, interativa e orientada a objetos. Serve para desenvolver aplicativos e serviços. É mantida pela ECMA International.""")
 t("""JavaScript:	é uma linguagem de programação que é usada para criar interatividade em páginas da web. Serve para criar interatividade em páginas da web.""")
@@ -457,6 +464,7 @@ t("""YAML:	é uma linguagem de serialização de dados que é usada para represe
 t("""ZeroMQ:	é uma biblioteca de mensagens de código aberto, que permite a comunicação assíncrona entre aplicativos. Serve para comunicar de forma assíncrona entre aplicativos.""")
 t("""zip:	é um formato de arquivo de código aberto que é projetado para compactar e descompactar arquivos de forma eficiente. Serve para compactar e descompactar arquivos.""")
 t("""Zsh:	é um shell de linha de comando que é uma extensão do Bash, com recursos adicionais e melhorias de usabilidade. Serve para interagir com o sistema operacional e executar comandos. Significa Z Shell.""")
-t("""ZSTD:	é um algoritmo de compressão de código aberto que é projetado para comprimir e descomprimir dados de forma eficiente. Serve para comprimir e descomprimir dados. É mantido pela Facebook.""") 
+t("""ZSTD:	é um algoritmo de compressão de código aberto que é projetado para comprimir e descomprimir dados de forma eficiente. Serve para comprimir e descomprimir dados. É mantido pela Facebook.""")
 q(f"""{c.Teacher()}, uau! Z finalmente...""")
 t("""Sim, agora vc já sabe o alfabeto inteiro... e muitos termos técnicos importantes, agora pode descansar...""")
+c.LastStep()

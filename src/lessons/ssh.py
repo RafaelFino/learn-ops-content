@@ -266,7 +266,7 @@ c.ShowCommand("scp -r diretorio usuario@servidor:/caminho")
 s("Caramba! Isso tudo é bem legal mesmo! Acho que aprendi algo bem importante hoje.")
 t("Fico feliz que tenha aprendido! O SSH é uma ferramenta muito poderosa e útil para acessar servidores remotos de forma segura.")
 s(f"Obrigado pela aula, professor{c.Teacher()}. Aprendi muito!")
-
+c.LastStep()
 
 
 
