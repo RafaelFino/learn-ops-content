@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from talker import chat
 import os
 import random
 from time import sleep
@@ -424,7 +425,6 @@ Usei várias vezes comandos do python e você nem falou nada?
 #!/usr/bin/env python3
 
 # Importing the chat class from the talker module
-from talker import chat
 c = chat.Chat()
 
 # Sobre as aulas:
@@ -439,18 +439,24 @@ c = chat.Chat()
 # O aluno deve se sentir à vontade para perguntar e interagir com o professor.
 # O professor deve sempre incentivar o aluno a participar e perguntar.
 # O professor deve sempre manter o aluno interessado e curioso sobre o tema.
-# O professor deve sempre encorajar o aluno a praticar o que foi ensinado. 
+# O professor deve sempre encorajar o aluno a praticar o que foi ensinado.
 # O aluno deve sempre se sentir motivado a aprender mais sobre o tema.
 # O professor sempre que possível, deve indicar materiais para o aluno estudar além dessa aula, como links e livros sobre o tema
 # Sempre que o aluno entender um tema e trocar para outro tema, deve tentar se despedir do professor e o professor, com uma piada, deve dizer que a aula não terminou e que ele ainda tem muito a aprender.
 # A cada Interação e troca de tema, as frases devem ser diferentes para não parecer uma cópia ou repetição durante o dialogo.
 # Os alunos devem ser chamados de "padawans", "Pobres", "Padawans", "Pequenos Gafanhotos", "Jovem Tartarugas" e outros jargões da cultura pop para se referir a aprendizes.
 
+
 def t(m):
     c.Speak(m)
+
 
 def s(m):
     c.StudentComment(m)
 
+
 def q(m):
     c.Question(m)
+
+
+c.LastStep()

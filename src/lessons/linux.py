@@ -1234,3 +1234,4 @@ c.Speak("""
 | Hyper                           | Terminal moderno                    | apt install hyper              | yum install hyper              |
 +---------------------------------+-------------------------------------+--------------------------------+--------------------------------+""")
 c.Speak("E por hoje é só... espero que tenha gostado da aula, qualquer dúvida estou por aqui!")
+c.LastStep()

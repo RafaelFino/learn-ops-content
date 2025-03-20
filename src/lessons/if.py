@@ -163,3 +163,4 @@ chat.Speak("""No fim do dia, temos os seguintes operadores de comparação:
 <=      testa para saber se uma variável é MENOR do que a outra, ou seja, se a primeira variável for menor ou IGUAIS, o resultado será FALSE, senão o resultado será TRUE
 Tá facil?
 """)
+chat.LastStep()
